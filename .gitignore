@@ -1,2 +1,5 @@
 # ignore python3 bytecode cache
 __pycache__/
+
+# ignore test coverage report
+.coverage
