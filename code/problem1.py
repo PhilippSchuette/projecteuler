@@ -65,25 +65,26 @@ def fast_divisible(a=3, b=5, target=1000):
     return sum
 
 
-# get a target from the user
-target = int(input("please provide a positive integer: "))
+if __name__ == "__main__":
+    # get a target from the user
+    target = int(input("please provide a positive integer: "))
 
-# time the slow function
-slow_start = time.time()
-slow_solution = slow_divisible(target=target)
-slow_end = time.time()
-slow_time = slow_end - slow_start
+    # time the slow function
+    slow_start = time.time()
+    slow_solution = slow_divisible(target=target)
+    slow_end = time.time()
+    slow_time = slow_end - slow_start
 
-# time the fast function
-fast_start = time.time()
-fast_solution = fast_divisible(target=target)
-fast_end = time.time()
-fast_time = fast_end - fast_start
+    # time the fast function
+    fast_start = time.time()
+    fast_solution = fast_divisible(target=target)
+    fast_end = time.time()
+    fast_time = fast_end - fast_start
 
-# print the results
-print("slow solution: {}\nfast solution: {}".format(
-    slow_solution,
-    fast_solution,
-))
-print("slow time: {}s\nfast time: {}s".format(
-    np.round(slow_time, 6), np.round(fast_time, 6)))
+    # print the results
+    print("slow solution: {}\nfast solution: {}".format(
+        slow_solution,
+        fast_solution,
+    ))
+    print("slow time: {}s\nfast time: {}s".format(
+        np.round(slow_time, 6), np.round(fast_time, 6)))
