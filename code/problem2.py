@@ -18,7 +18,7 @@
 import time
 
 
-def fibonacci(n):
+def slow_fibonacci(n):
     """
     this function calculates the fibonacci sequence up to the n'th
     member
@@ -34,6 +34,12 @@ def fibonacci(n):
     return y
 
 
+def fast_fibonacci(n):
+    """
+    """
+    pass
+
+
 if __name__ == "__main__":
     start = time.time()
     i = 0
@@ -41,7 +47,7 @@ if __name__ == "__main__":
     d = {}
     while True:
         i += 1
-        _tmp = fibonacci(i)
+        _tmp = slow_fibonacci(i)
         if _tmp > 4000000:
             break
         if (_tmp % 2) == 0:
