@@ -9,6 +9,7 @@ install:
 
 script:
   - coverage run code/problem1_test.py
+  - coverage run code/problem2_test.py
 
 after_success:
   - codecov
