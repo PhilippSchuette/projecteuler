@@ -3,3 +3,6 @@ __pycache__/
 
 # ignore test coverage report
 .coverage
+
+# ignore python3 bytecode files
+*.pyc
