@@ -5,9 +5,9 @@ import problem2
 
 
 class TestSolution(unittest.TestCase):
-    def test_fibonacci(self):
-        self.assertEqual(problem2.fibonacci(10), 1)
-        self.assertNotEqual(problem2.fibonacci(10), 1)
+    def test_slow_fibonacci(self):
+        self.assertEqual(problem2.slow_fibonacci(10), 89)
+        self.assertNotEqual(problem2.slow_fibonacci(10), 1)
 
 
 if __name__ == "__main__":
