@@ -35,14 +35,19 @@ def fibonacci(n):
 
 
 if __name__ == "__main__":
+    # start timing
     start = time.time()
+
+    # define looping variables
     i = 0
     sum = 0
-    d = {}
+    target = 4000000
+
+    # loop until `fibonacci()' returns an integer > target
     while True:
         i += 1
         _tmp = fibonacci(i)
-        if _tmp > 4000000:
+        if _tmp > target:
             break
         if (_tmp % 2) == 0:
             sum += _tmp
