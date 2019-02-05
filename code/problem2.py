@@ -41,13 +41,33 @@ def fast_fibonacci(n):
     pass
 
 
+def fibonacci_list(target):
+    """
+    Return a list containing all Fibonacci numbers whose values do not exceed target
+    """
+
+    # Generate list with all Fibonacci numbers below target
+    if target == 1:
+        return [1]
+    fib = [1, 2]
+    i = 2
+    while True: 
+        next = fib[i-1] + fib[i-2] 
+        if next > target: # Check if the next number would exceeds our target value
+            break
+        fib.append(next) # Append the sum of the previous two terms to our list
+        i+=1
+    
+    return fib
+
+
 if __name__ == "__main__":
     # start timing
     start = time.time()
 
     # define looping variables
     i = 0
-    sum = 0
+    s = 0
     target = 4000000
 
     # loop until `fibonacci()' returns an integer > target
@@ -57,9 +77,22 @@ if __name__ == "__main__":
         if _tmp > target:
             break
         if (_tmp % 2) == 0:
-            sum += _tmp
+            s += _tmp
 
     # stop timing and print results
     end = time.time()
-    print("result: {}".format(sum))
+    print("result: {}".format(s))
     print("elapsed: {}s".format(end - start))
+
+
+    #Fast solution begins here! 
+
+    start = time.time()
+
+    fib = fibonacci_list(target)
+    fast_result = sum(fib[1::3]) # Starting from 2, every 3rd Fibonacci number is even
+
+    end = time.time()
+    print("fast result: {}".format(fast_result))
+    print("elapsed: {}s".format(end - start))
+
