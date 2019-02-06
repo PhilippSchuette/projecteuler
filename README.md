@@ -10,3 +10,9 @@ Tests are implemented using the [unittest module](https://docs.python.org/3/libr
 
 
 ## Project Status
+
+| Problem | Number of Solutions | Test Coverage |
+| ------- | ------------------- | ------------- |
+|       1 |                   2 |           yes |
+|       2 |                   2 |     partially |
+|       3 |                   1 |            no |
