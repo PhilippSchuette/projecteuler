@@ -3,6 +3,7 @@ import unittest
 
 import problem1
 import problem2
+import problem4
 
 
 class TestProblem1Solution(unittest.TestCase):
@@ -14,6 +15,10 @@ class TestProblem1Solution(unittest.TestCase):
         self.assertEqual(problem1.fast_divisible(), 233168)
         self.assertNotEqual(problem1.fast_divisible(), 1)
 
+class TestProblem4Solution(unittest.TestCase):
+    def test_is_palindrome(self):
+        self.assertTrue(problem4.is_palindrome(123454321))
+        self.assertFalse(problem4.is_palindrome(74365))
 
 class TestProblem2Solution(unittest.TestCase):
     def test_slow_fibonacci(self):
