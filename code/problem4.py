@@ -13,6 +13,7 @@
 # License: MIT (see ../LICENSE.md)
 
 import time
+import argparse
 
 def is_palindrome(n):
     """
@@ -21,11 +22,19 @@ def is_palindrome(n):
     return str(n) == str(n)[::-1]
 
 if __name__ == "__main__":
-    largest = 0
+
+    # Parse command line arguments
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-d", type=int, default=3, help="Number of digits of the two multiplicands generating the palindrome number. E.g. D=3 for the problem solution (default) or D=2 for the example in the problem statement.")
+    args = parser.parse_args()
 
     start = time.time()
-    for i in range(100, 1000):
-        for j in range(i, 1000): # Save some time here by starting at i (exploiting commutativity)
+
+    min = 10**(args.d-1)
+    max = 10**(args.d)
+    largest = 0
+    for i in range(min, max):
+        for j in range(i, max): # Save some time here by starting at i (exploiting commutativity)
             n = i * j
             if n > largest and is_palindrome(n):
                 largest = n
