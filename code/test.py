@@ -1,5 +1,6 @@
 # unit tests for all problem*.py files in ./code
 import unittest
+import unittest.mock
 
 import problem1
 import problem2
@@ -30,12 +31,11 @@ class TestProblem2Solution(unittest.TestCase):
 
 class TestProblem3Solution(unittest.TestCase):
     def test_is_prime(self):
-        self.assertTrue(problem3.is_prime(7, verbose=False))
-        self.assertFalse(problem3.is_prime(20, verbose=False))
+        self.assertTrue(problem3.is_prime(7))
+        self.assertFalse(problem3.is_prime(20))
 
     def test_largest_prime_factor(self):
-        self.assertEqual(problem3.largest_prime_factor(200000, verbose=False),
-                         5)
+        self.assertEqual(problem3.largest_prime_factor(200000), 5)
 
 
 class TestProblem5Solution(unittest.TestCase):
