@@ -3,6 +3,7 @@ import unittest
 
 import problem1
 import problem2
+import problem5
 
 
 class TestProblem1Solution(unittest.TestCase):
@@ -23,6 +24,12 @@ class TestProblem2Solution(unittest.TestCase):
 
     def test_fast_fibonacci(self):
         self.assertEqual(problem2.fast_fibonacci(1), None)
+
+
+class TestProblem5Solution(unittest.TestCase):
+    def test_evenly_divisible(self):
+        self.assertEqual(problem5.evenly_divisible(10), 2520)
+        self.assertEqual(problem5.evenly_divisible(20), 232792560)
 
 
 if __name__ == "__main__":
