@@ -26,7 +26,7 @@ def evenly_divisible(limit):
 
     while True:
         for divisor in range(1, limit+1):
-            if not (current_num / divisor).is_integer():
+            if not (current_num % divisor) == 0:
                 divisible = False
                 break  # break out of for loop
 
