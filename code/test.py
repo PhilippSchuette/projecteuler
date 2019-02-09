@@ -24,6 +24,7 @@ class TestProblem2Solution(unittest.TestCase):
         self.assertNotEqual(problem2.slow_fibonacci(10), 1)
 
     def test_fast_fibonacci(self):
+        self.assertEqual(problem2.fast_fibonacci(1), 1)
         self.assertEqual(problem2.fast_fibonacci(4000000), 4613732)
 
 

@@ -43,7 +43,7 @@ def fast_fibonacci(target):
 
     # Generate list with all Fibonacci numbers below target
     if target == 1:
-        return [1]
+        return 1
     fib = [1, 2]
     i = 2
     while True:
