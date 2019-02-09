@@ -3,6 +3,7 @@ import unittest
 
 import problem1
 import problem2
+import problem3
 import problem5
 
 
