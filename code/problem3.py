@@ -35,7 +35,7 @@ def largest_prime_factor(n, div=2):
     while True:
         i -= 1
         if i <= 1:
-            break
+            break  # pragma: no cover
         if (target % i) == 0:
             if is_prime(i):
                 return i
