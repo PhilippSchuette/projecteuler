@@ -14,7 +14,7 @@ Tests are implemented using the [unittest module](https://docs.python.org/3/libr
 | Problem | Number of Solutions | Test Coverage |
 | ------- | ------------------- | ------------- |
 |       1 |                   2 |           yes |
-|       2 |                   2 |     partially |
+|       2 |                   2 |           yes |
 |       3 |                   1 |            no |
 |       4 |                   - |             - |
 |       5 |                   1 |           yes |
