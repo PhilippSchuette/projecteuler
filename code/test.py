@@ -28,6 +28,16 @@ class TestProblem2Solution(unittest.TestCase):
         self.assertEqual(problem2.fast_fibonacci(4000000), 4613732)
 
 
+class TestProblem3Solution(unittest.TestCase):
+    def test_is_prime(self):
+        self.assertTrue(problem3.is_prime(7, verbose=False))
+        self.assertFalse(problem3.is_prime(20, verbose=False))
+
+    def test_largest_prime_factor(self):
+        self.assertEqual(problem3.largest_prime_factor(200000, verbose=False),
+                         5)
+
+
 class TestProblem5Solution(unittest.TestCase):
     def test_evenly_divisible(self):
         self.assertEqual(problem5.evenly_divisible(10), 2520)
