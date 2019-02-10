@@ -51,6 +51,13 @@ class TestProblem5Solution(unittest.TestCase):
         self.assertEqual(problem5.evenly_divisible(10), 2520)
         self.assertEqual(problem5.evenly_divisible(20), 232792560)
 
+    def test_check_prime(self):
+        self.assertTrue(problem5.check_prime(13))
+        self.assertFalse(problem5.check_prime(20))
+        self.assertListEqual(problem5.prime_list(6),
+                             [2, 3, 5])
+        self.assertEqual(problem5.lcm(20), 232792560)
+
 
 class TestProblem7Solution(unittest.TestCase):
     def test_nth_prime(self):
@@ -58,6 +65,7 @@ class TestProblem7Solution(unittest.TestCase):
         self.assertEqual(problem7.nth_prime(2), 3)
         self.assertEqual(problem7.nth_prime(6), 13)
         self.assertNotEqual(problem7.nth_prime(6), 14)
+
 
 if __name__ == "__main__":
     unittest.main()
