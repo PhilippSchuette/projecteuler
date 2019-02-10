@@ -11,9 +11,9 @@
 # do not exceed four million, find the sum of the even-valued terms.
 #
 # Solution description:
-# TODO: write description
+# --
 #
-# Author: Daniel Schuette, T-Rex96
+# Author: Daniel Schuette, Tom Praschan
 # Date: 2018/09/24
 # License: MIT (see ../LICENSE.md)
 import time

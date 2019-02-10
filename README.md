@@ -18,3 +18,12 @@ Tests are implemented using the [unittest module](https://docs.python.org/3/libr
 |       3 |                   1 |           yes |
 |       4 |                   1 |           yes |
 |       5 |                   2 |           no  |
+|       6 |                   - |             - |
+|       7 |                   1 |           yes |
+|       8 |                   - |             - |
+|       9 |                   - |             - |
+|      10 |                   - |             - |
+|      11 |                   - |             - |
+|      12 |                   - |             - |
+|      13 |                   - |             - |
+|      14 |                   - |             - |
