@@ -1,8 +1,9 @@
 # Project Euler Problem 8 Solution
 #
 # Problem statement:
-#   The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
-
+# The four adjacent digits in the 1000-digit number that
+# have the greatest product are 9 × 9 × 8 × 9 = 5832.
+#
 #   73167176531330624919225119674426574742355349194934
 #   96983520312774506326239578318016984801869478851843
 #   85861560789112949495459501737958331952853208805511
@@ -23,24 +24,30 @@
 #   84580156166097919133875499200524063689912560717606
 #   05886116467109405077541002256983155200055935729725
 #   71636269561882670428252483600823257530420752963450
-
-#   Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
-
-# Solution description: TODO
-
+#
+# Find the thirteen adjacent digits in the 1000-digit number
+# that have the greatest product. What is the value of this
+# product?
+#
+# Solution description:
+# --
+#
 # Author: Tom Praschan
-# Date: 2018/2/10
+# Date: 2019/02/10
 # License: MIT (see ../LICENSE.md)
 
 import time
 import argparse
-from numpy import prod # Like the python built-in sum() but calculates the product instead
+
+from numpy import prod  # Like builtin sum() but calculates the product
+
 
 def bruteforce_product(num, n):
     """
-    Given a list of ints (num) this function calculates the largest product of n adjacent numbers in the list 
+    Given a list of ints (num), this function calculates the
+    largest product of n adjacent numbers in the list.
     """
-    m = 0 # Stores the current maximum
+    m = 0  # Stores the current maximum
     for i in range(0, len(num) - n):
         p = prod(num[i:i+n])
         if p > m:
@@ -50,16 +57,16 @@ def bruteforce_product(num, n):
 
 def faster_product(num, n):
     """
-    Same as bruteforce_product, but faster by skipping most 0s
+    Same as bruteforce_product, but faster by skipping most 0s.
     """
 
-    # If one of the first n digits contains a 0, 
+    # If one of the first n digits contains a 0,
     # we can skip those and start right at the nth digit
     start = n if n in num[:n] else 0
 
-    m = prod(num[start:start+n]) # Stores the current maximum
+    m = prod(num[start:start+n])  # stores the current maximum
 
-    i = start + 1 # Loop variable
+    i = start + 1  # loop variable
     while i < len(num) - n:
         # If the next digit is a 0 skip n digits ahead
         if num[i + n - 1] == 0:
@@ -74,9 +81,9 @@ def faster_product(num, n):
 
 if __name__ == "__main__":
     input_number = '73167176531330624919225119674426574742355349194934969835203127745063262395783180169848018694788518438586156078911294949545950173795833195285320880551112540698747158523863050715693290963295227443043557668966489504452445231617318564030987111217223831136222989342338030813533627661428280644448664523874930358907296290491560440772390713810515859307960867017242712188399879790879227492190169972088809377665727333001053367881220235421809751254540594752245258490771167055601360483958644670632441572215539536978179778461740649551492908625693219784686224883972241375657056057490261407972968652414535100478216637048440319989000889524345065854122758866688164271714799244429282308634656748139191231628245817866458359124566529476545682848912883142607690042421902267105562632111110937054421750694165896040071984038509624554443629812309878799272442849091884580156166097919133875499200524063689912560717600588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450'
-    
+
     # Convert to a list of ints for convenience
-    num_list = [int(c) for c in input_number] 
+    num_list = [int(c) for c in input_number]
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-n", type=int, default=13, help='Number of adjacent digits to multiply (default is 13)')

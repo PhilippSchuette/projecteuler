@@ -9,6 +9,7 @@ import problem004
 import problem005
 import problem006
 import problem007
+import problem008
 
 
 class TestProblem001Solution(unittest.TestCase):
@@ -75,6 +76,16 @@ class TestProblem007Solution(unittest.TestCase):
         self.assertEqual(problem007.nth_prime(2), 3)
         self.assertEqual(problem007.nth_prime(6), 13)
         self.assertNotEqual(problem007.nth_prime(6), 14)
+
+
+class TestProblem008Solution(unittest.TestCase):
+    def test_bruteforce_product(self):
+        self.testList = [1, 2, 8, 2, 2, 2, 1, 9, 1]
+        self.assertEqual(problem008.bruteforce_product(self.testList, 2), 16)
+
+    def test_faster_product(self):
+        self.testList = [1, 2, 8, 2, 2, 2, 1, 9, 1]
+        self.assertEqual(problem008.faster_product(self.testList, 2), 16)
 
 
 if __name__ == "__main__":
