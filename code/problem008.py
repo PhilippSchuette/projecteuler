@@ -1,5 +1,4 @@
-# template.py demonstrates how to structure the problem
-# solutions:
+# Project Euler Problem 8 Solution
 #
 # Problem statement:
 #   The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
@@ -27,7 +26,7 @@
 
 #   Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 
-# Solution description:
+# Solution description: TODO
 
 # Author: Tom Praschan
 # Date: 2018/2/10
