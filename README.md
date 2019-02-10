@@ -20,7 +20,7 @@ Tests are implemented using the [unittest module](https://docs.python.org/3/libr
 |       5 |                   2 |           yes |
 |       6 |                   - |             - |
 |       7 |                   1 |           yes |
-|       8 |                   - |             - |
+|       8 |                   2 |             - |
 |       9 |                   - |             - |
 |      10 |                   - |             - |
 |      11 |                   - |             - |
