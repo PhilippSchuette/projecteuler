@@ -25,8 +25,8 @@ import numpy as np
 
 
 def calc_sums(m, n):
-	sum1 = 0 # this variable is incremented towards the final value
-	sum2 = int((n*(n + 1) - m*(m + 1))/2) # this variable stores intermediate sums for recycling
+	sum1 = 0  # gets incremented towards the final value
+	sum2 = int((n*(n + 1) - m*(m + 1))/2)  # stores intermediate sums
 	for i in range(m, n):
 		sum1 += i*sum2
 		sum2 -= (i + 1)

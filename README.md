@@ -4,31 +4,49 @@
 
 ## Overview
 
-Project Euler problem solutions, written in Python. For more information, check [their website](https://projecteuler.net/).
+Project Euler problem solutions, written in multiple programming languages. For more information, check [their website](https://projecteuler.net/). Contributions are appreciated!
+
+### Python
 
 Tests are implemented using the [unittest module](https://docs.python.org/3/library/unittest.html).
+
+### C
+
+### C++
+
+### Go
+
+### JavaScript
 
 
 ## Project Status
 
-| Problem | Total Number of Solutions | Test Coverage | Python | C | C++ | JavaScript | Go | Optimal Runtime |
-| ------- | ------------------------- | ------------- | ------ |---| --- | ---------- | -- | --------------- | 
-|       1 |                         2 |           yes |    +   | - |  -  |     -      | -  |                 |
-|       2 |                         2 |           yes |    +   | - |  -  |     -      | -  |                 |
-|       3 |                         1 |           yes |    +   | - |  -  |     -      | -  |                 |
-|       4 |                         1 |           yes |    +   | - |  -  |     -      | -  |                 |
-|       5 |                         2 |           yes |    +   | - |  -  |     -      | -  |                 |
-|       6 |                         1 |           no  |    +   | - |  -  |     -      | -  |                 |
-|       7 |                         1 |           yes |    +   | - |  -  |     -      | -  |                 |
-|       8 |                         - |             - |    -   | - |  -  |     -      | -  |                 |
-|       9 |                         - |             - |    -   | - |  -  |     -      | -  |                 |
-|      10 |                         - |             - |    -   | - |  -  |     -      | -  |                 |
-|      11 |                         - |             - |    -   | - |  -  |     -      | -  |                 |
-|      12 |                         - |             - |    -   | - |  -  |     -      | -  |                 |
-|      13 |                         - |             - |    -   | - |  -  |     -      | -  |                 |
-|      14 |                         - |             - |    -   | - |  -  |     -      | -  |                 |
+The following table summarizes the current project status. The `test coverage` tab indicates whether there are unit tests across programming languages (`yes`, `partially`, `no`). The speed of the fastest solution per problem is shown as well.
+
+| Problem | Total Number of Solutions | Test Coverage |    Python | C | C++ | JavaScript | Go |
+| ------- | ------------------------- | ------------- | --------- |---| --- | ---------- | -- |
+|       1 |                         2 |           yes | + (0.00s) | - |  -  |     -      | -  |
+|       2 |                         2 |           yes | + (0.00s) | - |  -  |     -      | -  |
+|       3 |                         1 |           yes | + (33.0s) | - |  -  |     -      | -  |
+|       4 |                         1 |           yes | + (0.09s) | - |  -  |     -      | -  |
+|       5 |                         2 |           yes | + (0.00s) | - |  -  |     -      | -  |
+|       6 |                         1 |           no  | + (0.00s) | - |  -  |     -      | -  |
+|       7 |                         1 |           yes | + (56.0s) | - |  -  |     -      | -  |
+|       8 |                         - |             - |    -      | - |  -  |     -      | -  |
+|       9 |                         - |             - |    -      | - |  -  |     -      | -  |
+|      10 |                         - |             - |    -      | - |  -  |     -      | -  |
+|      11 |                         - |             - |    -      | - |  -  |     -      | -  |
+|      12 |                         - |             - |    -      | - |  -  |     -      | -  |
+|      13 |                         - |             - |    -      | - |  -  |     -      | -  |
+|      14 |                         - |             - |    -      | - |  -  |     -      | -  |
+|      15 |                         - |             - |    -      | - |  -  |     -      | -  |
+|      16 |                         - |             - |    -      | - |  -  |     -      | -  |
+|      17 |                         - |             - |    -      | - |  -  |     -      | -  |
+|      18 |                         - |             - |    -      | - |  -  |     -      | -  |
+|      19 |                         - |             - |    -      | - |  -  |     -      | -  |
+|      20 |                         - |             - |    -      | - |  -  |     -      | -  |
 
 
 ## Programming Languages
 
-As of 2019/02/10, all available solutions are implemented in [Python3](https://www.python.org/). For the future, solutions in [Go](https://golang.org/), [JavaScript](https://www.javascript.com/), C and C++ will be added.
+All solutions are implemented in [Python3](https://www.python.org/). For the future, solutions in [Go](https://golang.org/), [JavaScript](https://www.javascript.com/), C and C++ will be added. Whenever possible, unit tests are implemented and, too.
