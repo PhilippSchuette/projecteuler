@@ -7,6 +7,7 @@ import problem2
 import problem3
 import problem4
 import problem5
+import problem7
 
 
 class TestProblem1Solution(unittest.TestCase):
@@ -37,8 +38,8 @@ class TestProblem3Solution(unittest.TestCase):
 
     def test_largest_prime_factor(self):
         self.assertEqual(problem3.largest_prime_factor(200000), 5)
-        
-            
+
+
 class TestProblem4Solution(unittest.TestCase):
     def test_is_palindrome(self):
         self.assertTrue(problem4.is_palindrome(123454321))
@@ -50,6 +51,13 @@ class TestProblem5Solution(unittest.TestCase):
         self.assertEqual(problem5.evenly_divisible(10), 2520)
         self.assertEqual(problem5.evenly_divisible(20), 232792560)
 
+
+class TestProblem7Solution(unittest.TestCase):
+    def test_nth_prime(self):
+        self.assertEqual(problem7.nth_prime(1), 2)
+        self.assertEqual(problem7.nth_prime(2), 3)
+        self.assertEqual(problem7.nth_prime(6), 13)
+        self.assertNotEqual(problem7.nth_prime(6), 14)
 
 if __name__ == "__main__":
     unittest.main()
