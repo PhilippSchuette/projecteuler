@@ -70,11 +70,11 @@ def faster_product(num, n):
     while i < len(num) - n:
         # If the next digit is a 0 skip n digits ahead
         if num[i + n - 1] == 0:
-            i += n
+            i += n  # pragma: no cover
         else:
             p = prod(num[i:i+n])
             if p > m:
-                m = p
+                m = p  # pragma: no cover
             i += 1
     return m
 
@@ -86,7 +86,8 @@ if __name__ == "__main__":
     num_list = [int(c) for c in input_number]
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-n", type=int, default=13, help='Number of adjacent digits to multiply (default is 13)')
+    help_msg = "Number of adjacent digits to multiply (default is 13)"
+    parser.add_argument("-n", type=int, default=13, help=help_msg)
     args = parser.parse_args()
 
     start = time.time()
