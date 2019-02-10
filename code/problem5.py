@@ -69,7 +69,7 @@ def lcm(n):
 	lcm = 1
 	for p in primes:
 		e_p = 1
-		while pow(p, e_p + 1) < n:
+		while pow(p, e_p + 1) <= n:
 			e_p += 1
 		lcm *= pow(p, e_p)
 	return lcm

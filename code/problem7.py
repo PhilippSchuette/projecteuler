@@ -1,4 +1,4 @@
-# Project Euler Problem 5 Solution
+# Project Euler Problem 7 Solution
 #
 # Problem statement:
 # By listing the first six prime numbers: 2, 3, 5, 7, 11,
