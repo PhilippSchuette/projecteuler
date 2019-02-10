@@ -7,10 +7,7 @@ import problem002
 import problem003
 import problem004
 import problem005
-<<<<<<< HEAD
 import problem006
-=======
->>>>>>> a621435fe0cccc4987ad65c375031dc6a02dc3d5
 import problem007
 
 
@@ -67,10 +64,7 @@ class TestProblem007Solution(unittest.TestCase):
         self.assertEqual(problem007.nth_prime(2), 3)
         self.assertEqual(problem007.nth_prime(6), 13)
         self.assertNotEqual(problem007.nth_prime(6), 14)
-<<<<<<< HEAD
 
-=======
->>>>>>> a621435fe0cccc4987ad65c375031dc6a02dc3d5
 
 if __name__ == "__main__":
     unittest.main()
