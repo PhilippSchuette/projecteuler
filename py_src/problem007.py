@@ -16,7 +16,7 @@
 import time
 
 import numpy as np
-from problem3 import is_prime
+from problem003 import is_prime
 
 
 def nth_prime(n):
