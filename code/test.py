@@ -5,6 +5,7 @@ import unittest.mock
 import problem1
 import problem2
 import problem3
+import problem4
 import problem5
 
 
@@ -36,6 +37,12 @@ class TestProblem3Solution(unittest.TestCase):
 
     def test_largest_prime_factor(self):
         self.assertEqual(problem3.largest_prime_factor(200000), 5)
+        
+            
+class TestProblem4Solution(unittest.TestCase):
+    def test_is_palindrome(self):
+        self.assertTrue(problem4.is_palindrome(123454321))
+        self.assertFalse(problem4.is_palindrome(74365))
 
 
 class TestProblem5Solution(unittest.TestCase):
