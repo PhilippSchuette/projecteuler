@@ -7,9 +7,8 @@
 #
 # Solution description:
 # This script compares a brute force algorithm with O(n) with a
-# formula-based algorithm with O(1)
-# Performance differences are best observed
-# with input numbers > 1000000
+# formula-based algorithm with O(1). Performance differences are
+# best observed with input numbers > 1000000.
 #
 # Authors: Philipp Schuette, Daniel Schuette
 # Date: 2018/09/24
