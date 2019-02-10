@@ -13,7 +13,7 @@
 # Solution description:
 # TODO: write description
 #
-# Author: Daniel Schuette
+# Author: Daniel Schuette, T-Rex96
 # Date: 2018/09/24
 # License: MIT (see ../LICENSE.md)
 import time
@@ -21,8 +21,8 @@ import time
 
 def slow_fibonacci(n):
     """
-    this function calculates the fibonacci sequence up to the n'th
-    member
+    This function calculates the fibonacci sequence up to the n'th
+    member.
     """
     x = 0
     y = 1
@@ -35,30 +35,30 @@ def slow_fibonacci(n):
     return y
 
 
-def fast_fibonacci(n):
+def fast_fibonacci(target):
     """
-    """
-    pass
-
-
-def fibonacci_list(target):
-    """
-    Return a list containing all Fibonacci numbers whose values do not exceed target
+    Return a list containing all Fibonacci numbers whose values do not exceed
+    the target.
     """
 
     # Generate list with all Fibonacci numbers below target
     if target == 1:
-        return [1]
+        return 1
     fib = [1, 2]
     i = 2
-    while True: 
-        next = fib[i-1] + fib[i-2] 
-        if next > target: # Check if the next number would exceeds our target value
+    while True:
+        next = fib[i-1] + fib[i-2]
+
+        # Check if the next number would exceeds our target value
+        if next > target:
             break
-        fib.append(next) # Append the sum of the previous two terms to our list
-        i+=1
-    
-    return fib
+
+        # Append the sum of the previous two terms to our list
+        fib.append(next)
+        i += 1
+
+    # Starting from 2, every 3rd Fibonacci number is even
+    return sum(fib[1::3])
 
 
 if __name__ == "__main__":
@@ -66,8 +66,7 @@ if __name__ == "__main__":
     start = time.time()
 
     # define looping variables
-    i = 0
-    s = 0
+    i, s = 0, 0
     target = 4000000
 
     # loop until `fibonacci()' returns an integer > target
@@ -84,15 +83,10 @@ if __name__ == "__main__":
     print("result: {}".format(s))
     print("elapsed: {}s".format(end - start))
 
-
-    #Fast solution begins here! 
-
+    # Fast solution begins here!
     start = time.time()
-
-    fib = fibonacci_list(target)
-    fast_result = sum(fib[1::3]) # Starting from 2, every 3rd Fibonacci number is even
-
+    fast_result = fast_fibonacci(target)
     end = time.time()
+
     print("fast result: {}".format(fast_result))
     print("elapsed: {}s".format(end - start))
-
