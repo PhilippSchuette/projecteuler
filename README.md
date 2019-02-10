@@ -16,6 +16,14 @@ Tests are implemented using the [unittest module](https://docs.python.org/3/libr
 
 ### C++
 
+Tested with g++8. Build using 
+
+`cmake . && make`
+
+and run with 
+
+`./problem<number>.out`
+
 ### Go
 
 If you want to run the problem solutions in this repository, you need to install Go from [here](https://golang.org/). After you confirmed that your Go installation works (you need to set up a workspace and set your `$GOPATH` accordingly, see [here](https://golang.org/doc/code.html)), you can `$go get` all solutions as follows:
