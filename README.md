@@ -11,24 +11,24 @@ Tests are implemented using the [unittest module](https://docs.python.org/3/libr
 
 ## Project Status
 
-| Problem | Number of Solutions | Test Coverage |
-| ------- | ------------------- | ------------- |
-|       1 |                   2 |           yes |
-|       2 |                   2 |           yes |
-|       3 |                   1 |           yes |
-|       4 |                   1 |           yes |
-|       5 |                   2 |           yes |
-|       6 |                   1 |           no  |
-|       7 |                   1 |           yes |
-|       8 |                   - |             - |
-|       9 |                   - |             - |
-|      10 |                   - |             - |
-|      11 |                   - |             - |
-|      12 |                   - |             - |
-|      13 |                   - |             - |
-|      14 |                   - |             - |
+| Problem | Total Number of Solutions | Test Coverage | Python | C | C++ | JavaScript | Go | Optimal Runtime |
+| ------- | ------------------------- | ------------- | ------ |---| --- | ---------- | -- | --------------- | 
+|       1 |                         2 |           yes |    +   | - |  -  |     -      | -  |                 |
+|       2 |                         2 |           yes |    +   | - |  -  |     -      | -  |                 |
+|       3 |                         1 |           yes |    +   | - |  -  |     -      | -  |                 |
+|       4 |                         1 |           yes |    +   | - |  -  |     -      | -  |                 |
+|       5 |                         2 |           yes |    +   | - |  -  |     -      | -  |                 |
+|       6 |                         1 |           no  |    +   | - |  -  |     -      | -  |                 |
+|       7 |                         1 |           yes |    +   | - |  -  |     -      | -  |                 |
+|       8 |                         - |             - |    -   | - |  -  |     -      | -  |                 |
+|       9 |                         - |             - |    -   | - |  -  |     -      | -  |                 |
+|      10 |                         - |             - |    -   | - |  -  |     -      | -  |                 |
+|      11 |                         - |             - |    -   | - |  -  |     -      | -  |                 |
+|      12 |                         - |             - |    -   | - |  -  |     -      | -  |                 |
+|      13 |                         - |             - |    -   | - |  -  |     -      | -  |                 |
+|      14 |                         - |             - |    -   | - |  -  |     -      | -  |                 |
 
 
 ## Programming Languages
 
-As of 2019/02/10, all available solutions are implemented in [Python3] (https://www.python.org/). For the future, solutions in [Go] (https://golang.org/), [JavaScript] (https://www.javascript.com/), C and C++ will be added.
+As of 2019/02/10, all available solutions are implemented in [Python3](https://www.python.org/). For the future, solutions in [Go](https://golang.org/), [JavaScript](https://www.javascript.com/), C and C++ will be added.
