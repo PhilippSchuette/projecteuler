@@ -10,6 +10,7 @@ import problem005
 import problem006
 import problem007
 import problem008
+import problem013
 
 
 class TestProblem001Solution(unittest.TestCase):
@@ -87,6 +88,9 @@ class TestProblem008Solution(unittest.TestCase):
         self.testList = [1, 2, 8, 2, 2, 2, 1, 9, 1]
         self.assertEqual(problem008.faster_product(self.testList, 2), 16)
 
+class TestProblem013Solution(unittest.TestCase):
+    def test_sum_numbers(self):
+        self.assertEqual(problem013.sum_numbers([123, 100, 400]), 623)
 
 if __name__ == "__main__":
     unittest.main()

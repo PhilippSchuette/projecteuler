@@ -80,7 +80,7 @@ The following table summarizes the current project status. The `test coverage` t
 |      10 |                2 |     partially |    -      | - | + (0.66s) |  - | + (s) |
 |      11 |                - |             - |    -      | - |      -    |  - |    -  |
 |      12 |                - |             - |    -      | - |      -    |  - |    -  |
-|      13 |                - |             - |    -      | - |      -    |  - |    -  |
+|      13 |                - |           yes |    TBD    | - |      -    |  - |    -  |
 |      14 |                - |             - |    -      | - |      -    |  - |    -  |
 |      15 |                - |             - |    -      | - |      -    |  - |    -  |
 |      16 |                - |             - |    -      | - |      -    |  - |    -  |
