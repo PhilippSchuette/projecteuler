@@ -64,7 +64,7 @@ go run main/<problemXX.go>
 
 ## Project Status
 
-The following table summarizes the current project status. The `test coverage` tab indicates whether there are unit tests across programming languages (`yes`, `partially`, `no`). The speed of the fastest solution per problem is shown as well.
+The following table summarizes the current project status. The `test coverage` tab indicates whether there are unit tests across programming languages (`yes`, `partially`, `no`). The speed of the fastest solution per problem is shown as well (all test were run on a ThinkPad T440 with an Intel i5-4300U CPU).
 
 | Problem | No. of Solutions | Test Coverage |    Python | C |       C++ | JS |    Go |
 | ------- | ---------------- | ------------- | --------- |---| --------- | -- | ----- |
