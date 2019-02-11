@@ -10,37 +10,54 @@ Project Euler problem solutions, written in multiple programming languages. For 
 
 ### Python
 
-Tests are implemented using the [unittest module](https://docs.python.org/3/library/unittest.html).
+Tests are implemented using the [unittest module](https://docs.python.org/3/library/unittest.html).Run tests with:
+
+```bash
+cd py_src
+python3 test.py
+```
 
 ### C
 
 ### C++
 
-Tested with g++8. Build using 
+Tested with g++8. Build using
 
-`cmake . && make`
+```bash
+cmake . && make
+```
 
-and run with 
+and run with
 
-`./problem<number>.out`
+```bash
+./problem<number>.out
+```
 
 ### Go
 
 If you want to run the problem solutions in this repository, you need to install Go from [here](https://golang.org/). After you confirmed that your Go installation works (you need to set up a workspace and set your `$GOPATH` accordingly, see [here](https://golang.org/doc/code.html)), you can `$go get` all solutions as follows:
 
-`$go get github.com/DanielSchuette/geulerproject`
+```bash
+go get github.com/DanielSchuette/geulerproject
+```
 
 If this does not work for you, you can clone this repository and manually put all files into a folder in your Go workspace:
 
-`$GOPATH/src/github.com/DanielSchuette/geulerproject/<all_files_are_here>`
+```bash
+GOPATH/src/github.com/DanielSchuette/geulerproject/<all_files_are_here>
+```
 
 Now, confirm that all tests run successfully and print the % of code that is covered by unit tests:
 
-`$go test -v -cover .`
+```bash
+go test -v -cover .
+```
 
 You can then run individual examples, too:
 
-`$go run main/<problemXX.go>`
+```bash
+go run main/<problemXX.go>
+```
 
 ### JavaScript
 
@@ -58,9 +75,9 @@ The following table summarizes the current project status. The `test coverage` t
 |       5 |                      3 |           yes | + (0.00s) | - |  -  |     -      | + (s) |
 |       6 |                      2 |           yes | + (0.00s) | - |  -  |     -      | + (s) |
 |       7 |                      2 |           yes | + (56.0s) | - |  -  |     -      | + (s) |
-|       8 |                      3 |            no | + (0.00s) | - |  -  |     -      | + (s) |
+|       8 |                      3 |           yes | + (0.00s) | - |  -  |     -      | + (s) |
 |       9 |                      - |             - |    -      | - |  -  |     -      | + (s) |
-|      10 |                      2 |            no |    -      | - | TBD |     -      | + (s) |
+|      10 |                      2 |     partially |    -      | - | TBD |     -      | + (s) |
 |      11 |                      - |             - |    -      | - |  -  |     -      |    -  |
 |      12 |                      - |             - |    -      | - |  -  |     -      |    -  |
 |      13 |                      - |             - |    -      | - |  -  |     -      |    -  |
@@ -75,7 +92,7 @@ The following table summarizes the current project status. The `test coverage` t
 
 ## Programming Languages
 
-All solutions are implemented in [Python3](https://www.python.org/). For the future, solutions in [Go](https://golang.org/), [JavaScript](https://www.javascript.com/), C and C++ will be added. Whenever possible, unit tests are implemented, too.
+Solutions are mainly implemented in [Python3](https://www.python.org/). For the future, solutions in [Go](https://golang.org/), [JavaScript](https://www.javascript.com/), C and C++ will be added. Whenever possible, unit tests are implemented, too. Please consider contributing!
 
 ## License
 
