@@ -11,6 +11,7 @@ import problem006
 import problem007
 import problem008
 import problem013
+import problem016
 
 
 class TestProblem001Solution(unittest.TestCase):
@@ -91,6 +92,12 @@ class TestProblem008Solution(unittest.TestCase):
 class TestProblem013Solution(unittest.TestCase):
     def test_sum_numbers(self):
         self.assertEqual(problem013.sum_numbers([123, 100, 400]), 623)
+
+
+class TestProblem016Solution(unittest.TestCase):
+    def test_digit_sum(self):
+        self.assertEqual(problem016.digit_sum(123), 6)
+        self.assertEqual(problem016.digit_sum('7356'), 21)
 
 if __name__ == "__main__":
     unittest.main()

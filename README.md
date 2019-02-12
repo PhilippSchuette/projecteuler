@@ -83,7 +83,7 @@ The following table summarizes the current project status. The `test coverage` t
 |      13 |                - |           yes |    TBD    | - |      -    |  - |    -  |
 |      14 |                - |             - |    -      | - |      -    |  - |    -  |
 |      15 |                - |             - |    -      | - |      -    |  - |    -  |
-|      16 |                - |             - |    -      | - |      -    |  - |    -  |
+|      16 |                - |           yes |    TBD    | - |      -    |  - |    -  |
 |      17 |                - |             - |    -      | - |      -    |  - |    -  |
 |      18 |                - |             - |    -      | - |      -    |  - |    -  |
 |      19 |                - |             - |    -      | - |      -    |  - |    -  |
