@@ -10,7 +10,7 @@ Project Euler problem solutions, written in multiple programming languages. For 
 
 ### Python
 
-Tests are implemented using the [unittest module](https://docs.python.org/3/library/unittest.html).Run tests with:
+Tests are implemented using the [unittest module](https://docs.python.org/3/library/unittest.html). Run tests with:
 
 ```bash
 cd py_src
@@ -18,6 +18,8 @@ python3 test.py
 ```
 
 ### C
+
+No solutions are implemented in C yet!
 
 ### C++
 
@@ -61,10 +63,11 @@ go run main/<problemXX.go>
 
 ### JavaScript
 
+No solutions are implemented in JS yet!
 
 ## Project Status
 
-The following table summarizes the current project status. The `test coverage` tab indicates whether there are unit tests across programming languages (`yes`, `partially`, `no`). The speed of the fastest solution per problem is shown as well (all test were run on a ThinkPad T440 with an Intel i5-4300U CPU).
+The following table summarizes the current project status. The `test coverage` tab indicates whether there are unit tests across programming languages (`yes`, `partially`, `no`). The speed of the fastest solution per problem is shown as well (all test were run on a ThinkPad T440 with an Intel i5-4300U CPU). *Solutions that are marked with* `*` *are still very slow and need improvement*!
 
 | Problem | No. of Solutions | Test Coverage |    Python | C |       C++ | JS |    Go |
 | ------- | ---------------- | ------------- | --------- |---| --------- | -- | ----- |
