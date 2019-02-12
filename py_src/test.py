@@ -11,6 +11,7 @@ import problem006
 import problem007
 import problem008
 import problem009
+import problem010
 import problem013
 import problem016
 
@@ -38,6 +39,9 @@ class TestProblem002Solution(unittest.TestCase):
 
 class TestProblem003Solution(unittest.TestCase):
     def test_is_prime(self):
+        self.assertFalse(problem003.is_prime(1))
+        self.assertTrue(problem003.is_prime(2))
+        self.assertFalse(problem003.is_prime(4))
         self.assertTrue(problem003.is_prime(7))
         self.assertFalse(problem003.is_prime(20))
 
@@ -98,6 +102,11 @@ class TestProblem009Solution(unittest.TestCase):
 
     def test_find_triplet(self):
         self.assertEqual(problem009.find_triplet(1000), 31875000)
+
+
+class TestProblem010Solution(unittest.TestCase):
+    def test_sum_primes(self):
+        self.assertEqual(problem010.sum_primes(10), 17)
 
 
 class TestProblem013Solution(unittest.TestCase):

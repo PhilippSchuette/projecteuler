@@ -20,6 +20,14 @@ def is_prime(n):
     This function returns a boolean value indicating whether
     the input `n' is a primer number or not.
     """
+    # handle edge cases
+    if n == 1:
+        return False
+    elif n == 2:
+        return True
+    elif n % 2 == 0:
+        return False
+
     for i in range(n):
         if (i == 0) or (i == 1):
             continue
