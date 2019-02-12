@@ -5,9 +5,10 @@
 // Find the sum of all the primes below two million.
 //
 // Solution description:
+// --
 //
 // Author: Tom Praschan
-// Date: 2018/2/10
+// Date: 2019/02/10
 // License: MIT (see ../LICENSE.md)
 
 #include <iostream>
@@ -27,7 +28,7 @@ bool is_prime(size_t n) {
     return true;
 }
 
-// Calculates the sum of all primes below max 
+// Calculates the sum of all primes below max
 // The loop is parallelized using OpenMP
 size_t prime_sum(std::function<bool(size_t)> prime_test, size_t max) {
     size_t sum = 2;
