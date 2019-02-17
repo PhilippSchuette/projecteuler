@@ -20,7 +20,7 @@ const solver = require("./solver001.js");
 
 // calculate solution and record the elapsed time
 const start = performance.now();
-const multArray = solver.listMultiples();
+const multArray = solver.listMultiples(1000, 3, 5);
 const result = solver.sumOverArray(multArray);
 const end = performance.now();
 

@@ -4,7 +4,7 @@ const { performance } = require("perf_hooks");
 
 // Returns an array of numbers below `target' that are
 // multiples of `a' and `b'.
-function listMultiples(target = 1000, a = 3, b = 5) {
+function listMultiples(target = 20, a = 3, b = 5) {
     let multiples = [];
 
     for (let i = 0; i < target; i++)

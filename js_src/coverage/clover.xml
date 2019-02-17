@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1550419752187" clover="3.2.0">
-  <project timestamp="1550419752187" name="All files">
-    <metrics statements="13" coveredstatements="13" conditionals="7" coveredconditionals="4" methods="3" coveredmethods="3" elements="23" coveredelements="20" complexity="0" loc="13" ncloc="13" packages="1" files="1" classes="1"/>
+<coverage generated="1550422639577" clover="3.2.0">
+  <project timestamp="1550422639577" name="All files">
+    <metrics statements="13" coveredstatements="13" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3" elements="23" coveredelements="23" complexity="0" loc="13" ncloc="13" packages="1" files="1" classes="1"/>
     <file name="solver001.js" path="/home/daniel/code/python_src/projecteuler/js_src/solver001.js">
-      <metrics statements="13" coveredstatements="13" conditionals="7" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <metrics statements="13" coveredstatements="13" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3"/>
       <line num="3" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="11" count="20" type="cond" truecount="4" falsecount="0"/>
-      <line num="12" count="9" type="stmt"/>
-      <line num="14" count="1" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="11" count="40" type="cond" truecount="4" falsecount="0"/>
+      <line num="12" count="18" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
       <line num="19" count="1" type="stmt"/>
       <line num="20" count="1" type="stmt"/>
       <line num="21" count="4" type="stmt"/>
