@@ -14,7 +14,7 @@
 # How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 #
 # Solution description:
-#   Brutforce solution: Implements a simple calendar, iterates over
+#   Bruteforce solution: Implements a simple calendar, iterates over
 #   all the days and counts the number of Sundays that fell on the
 #   first of a month
 #   Fast solution: Iterates only over the relevant dates and 
@@ -84,7 +84,7 @@ def zellers_congruence(day, month, year):
     For details see https://en.wikipedia.org/wiki/Zeller%27s_congruence
     """
 
-    # Constistent variable names with the formulaon on Wikipedia
+    # Consistent variable names with the formula on on Wikipedia
     q = day
     if month >= 3:
         m = month 

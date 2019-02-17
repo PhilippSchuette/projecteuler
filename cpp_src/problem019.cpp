@@ -30,7 +30,7 @@ For details see https://en.wikipedia.org/wiki/Zeller%27s_congruence */
 #include <omp.h>
 
 unsigned zellers_congruence(unsigned day, unsigned month, unsigned year) {
-    // Constistent variable names with the formulaon on Wikipedia
+    // Consistent variable names with the formula on on Wikipedia
     unsigned q = day;
     unsigned m;
     if (month >= 3)
