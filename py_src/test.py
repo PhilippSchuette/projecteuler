@@ -14,6 +14,7 @@ import problem009
 import problem010
 import problem013
 import problem016
+import problem019
 
 
 class TestProblem001Solution(unittest.TestCase):
@@ -118,6 +119,17 @@ class TestProblem016Solution(unittest.TestCase):
     def test_digit_sum(self):
         self.assertEqual(problem016.digit_sum(123), 6)
         self.assertEqual(problem016.digit_sum('7356'), 21)
+
+class TestProblem019Solution(unittest.TestCase):
+    def test_is_leapyear(self):
+        self.assertEqual(problem019.is_leapyear(1904), True)
+        self.assertEqual(problem019.is_leapyear(1800), False)
+        self.assertEqual(problem019.is_leapyear(2400), True)
+
+    def test_zeller(self):
+        self.assertEqual(problem019.zellers_congruence(1, 1, 1900), 1)
+        self.assertEqual(problem019.zellers_congruence(17, 2, 2019), 7)
+
 
 
 if __name__ == "__main__":
