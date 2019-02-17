@@ -6,5 +6,5 @@
 # Solution description:
 #
 # Author: <autor_name>
-# Date: 2018/../..
+# Date: 2019/../..
 # License: MIT (see ../LICENSE.md)

@@ -83,34 +83,40 @@ go run main/<problemXX.go>
 
 ### <a name="js"></a> JavaScript
 
-No solutions are implemented in JS yet!
+The solutions are intended to be run with `node` from the command line:
+
+```bash
+node <solution_number.js>
+```
+
+Unit tests: Coming soon!
 
 ## <a name="project-status"></a> Project Status
 
-The following table summarizes the current project status. The `test coverage` tab indicates whether there are unit tests across programming languages (`yes`, `partially`, `no`). The speed of the fastest solution per problem is shown as well (all test were run on a ThinkPad T440 with an Intel i5-4300U CPU). *Solutions that are written in bold face are still very slow and need improvement*!
+The following table summarizes the current project status. The `test coverage` tab indicates whether there are unit tests across programming languages (`yes`, `partially`, `no`). The speed of the fastest solution per problem is shown as well (all test were run on a ThinkPad T440 with an Intel i5-4300U CPU). *Solutions that are written in bold face are still very slow and need improvement*! Solutions that are written in italics don't have unit tests yet.
 
-| Problem | No. of Solutions | Test Coverage |      Python | C |       C++ | JS |    Go |
-| ------- | ---------------- | ------------- | ----------- |---| --------- | -- | ----- |
-|       1 |                3 |           yes |  + (0.00s)  | - |      -    |  - | + (s) |
-|       2 |                3 |           yes |  + (0.00s)  | - |      -    |  - | + (s) |
-|       3 |                2 |           yes |**+ (33.0s)**| - |      -    |  - | + (s) |
-|       4 |                2 |           yes |  + (0.09s)  | - |      -    |  - | + (s) |
-|       5 |                3 |           yes |  + (0.00s)  | - |      -    |  - | + (s) |
-|       6 |                2 |           yes |  + (0.00s)  | - |      -    |  - | + (s) |
-|       7 |                2 |           yes |**+ (56.0s)**| - |      -    |  - | + (s) |
-|       8 |                3 |           yes |  + (0.00s)  | - |      -    |  - | + (s) |
-|       9 |                - |           yes |  + (0.60s)  | - |      -    |  - | + (s) |
-|      10 |                2 |           yes |**+ (> 20s)**| - | + (0.66s) |  - | + (s) |
-|      11 |                - |             - |     -       | - |      -    |  - |    -  |
-|      12 |                - |             - |     -       | - |      -    |  - |    -  |
-|      13 |                - |           yes |  + (0.00s)  | - |      -    |  - |    -  |
-|      14 |                - |             - |     -       | - |      -    |  - |    -  |
-|      15 |                - |             - |     -       | - |      -    |  - |    -  |
-|      16 |                - |           yes |  + (0.00s)  | - |      -    |  - |    -  |
-|      17 |                - |             - |     -       | - |      -    |  - |    -  |
-|      18 |                - |             - |     -       | - |      -    |  - |    -  |
-|      19 |                - |             - |     -       | - |      -    |  - |    -  |
-|      20 |                - |             - |     -       | - |      -    |  - |    -  |
+| Problem | No. of Solutions | Test Coverage |      Python | C |       C++ |        JS |    Go |
+| ------- | ---------------- | ------------- | ----------- |---| --------- | --------- | ----- |
+|       1 |                3 |     partially |  + (0.00s)  | - |      -    |*+ (0.23s)*| + (s) |
+|       2 |                3 |           yes |  + (0.00s)  | - |      -    |    -      | + (s) |
+|       3 |                2 |           yes |**+ (33.0s)**| - |      -    |    -      | + (s) |
+|       4 |                2 |           yes |  + (0.09s)  | - |      -    |    -      | + (s) |
+|       5 |                3 |           yes |  + (0.00s)  | - |      -    |    -      | + (s) |
+|       6 |                2 |           yes |  + (0.00s)  | - |      -    |    -      | + (s) |
+|       7 |                2 |           yes |**+ (56.0s)**| - |      -    |    -      | + (s) |
+|       8 |                3 |           yes |  + (0.00s)  | - |      -    |    -      | + (s) |
+|       9 |                - |           yes |  + (0.60s)  | - |      -    |    -      | + (s) |
+|      10 |                2 |     partially |**+ (> 20s)**| - |*+ (0.66s)*|    -      | + (s) |
+|      11 |                - |             - |     -       | - |      -    |    -      |    -  |
+|      12 |                - |             - |     -       | - |      -    |    -      |    -  |
+|      13 |                - |           yes |  + (0.00s)  | - |      -    |    -      |    -  |
+|      14 |                - |             - |     -       | - |      -    |    -      |    -  |
+|      15 |                - |             - |     -       | - |      -    |    -      |    -  |
+|      16 |                - |           yes |  + (0.00s)  | - |      -    |    -      |    -  |
+|      17 |                - |             - |     -       | - |      -    |    -      |    -  |
+|      18 |                - |             - |     -       | - |      -    |    -      |    -  |
+|      19 |                - |             - |     -       | - |      -    |    -      |    -  |
+|      20 |                - |             - |     -       | - |      -    |    -      |    -  |
 
 
 ## <a name="license"></a> License
