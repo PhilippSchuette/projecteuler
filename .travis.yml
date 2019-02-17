@@ -9,6 +9,7 @@ matrix:
     language:
       - node_js
     install:
+      - cd js_src
       - npm install -g codecov
     script:
       - npm run problem001
