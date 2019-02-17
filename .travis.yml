@@ -6,10 +6,10 @@ matrix:
     script: coverage run py_src/test.py
     after_success: codecov
 
-    language: node_js
+    language:
+      - node_js
     install:
       - npm install -g codecov
-      - npm install
     script:
       - npm run problem001
       - npm run test
