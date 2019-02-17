@@ -8,6 +8,7 @@
  * of 3 or 5 below 1000.
  *
  * Solution description:
+ * Brute-force.
  *
  * Author: Daniel Schuette
  * Date: 2019/02/17
@@ -15,41 +16,14 @@
  */
 "use strict";
 const { performance } = require("perf_hooks");
-
-// Returns an array of numbers below `target' that are
-// multiples of `a' and `b'.
-function listMultiples(target = 1000, a = 3, b = 5) {
-    let multiples = [];
-
-    for (let i = 0; i < target; i++)
-        if ((i % a === 0) || (i % b === 0))
-            multiples.push(i);
-
-    return multiples;
-}
-
-// Sums up all numbers in an input array `arr'.
-function sumOverArray(arr) {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i];
-    }
-    return sum;
-}
-
-// Takes two performance time stamps and logs the
-// execution time as a difference of those two.
-function timeIt(t0, t1) {
-    const msg = `elapsed: ${Math.round((t1 - t0)*1000)/1000}`;
-    console.log(msg);
-}
+const solver = require("./solver001.js");
 
 // calculate solution and record the elapsed time
 const start = performance.now();
-const multArray = listMultiples();
-const result = sumOverArray(multArray);
+const multArray = solver.listMultiples();
+const result = solver.sumOverArray(multArray);
 const end = performance.now();
 
 // log results
-timeIt(start, end);
+console.log(`elapsed: ${solver.timeIt(start, end)}`);
 console.log(`result: ${result}`);

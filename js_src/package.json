@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "test": "jest",
+    "problem001": "node problem001.js"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  },
+  "name": "euler.js",
+  "version": "0.0.1",
+  "description": "Project Euler solutions in JavaScript.",
+  "main": "problem001.js",
+  "keywords": [
+    "Algorithms"
+  ],
+  "author": "Daniel Schuette",
+  "license": "MIT"
+}

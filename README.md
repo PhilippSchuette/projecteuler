@@ -86,10 +86,17 @@ go run main/<problemXX.go>
 The solutions are intended to be run with `node` from the command line:
 
 ```bash
-node <solution_number.js>
+npm install
+node <solution_number.js> # or:
+npm run <solution_number> # no 'js' extension required
 ```
 
-Unit tests: Coming soon!
+Unit tests are implemented using [Jest](https://jestjs.io/docs/en/getting-started.html) and can be run using:
+
+```bash
+npm run test # or:
+jest # uses test.js as an entry point by default
+```
 
 ## <a name="project-status"></a> Project Status
 
