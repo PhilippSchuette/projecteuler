@@ -11,7 +11,7 @@
 // Date: 2019/02/10
 // License: MIT (see ../LICENSE.md)
 
-#include <iostream>
+#include "fmt/format.h"
 #include <cmath>
 #include <functional>
 #include <omp.h>
@@ -49,6 +49,5 @@ int main(int argc, char **argv) {
     auto solution = prime_sum(is_prime, max);
     auto end = omp_get_wtime();
 
-    std::cout << "Solution: " << solution << "\n";
-    std::cout << "Elapsed time: " << end - start << "s\n";
+    fmt::print("Solution: {}\nElapsed time: {}s \n", solution, end-start);
 }

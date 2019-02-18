@@ -26,7 +26,7 @@ License: MIT (see ../LICENSE.md) */
 the weekday of that date (1 = Monday, 2 = Tuesday, etc.)
 For details see https://en.wikipedia.org/wiki/Zeller%27s_congruence */
 
-#include <iostream>
+#include "fmt/format.h"
 #include <omp.h>
 
 unsigned zellers_congruence(unsigned day, unsigned month, unsigned year) {
@@ -57,6 +57,5 @@ int main() {
                 num_sundays++;
     auto end = omp_get_wtime();
 
-    std::cout << "Solution: " << num_sundays << "\n";
-    std::cout << "Elapsed time: " << end - start << "\n";
+    fmt::print("Solution: {}\nElapsed time: {}s \n", num_sundays, end-start);
 }
