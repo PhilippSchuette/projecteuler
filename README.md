@@ -43,13 +43,26 @@ No solutions are implemented in C yet!
 
 ### <a name="cpp"></a> C++
 
-Tested with g++8. Build using
+Tested with g++8. First of all navigate to `cpp_src` and execute
 
 ```bash
-cmake . && make
+cmake .
 ```
 
-and run with
+Afterwards you can build and run the tests with
+
+```bash
+make test
+```
+
+To build the problems use
+
+```bash
+make -j n
+```
+
+where `n` is the number of threads to use for the build.
+Now run with
 
 ```bash
 ./problem<number>.out
@@ -113,7 +126,7 @@ The following table summarizes the current project status. The `test coverage` t
 |       7 |                2 |           yes |**+ (56.0s)**| - |      -    |    -      | + (s) |
 |       8 |                3 |           yes |  + (0.00s)  | - |      -    |    -      | + (s) |
 |       9 |                - |           yes |  + (0.60s)  | - |      -    |    -      | + (s) |
-|      10 |                2 |     partially |**+ (> 20s)**| - |*+ (0.66s)*|    -      | + (s) |
+|      10 |                2 |           yes |**+ (> 20s)**| - |*+ (0.66s)*|    -      | + (s) |
 |      11 |                - |             - |     -       | - |      -    |    -      |    -  |
 |      12 |                - |             - |     -       | - |      -    |    -      |    -  |
 |      13 |                - |           yes |  + (0.00s)  | - |      -    |    -      |    -  |
