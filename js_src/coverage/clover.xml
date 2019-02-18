@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1550422639577" clover="3.2.0">
-  <project timestamp="1550422639577" name="All files">
+<coverage generated="1550450395257" clover="3.2.0">
+  <project timestamp="1550450395257" name="All files">
     <metrics statements="13" coveredstatements="13" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3" elements="23" coveredelements="23" complexity="0" loc="13" ncloc="13" packages="1" files="1" classes="1"/>
     <file name="solver001.js" path="/home/daniel/code/python_src/projecteuler/js_src/solver001.js">
       <metrics statements="13" coveredstatements="13" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3"/>
