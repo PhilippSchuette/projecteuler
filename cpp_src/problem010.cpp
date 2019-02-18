@@ -12,8 +12,8 @@
 // License: MIT (see ../LICENSE.md)
 
 #include "fmt/format.h"
+#include "problem010.hpp"
 #include <cmath>
-#include <functional>
 #include <omp.h>
 
 // This function returns a boolean value indicating whether the input "n" is a primer number or not.

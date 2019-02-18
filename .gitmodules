@@ -4,3 +4,4 @@
 [submodule "cpp_src/include/Catch2"]
 	path = cpp_src/include/Catch2
 	url = https://github.com/catchorg/Catch2
+    ignore = dirty
