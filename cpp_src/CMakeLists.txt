@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 3.0.2)
 # Enable optimization and link OpenMP
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -fopenmp")
 
-if(NOT EXISTS include/fmt)
+if(NOT EXISTS include/fmt/include)
     message("Fmt library not found, initializing git submodule...")
     execute_process(COMMAND git submodule update --init -- include/fmt WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
