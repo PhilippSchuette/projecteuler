@@ -41,6 +41,7 @@ size_t prime_sum(std::function<bool(size_t)> prime_test, size_t max) {
     return sum;
 }
 
+#ifndef TESTING
 int main(int argc, char **argv) {
     // Read upper bound from command line arguments
     size_t max = argc > 1 ? atoi(argv[1]) : 2e6;
@@ -51,3 +52,4 @@ int main(int argc, char **argv) {
 
     fmt::print("Solution: {}\nElapsed time: {}s \n", solution, end-start);
 }
+#endif

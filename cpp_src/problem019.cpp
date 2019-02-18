@@ -27,6 +27,7 @@ the weekday of that date (1 = Monday, 2 = Tuesday, etc.)
 For details see https://en.wikipedia.org/wiki/Zeller%27s_congruence */
 
 #include "fmt/format.h"
+#include "problem019.hpp"
 #include <omp.h>
 
 unsigned zellers_congruence(unsigned day, unsigned month, unsigned year) {
@@ -48,6 +49,7 @@ unsigned zellers_congruence(unsigned day, unsigned month, unsigned year) {
     return ((h + 5) % 7) + 1;
 }
 
+#ifndef TESTING
 int main() {
     auto start = omp_get_wtime();
     unsigned num_sundays = 0;
@@ -59,3 +61,4 @@ int main() {
 
     fmt::print("Solution: {}\nElapsed time: {}s \n", num_sundays, end-start);
 }
+#endif

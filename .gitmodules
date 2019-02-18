@@ -1,3 +1,6 @@
 [submodule "cpp_src/include/fmt"]
 	path = cpp_src/include/fmt
 	url = https://github.com/fmtlib/fmt
+[submodule "cpp_src/include/Catch2"]
+	path = cpp_src/include/Catch2
+	url = https://github.com/catchorg/Catch2
