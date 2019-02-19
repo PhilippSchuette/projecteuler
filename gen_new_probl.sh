@@ -10,7 +10,7 @@ print_help() {
     echo "Usage: ./gen_new_probl.sh -l [LANGUAGE] -n [NUMBER] \n"
 
     echo "Mandatory arguments:"
-    printf "%-15s  %s \n" "-l --language" "Programming language to use: Currently supported are 'cpp' for C++ and 'py' for Python"
+    printf "%-15s  %s \n" "-l --language" "Programming language to use: Currently supported are 'cpp' for C++, 'c' for C and 'py' for Python"
     printf "%-15s  %s \n" "-n --number" "Number of the problem you want to solve"
     echo "\nOptional arguments:"
     printf "%-15s  %s \n" "-a --author" "Author name, default is the output of 'git config user.name'"
