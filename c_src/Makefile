@@ -16,7 +16,7 @@ debug_utest:
 	./p1
 
 clean_utest:
-	rm test/*.gcno test/*.gcda test/*.gcov
+	rm -f test/*.gcno test/*.gcda test/*.gcov
 
 clean:
 	rm -f *.o p1 p2 *.gcno *.gcda *.gcov
