@@ -1,10 +1,12 @@
-/* template.c demonstrates how to structure solutions:
+/* 
+ * template.c demonstrates how to structure solutions:
+ * Project Euler Problem X Solution
  *
  * Problem statement:
  *
  * Solution description:
  *
- * Author: <autor_name>
+ * Author: <author_name>
  * Date: 2019/../..
  * License: MIT (see ../LICENSE.md)
  */
