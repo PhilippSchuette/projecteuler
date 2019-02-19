@@ -20,11 +20,11 @@
 #define CONSTRAINT_1 3
 #define CONSTRAINT_2 5
 
-int summation(long, long);
+long summation(long, long);
 
 int main(int argc, char **argv)
 {
-    int     sum;
+    long    sum;
     long    bound;
 
     switch (argc) {
@@ -49,7 +49,7 @@ int main(int argc, char **argv)
             summation(CONSTRAINT_2, bound) -
             summation(CONSTRAINT_1*CONSTRAINT_2, bound);
 
-    fprintf(stdout, "%s: solution: %d\n", argv[0], sum);
+    fprintf(stdout, "%s: solution: %ld\n", argv[0], sum);
     return 0;
 }
 
@@ -57,8 +57,8 @@ int main(int argc, char **argv)
  * Calculates the sum of all multiples of x between
  * 0 and target.
  */
-int summation(long x, long target)
+long summation(long x, long target)
 {
     long n = (target - 1)/x;
-    return x*n*(n + 1)/2;
+    return (long)(x*n*(n + 1)/2);
 }
