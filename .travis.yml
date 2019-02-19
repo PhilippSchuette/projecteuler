@@ -26,12 +26,8 @@ matrix:
         - cd ../
 
     - language: c
-      compiler:
-        - gcc
-      before_install:
+      before_script:
         - cd c_src
-      install:
-        - gcov
       script:
         - make
       after_success:
