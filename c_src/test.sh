@@ -1,13 +1,13 @@
 #!/bin/sh
-# determine test coverage using gcov
+# Determine coverage using gcov.
 
 # problem 1
 ./p1
-./p1 1000
-./p1 1000 1000
-./p1 not_valid
-gcov problem001.c
+./p1 1000 --silent
+./p1 1000 1000 --silent
+./p1 not_valid --silent
+gcov p1
 
 # problem 2
 ./p2
-gcov problem002.c
+gcov p2

@@ -9,16 +9,19 @@
  * This script uses a similar formula-based algorithm as the python
  * implemented solution '../py_src/problem001.py'.
  *
- * Author: Philipp Schuette
+ * Author: Philipp Schuette, Daniel Schuette
  * Date: 2019/02/19
  * License: MIT (see ../LICENSE.md)
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include "utest.h"
 
-#define BOUND 1000
-#define CONSTRAINT_1 3
-#define CONSTRAINT_2 5
+#define  DEFAULT_BOUND   1000
+#define  CONSTRAINT_1    3
+#define  CONSTRAINT_2    5
+#define  EXPECTED_RSLT   233168
+#define  WRONG_RSLT      233169
 
 long summation(long, long);
 
@@ -27,27 +30,40 @@ int main(int argc, char **argv)
     long    sum;
     long    bound;
 
+    /* initialize unit testing */
+    utest_init(&argc, argv);
+
+    /* parse cli arguments */
     switch (argc) {
         case 1:
-            bound = BOUND;
+            bound = DEFAULT_BOUND;
             break;
         case 2:
             bound = atol(argv[1]);
             if (bound == 0) {
-                fprintf(stderr, "%s: error: %s is not valid\n",
-                        argv[0], argv[1]);
-                exit(1);
+                fprintf(stderr, "%s: warning: %s is not valid, taking default (%d)\n",
+                        argv[0], argv[1], DEFAULT_BOUND);
+                bound = DEFAULT_BOUND;
             }
             break;
         default:
-            fprintf(stderr, "%s: error: too many arguments\n",
-                    argv[0]);
-            exit(1);
+            fprintf(stderr, "%s: warning: too many arguments, taking default (%d)\n",
+                    argv[0], DEFAULT_BOUND);
+            bound = DEFAULT_BOUND;
+            break;
     }
 
+    /* calculate results */
     sum = summation(CONSTRAINT_1, bound) +
             summation(CONSTRAINT_2, bound) -
             summation(CONSTRAINT_1*CONSTRAINT_2, bound);
+
+    /* assert equality of calculated and expected result */
+    assert_equal(sum, EXPECTED_RSLT,
+                 "testing equality of calulated and expected result");
+    assert_not_equal(sum, WRONG_RSLT,
+                     "testing unequality of calculated and wrong result");
+    print_rslt_tbl();
 
     fprintf(stdout, "%s: solution: %ld\n", argv[0], sum);
     return 0;
