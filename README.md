@@ -118,7 +118,7 @@ The following table summarizes the current project status. The `test coverage` t
 | Problem | No. of Solutions | Test Coverage |      Python | C |       C++ |        JS |    Go |
 | ------- | ---------------- | ------------- | ----------- |---| --------- | --------- | ----- |
 |       1 |                4 |     partially |  + (0.00s)  | + |      -    |*+ (0.23s)*| + (s) |
-|       2 |                4 |           yes |  + (0.00s)  | + |      -    |    -      | + (s) |
+|       2 |                4 |     partially |  + (0.00s)  | + |      -    |    -      | + (s) |
 |       3 |                2 |           yes |**+ (33.0s)**| - |      -    |    -      | + (s) |
 |       4 |                2 |           yes |  + (0.09s)  | - |      -    |    -      | + (s) |
 |       5 |                3 |           yes |  + (0.00s)  | - |      -    |    -      | + (s) |
