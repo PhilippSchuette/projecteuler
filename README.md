@@ -22,7 +22,9 @@ Project Euler problem solutions, written in multiple programming languages. For 
 
 3. [Project Status](#project-status)
 
-4. [License](#license)
+4. [Adding Solutions](#adding-solutions)
+
+5. [License](#license)
 
 ## <a name="langs"></a> Programming Languages
 
@@ -164,6 +166,16 @@ The following table summarizes the current project status. The `test coverage` t
 |      33 |                - |             - |     -       | -     |      -    |    -      |    -  |
 |      34 |                - |             - |     -       | -     |      -    |    -      |    -  |
 |      35 |                - |             - |     -       | -     |      -    |    -      |    -  |
+
+## <a name="adding-solutions"></a> Adding Solutions
+
+You can use the script `gen_new_probl.sh` to quickly generate a template for your problem solution. Problem number, author name and date will be automatically filled in. 
+
+E.g. to generate a template for your C++ solution to problem 123 use
+
+```bash
+./gen_new_problem.sh -l cpp -n 123
+```
 
 ## <a name="license"></a> License
 
