@@ -147,7 +147,7 @@ The following table summarizes the current project status. The `test coverage` t
 |      16 |                - |           yes |  + (0.00s)  | -     |      -    |    -      |    -  |
 |      17 |                - |             - |     -       | -     |      -    |    -      |    -  |
 |      18 |                - |             - |     -       | -     |      -    |    -      |    -  |
-|      19 |                2 |     partially | *+ (s) *    | -     |*+  (s) *  |    -      |    -  |
+|      19 |                2 |     partially |* + (s)    * | -     |*+  (s)   *|    -      |    -  |
 |      20 |                - |             - |     -       | -     |      -    |    -      |    -  |
 |      21 |                - |             - |     -       | -     |      -    |    -      |    -  |
 |      22 |                - |             - |     -       | -     |      -    |    -      |    -  |

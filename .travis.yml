@@ -21,7 +21,22 @@ matrix:
       script:
         - npm run problem001
         - npm run test
-      after_success: codecov
+      after_success:
+        - codecov
+        - cd ../
+
+    - language: c
+      compiler:
+        - gcc
+      before_install:
+        - cd c_src
+      install:
+        - gcov
+      script:
+        - make
+      after_success:
+        - bash <(curl -s https://codecov.io/bash)
+
 
 notifications:
   email: false
