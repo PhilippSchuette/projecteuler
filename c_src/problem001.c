@@ -15,7 +15,7 @@ implemented solution 'problem001.py'. */
 
 #include <stdio.h>
 
-#define BOUND 10
+#define BOUND 1000
 #define INT1 3
 #define INT2 5
 
