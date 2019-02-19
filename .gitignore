@@ -16,8 +16,10 @@ tags
 # ignore Cmake temporary files
 CMakeFiles/
 CMakeCache.txt
-./cpp_src/Makefile # must be absolute since Makefiles are required for some Travis builds
 *.cmake
+
+# exclude must be absolute since Makefiles are required for some Travis builds
+/cpp_src/Makefile
 
 # ignore catch temporary files
 cpp_src/Testing
