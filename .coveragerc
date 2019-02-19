@@ -3,3 +3,7 @@
 exclude_lines =
     pragma: no cover
     if __name__ == .__main__.:
+
+omit =
+    c_src/utest.c
+    c_src/utest.h
