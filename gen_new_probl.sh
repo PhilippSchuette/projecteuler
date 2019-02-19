@@ -24,9 +24,11 @@ if [[ -z $lang || -z $num || -n $help ]]; then
 fi
 
 # Add leading 0s to the problem number
-num=$(printf "%03d" $num[2]) 
+num=$(printf "%03d" $num[2])
 
 # Create the problem source file
+is_go=false
+is_js=false
 case $lang[2] in
     "cpp" )
         template="cpp_src/template.cpp"
@@ -40,25 +42,71 @@ case $lang[2] in
         template="py_src/template.py"
         outfile="py_src/problem${num}.py"
         ;;
+    "go" )
+        is_go=true
+        template1="go_src/templates/template.go"
+        template2="go_src/templates/template_test.go"
+        template3="go_src/templates/template_main.go"
+        outfile1="go_src/solver${num}.go"
+        outfile2="go_src/solver${num}_test.go"
+        outfile3="go_src/main/problem${num}.go"
+        ;;
+    "js" )
+        is_js=true
+        template1="js_src/template_problem.js"
+        template2="js_src/template_solver.js"
+        outfile1="js_src/problem${num}.js"
+        outfile2="js_src/solver${num}.js"
+        ;;
 esac
-if [[ -e $outfile ]]; then
-    read -q "REPLY?File $outfil already exists! Overwrite? (y/n)"
-    echo ""
-    [[ $REPLY = "n" ]] && exit 1
+
+# if target language is Go, copy multiple files
+if $is_go; then
+    if [[ -e $outfile1 || -e $outfile2 || -e $outfile3 ]]; then
+        read -q "REPLY?One of the output files already exists! Overwrite? (y/n)"
+        echo ""
+        [[ $REPLY = "n" ]] && exit 1
+    fi
+    cp $template1 $outfile1
+    cp $template2 $outfile2
+    cp $template3 $outfile3
+elif $is_js; then
+    if [[ -e $outfile1 || -e $outfile2 ]]; then
+        read -q "REPLY?One of the output files already exists! Overwrite? (y/n)"
+        echo ""
+        [[ $REPLY = "n" ]] && exit 1
+    fi
+    cp $template1 $outfile1
+    cp $template2 $outfile2
+else
+    if [[ -e $outfile ]]; then
+        read -q "REPLY?File $outfile already exists! Overwrite? (y/n)"
+        echo ""
+        [[ $REPLY = "n" ]] && exit 1
+    fi
+    cp $template $outfile
 fi
-cp $template $outfile
 
-# Add problem number
-sed -i "s/Problem X/Problem $num/g" $outfile 
+# Add problem number, author and date (not for Go files)
+if $is_go; then
+    echo "Successfully created source files $outfile1, $outfile2 and $outfile3!"
+    echo "Please add author name, date and solution number manually."
+elif $is_js; then
+    echo "Successfully created source files $outfile1 and $outfile2!"
+    echo "Please add author name, date and solution number manually."
+else
+    # add problem number
+    sed -i "s/Problem X/Problem $num/g" $outfile
 
-# Add author
-[[ -z $author ]] && author=$(git config user.name) || author=$author[2]
-sed -i "s/<author_name>/$author/g" $outfile 
+    # add author information
+    [[ -z $author ]] && author=$(git config user.name) || author=$author[2]
+    sed -i "s/<author_name>/$author/g" $outfile
 
-# Add date
-sed -i "s/Date: .*$/$(date +'%Y\/%m\/%d')/g" $outfile 
+    # add date
+    sed -i "s/Date: .*$/$(date +'%Y\/%m\/%d')/g" $outfile
 
-# Remove the comment about the template
-sed -i "/demonstrates/d" $outfile
+    # remove template comment
+    sed -i "/demonstrates/d" $outfile
 
-echo "Successfully created source file $outfile!"
+    echo "Successfully created source file $outfile!"
+fi
