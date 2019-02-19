@@ -29,3 +29,6 @@ cpp_src/Testing
 *.gcno
 *.o
 *.gcov
+
+# ignore js coverage reports
+coverage/
