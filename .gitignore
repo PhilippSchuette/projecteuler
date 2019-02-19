@@ -23,3 +23,9 @@ CMakeCache.txt
 
 # ignore catch temporary files
 cpp_src/Testing
+
+# ignore C temp files, object files, etc.
+*.gcda
+*.gcno
+*.o
+*.gcov

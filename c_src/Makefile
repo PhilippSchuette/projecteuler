@@ -1,5 +1,5 @@
 # Makefile to compile all solutions in this dir
-CFLAGS := -coverage -O0
+CFLAGS := -coverage -O0 -std=c99
 
 target:
 	gcc $(CFLAGS) utest.c -c -o utest.o
