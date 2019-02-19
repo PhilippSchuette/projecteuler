@@ -30,6 +30,7 @@ matrix:
         - cd c_src
       script:
         - make
+        - make clean_utest
       after_success:
         - bash <(curl -s https://codecov.io/bash)
 

@@ -15,7 +15,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
-#include "utest.h"
+#include "test/utest.h"
 
 #define  DEFAULT_BOUND   1000
 #define  CONSTRAINT_1    3
