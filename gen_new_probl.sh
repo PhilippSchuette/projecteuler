@@ -4,6 +4,7 @@ zparseopts -D -E \
     l:=lang -language:=lang \
     n:=num -number:=num \
     a:=author -author=author \
+    f=force -force=force \
     h=help -help=help
 
 print_help() {
@@ -13,6 +14,7 @@ print_help() {
     printf "%-15s  %s \n" "-l --language" "Programming language to use: Currently supported are 'cpp' for C++, 'c' for C and 'py' for Python"
     printf "%-15s  %s \n" "-n --number" "Number of the problem you want to solve"
     echo "\nOptional arguments:"
+    printf "%-15s  %s \n" "-f --force" "Always override if file already exists without prompting"
     printf "%-15s  %s \n" "-a --author" "Author name, default is the output of 'git config user.name'"
     printf "%-15s  %s \n" "-h --help" "Print this message and exit"
 }
@@ -62,7 +64,7 @@ esac
 
 # if target language is Go, copy multiple files
 if $is_go; then
-    if [[ -e $outfile1 || -e $outfile2 || -e $outfile3 ]]; then
+    if [[ -z $force && (-e $outfile1 || -e $outfile2 || -e $outfile3) ]]; then
         read -q "REPLY?One of the output files already exists! Overwrite? (y/n)"
         echo ""
         [[ $REPLY = "n" ]] && exit 1
@@ -71,7 +73,7 @@ if $is_go; then
     cp $template2 $outfile2
     cp $template3 $outfile3
 elif $is_js; then
-    if [[ -e $outfile1 || -e $outfile2 ]]; then
+    if [[ -z $force && (-e $outfile1 || -e $outfile2) ]]; then
         read -q "REPLY?One of the output files already exists! Overwrite? (y/n)"
         echo ""
         [[ $REPLY = "n" ]] && exit 1
@@ -79,7 +81,7 @@ elif $is_js; then
     cp $template1 $outfile1
     cp $template2 $outfile2
 else
-    if [[ -e $outfile ]]; then
+    if [[ -z $force && -e $outfile ]]; then
         read -q "REPLY?File $outfile already exists! Overwrite? (y/n)"
         echo ""
         [[ $REPLY = "n" ]] && exit 1
