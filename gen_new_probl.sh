@@ -115,6 +115,9 @@ else
     statement=$(curl -s $url | tr -d '\n' | grep -o -P '(?<=problem_content" role="problem"\>).*(?=\<\/p\>\<\/div\>\<br)' | sed -e 's/<p>//g' | sed -e 's/<\/p>//g')
     # TODO (bug fix): Formulas have multiple inline html tags (spans, etc.)
     # that need to be removed to make this work for some problems!
+    
+    # Remove hyperlinks to input files, e.g. in problem 22
+    statement=$(echo $statement | sed 's/<a href=".*">//g' | sed 's/<\/a>//g')
 
     # replace template comment with problem statement
     statement=$(echo "Problem statement: $statement")
