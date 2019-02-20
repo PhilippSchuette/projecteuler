@@ -108,5 +108,15 @@ else
     # remove template comment
     sed -i "/demonstrates/d" $outfile
 
+    # try to get problem text from `projecteuler.net'
+    url="https://projecteuler.net/problem={$num}"
+    statement=$(curl -s $url | tr -d '\n' | grep -o -P '(?<=problem_content" role="problem"\>).*(?=\<\/p\>\<\/div\>\<br)' | sed -e 's/<p>//g' | sed -e 's/<\/p>//g')
+    # TODO (bug fix): Formulas have multiple inline html tags (spans, etc.)
+    # that need to be removed to make this work for some problems!
+
+    # replace template comment with problem statement
+    statement=$(echo "Problem statement: $statement")
+    sed -i "s/Problem statement:/$statement/g" $outfile
+
     echo "Successfully created source file $outfile!"
 fi
