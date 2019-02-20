@@ -15,6 +15,7 @@ import problem010
 import problem013
 import problem016
 import problem019
+import problem022
 
 
 class TestProblem001Solution(unittest.TestCase):
@@ -130,6 +131,10 @@ class TestProblem019Solution(unittest.TestCase):
         self.assertEqual(problem019.zellers_congruence(1, 1, 1900), 1)
         self.assertEqual(problem019.zellers_congruence(17, 2, 2019), 7)
 
+class TestProblem022Solution(unittest.TestCase):
+    def test_alphabetical_value(self):
+        self.assertEqual(problem022.alphabetical_value('COLIN'), 53)
+        self.assertEqual(problem022.alphabetical_value('ABC'), 6)
 
 
 if __name__ == "__main__":
