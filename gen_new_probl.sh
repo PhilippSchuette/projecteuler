@@ -4,6 +4,7 @@ zparseopts -D -E \
     l:=lang -language:=lang \
     n:=num -number:=num \
     a:=author -author=author \
+    d=dep -dependencies=dep \
     f=force -force=force \
     h=help -help=help
 
@@ -11,19 +12,21 @@ print_help() {
     echo "Usage: ./gen_new_probl.sh -l [LANGUAGE] -n [NUMBER] \n"
 
     echo "Mandatory arguments:"
-    printf "%-15s  %s \n" "-l --language" "Programming language to use: Currently supported are 'cpp' for C++, 'c' for C and 'py' for Python"
-    printf "%-15s  %s \n" "-n --number" "Number of the problem you want to solve"
+    printf "%-20s  %s \n" "-l --language" "Programming language to use: Currently supported are 'cpp' for C++, 'c' for C and 'py' for Python"
+    printf "%-20s  %s \n" "-n --number" "Number of the problem you want to solve"
     echo "\nOptional arguments:"
-    printf "%-15s  %s \n" "-f --force" "Always override if file already exists without prompting"
-    printf "%-15s  %s \n" "-a --author" "Author name, default is the output of 'git config user.name'"
-    printf "%-15s  %s \n" "-h --help" "Print this message and exit"
+    printf "%-20s  %s \n" "-d --dependencies" "Try to extract and download the input file(s) from the problem statement"
+    printf "%-20s  %s \n" "-f --force" "Always override if file already exists without prompting"
+    printf "%-20s  %s \n" "-a --author" "Author name, default is the output of 'git config user.name'"
+    printf "%-20s  %s \n" "-h --help" "Print this message and exit"
 }
 
-if [[ -z $lang || -z $num || -n $help ]]; then
+if [[ -z $lang || -z $num ]]; then
     echo "Missing mandatory arguments!\n"
     print_help
     exit 0
 fi
+[[ -n $help ]] && {print_help; exit 0}
 
 # Add leading 0s to the problem number
 num=$(printf "%03d" $num[2])
@@ -115,8 +118,26 @@ else
     statement=$(curl -s $url | tr -d '\n' | grep -o -P '(?<=problem_content" role="problem"\>).*(?=\<\/p\>\<\/div\>\<br)' | sed -e 's/<p>//g' | sed -e 's/<\/p>//g')
     # TODO (bug fix): Formulas have multiple inline html tags (spans, etc.)
     # that need to be removed to make this work for some problems!
+
+    if [[ -n $dep ]]; then
+        # Extract href tags in the statement
+        hrefs=$(echo $statement | grep -Po '<a href="[^"]*"[^>]*>[^>]*>')
+        # Iterate over the matches
+        while read -r href; do
+            # Extract link to the file and its name
+            link=$(echo $href | grep -oP '(?<=").*(?=")')
+            name=$(echo $href | grep -oP '(?<=>).*(?=<)')
+            # Check if this is actually a link to a input file, assuming
+            # that those are always stored at projecteuler.net/project/resources/
+            if [[ $(echo $link | grep -oP '^[^/]*/[^/]*') = "project/resources" ]]; then
+                link="https://projecteuler.net/${link}"
+                curl -s $link > input_files/$name
+                echo "Downloaded input file input_files/${name}!"
+            fi
+        done <<< "$hrefs"
+    fi
     
-    # Remove hyperlinks to input files, e.g. in problem 22
+    # Now remove hyperlinks to input files
     statement=$(echo $statement | sed 's/<a href=".*">//g' | sed 's/<\/a>//g')
 
     # replace template comment with problem statement
@@ -126,3 +147,4 @@ else
 
     echo "Successfully created source file $outfile!"
 fi
+
