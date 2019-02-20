@@ -121,7 +121,8 @@ else
 
     # replace template comment with problem statement
     statement=$(echo "Problem statement: $statement")
-    sed -i "s/Problem statement:/$statement/g" $outfile
+    # use @ instead of / here, otherwise sed will be confused if the problem statement contains /
+    sed -i "s@Problem statement:@$statement@g" $outfile
 
     echo "Successfully created source file $outfile!"
 fi
