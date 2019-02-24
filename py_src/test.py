@@ -12,6 +12,7 @@ import problem007
 import problem008
 import problem009
 import problem010
+import problem011
 import problem013
 import problem016
 import problem019
