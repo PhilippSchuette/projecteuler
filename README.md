@@ -131,8 +131,8 @@ The following table summarizes the current project status. The `test coverage` t
 
 | Problem | No. of Solutions | Test Coverage |      Python |     C |       C++ |        JS |    Go |
 | ------- | ---------------- | ------------- | ----------- |------ | --------- | --------- | ----- |
-|       1 |                4 |     partially |  + (0.00s)  |*+ (s)*|      -    |*+ (0.23s)*| + (s) |
-|       2 |                4 |     partially |  + (0.00s)  |*+ (s)*|      -    |    -      | + (s) |
+|       1 |                4 |           yes |  + (0.00s)  | + (s) |      -    | + (0.23s) | + (s) |
+|       2 |                4 |     partially |  + (0.00s)  |*+ (s)*|      -    | + (0.17s) | + (s) |
 |       3 |                2 |           yes |**+ (33.0s)**| -     |      -    |    -      | + (s) |
 |       4 |                2 |           yes |  + (0.09s)  | -     |      -    |    -      | + (s) |
 |       5 |                3 |           yes |  + (0.00s)  | -     |      -    |    -      | + (s) |
@@ -149,10 +149,10 @@ The following table summarizes the current project status. The `test coverage` t
 |      16 |                - |           yes |  + (0.00s)  | -     |      -    |    -      |    -  |
 |      17 |                - |             - |     -       | -     |      -    |    -      |    -  |
 |      18 |                - |             - |     -       | -     |      -    |    -      |    -  |
-|      19 |                2 |     partially |* + (s)    * | -     |*+  (s)   *|    -      |    -  |
+|      19 |                2 |     partially | *+ (s)*     | -     | *+ (s)*   |    -      |    -  |
 |      20 |                - |             - |     -       | -     |      -    |    -      |    -  |
 |      21 |                - |             - |     -       | -     |      -    |    -      |    -  |
-|      22 |                - |             - |     -       | -     |      -    |    -      |    -  |
+|      22 |                - |     partially | *+ (s)*     | -     |      -    |    -      |    -  |
 |      23 |                - |             - |     -       | -     |      -    |    -      |    -  |
 |      24 |                - |             - |     -       | -     |      -    |    -      |    -  |
 |      25 |                - |             - |     -       | -     |      -    |    -      |    -  |
@@ -169,7 +169,7 @@ The following table summarizes the current project status. The `test coverage` t
 
 ## <a name="adding-solutions"></a> Adding Solutions
 
-You can use the script `gen_new_probl.sh` to quickly generate a template for your problem solution. Problem number, author name and date will be automatically filled in. 
+You can use the script `gen_new_probl.sh` to quickly generate a template for your problem solution. Problem number, author name and date will be automatically filled in.
 
 E.g. to generate a template for your C++ solution to problem 123 use
 

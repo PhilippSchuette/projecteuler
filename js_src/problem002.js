@@ -18,4 +18,15 @@
  */
 "use strict";
 const { performance } = require("perf_hooks");
-const solver = require("./solver002.js");
+const { timeIt } = require("./solver001.js");
+const { fibonacciArr, sumOverArrayEven } = require("./solver002.js");
+
+// calculate solution and record the elapsed time
+const start = performance.now();
+const fibonacciArray = fibonacciArr(4000000);
+const result = sumOverArrayEven(fibonacciArray);
+const end = performance.now();
+
+// log results
+console.log(`elapsed: ${timeIt(start, end)}`);
+console.log(`result: ${result}`);
