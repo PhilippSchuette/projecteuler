@@ -8,6 +8,7 @@ target:
 	gcc $(CFLAGS) p1.o test/utest.o -o p1
 	gcc $(CFLAGS) p2.o test/utest.o -o p2
 	bash ./test.sh
+	bash ./time.sh
 
 debug_utest:
 	gcc -g utest.c -c -o test/utest.o
