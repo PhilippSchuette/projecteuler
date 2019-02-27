@@ -138,45 +138,45 @@ Testing and CI is not yet implemented.
 
 ## <a name="project-status"></a> Project Status
 
-The following table summarizes the current project status. The `test coverage` tab indicates whether there are unit tests across programming languages (`yes`, `partially`, `no`). The speed of the fastest solution per problem is shown as well (all test were run on a ThinkPad T440 with an Intel i5-4300U CPU). *Solutions that are written in bold face are still very slow and need improvement*! Solutions that are written in italics don't have unit tests yet.
+The following table summarizes the current project status. The `test coverage` tab indicates whether there are unit tests across programming languages (`yes`, `partially`, `no`). The speed of the fastest solution per problem is shown as well (all test were run on a ThinkPad T440 with an Intel i5-4300U CPU). *Solutions that are written in bold face and italics are still very slow and need improvement*! The unit test coverage for all solutions is monitored via `Travis` and `CodeCov`, but **C++, Go and Rust** still need to be added to the CI pipeline.
 
-| Problem | No. of Solutions | Test Coverage |      Python |         C |       C++ |        JS |    Go |  Rust |
-| ------- | ---------------- | ------------- | ----------- |---------- | --------- | --------- | ----- | ----- |
-|       1 |                5 |     partially |  + (0.00s)  | + (0.00s) |      -    | + (0.23s) | + (s) |*+ (s)*|
-|       2 |                5 |     partially |  + (0.00s)  |*+ (0.00s)*|      -    | + (0.17s) | + (s) |*+ (s)*|
-|       3 |                2 |     partially |**+ (33.0s)**|   -       |      -    |    -      | + (s) |*+ (s)*|
-|       4 |                2 |     partially |  + (0.09s)  |   -       |      -    |    -      | + (s) |*+ (s)*|
-|       5 |                3 |           yes |  + (0.00s)  |   -       |      -    |    -      | + (s) |   -   |
-|       6 |                2 |           yes |  + (0.00s)  |   -       |      -    |    -      | + (s) |   -   |
-|       7 |                2 |           yes |**+ (56.0s)**|   -       |      -    |    -      | + (s) |   -   |
-|       8 |                3 |           yes |  + (0.00s)  |   -       |      -    |    -      | + (s) |   -   |
-|       9 |                1 |           yes |  + (0.60s)  |   -       |      -    |    -      | + (s) |   -   |
-|      10 |                2 |     partially |**+ (> 20s)**|   -       |*+ (0.66s)*|    -      |*+ (s)*|   -   |
-|      11 |                1 |            no | *+ (0.00)*  |   -       |      -    |    -      |    -  |   -   |
-|      12 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      13 |                1 |           yes |  + (0.00s)  |   -       |      -    |    -      |    -  |   -   |
-|      14 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      15 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      16 |                1 |           yes |  + (0.00s)  |   -       |      -    |    -      |    -  |   -   |
-|      17 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      18 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      19 |                2 |     partially | *+ (0.00s)* |   -       |*+ (0.00s)*|    -      |    -  |   -   |
-|      20 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      21 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      22 |                1 |     partially | *+ (0.02s)* |   -       |      -    |    -      |    -  |   -   |
-|      23 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      24 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      25 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      26 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      27 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      28 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      29 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      30 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      31 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      32 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      33 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      34 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
-|      35 |                - |             - |     -       |   -       |      -    |    -      |    -  |   -   |
+| Problem | No. Solutions | Fastest Python |   Fastest C | Fastest C++ | Fastest JS | Fastest Go | Fastest Rust |
+| ------- | ------------- | -------------- |------------ | ----------- | ---------- | ---------- | ------------ |
+|       1 |             6 |    + (0.00s)   |  + (0.00s)  |       -     |  + (0.23s) |    + (s)   |     + (s)    |
+|       2 |             6 |    + (0.00s)   |  + (0.00s)  |       -     |  + (0.17s) |    + (s)   |     + (s)    |
+|       3 |             3 | _**+ (33.0s)**_|    -        |       -     |     -      |    + (s)   |     + (s)    |
+|       4 |             3 |    + (0.09s)   |    -        |       -     |     -      |    + (s)   |     + (s)    |
+|       5 |             3 |    + (0.00s)   |    -        |       -     |     -      |    + (s)   |       -      |
+|       6 |             2 |    + (0.00s)   |    -        |       -     |     -      |    + (s)   |       -      |
+|       7 |             2 | _**+ (56.0s)**_|    -        |       -     |     -      |    + (s)   |       -      |
+|       8 |             3 |    + (0.00s)   |    -        |       -     |     -      |    + (s)   |       -      |
+|       9 |             1 |    + (0.60s)   |    -        |       -     |     -      |    + (s)   |       -      |
+|      10 |             2 | _**+ (> 20s)**_|    -        |  + (0.66s)  |     -      |    + (s)   |       -      |
+|      11 |             1 |    + (0.00)    |    -        |       -     |     -      |       -    |       -      |
+|      12 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      13 |             1 |    + (0.00s)   |    -        |       -     |     -      |       -    |       -      |
+|      14 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      15 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      16 |             1 |    + (0.00s)   |    -        |       -     |     -      |       -    |       -      |
+|      17 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      18 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      19 |             2 |    + (0.00s)   |    -        |  + (0.00s)  |     -      |       -    |       -      |
+|      20 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      21 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      22 |             1 |    + (0.02s)   |    -        |       -     |     -      |       -    |       -      |
+|      23 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      24 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      25 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      26 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      27 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      28 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      29 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      30 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      31 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      32 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      33 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      34 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
+|      35 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
 
 ## <a name="adding-solutions"></a> Adding Solutions
 
