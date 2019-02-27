@@ -39,40 +39,40 @@ def evenly_divisible(limit):
 
 
 def check_prime(x):
-	"""
-	checks, whether or not x is a prime number
-	"""
-	prime = True
-	for i in range(2, x):
-		if (x % i) == 0:
-			prime = False
-			break
-	return prime
+    """
+    checks, whether or not x is a prime number
+    """
+    prime = True
+    for i in range(2, x):
+        if (x % i) == 0:
+            prime = False
+            break
+    return prime
 
 
 def prime_list(n):
-	"""
-	outputs a list of all prime numbers between 1 and n > 1
-	"""
-	prime_list = []
-	for i in range(2, n + 1):
-		if check_prime(i):
-			prime_list.append(i)
-	return prime_list
+    """
+    outputs a list of all prime numbers between 1 and n > 1
+    """
+    prime_list = []
+    for i in range(2, n + 1):
+        if check_prime(i):
+            prime_list.append(i)
+    return prime_list
 
 
 def lcm(n):
-	"""
-	outputs the least common multiple for the numbers from 1 to 20
-	"""
-	primes = prime_list(n)
-	lcm = 1
-	for p in primes:
-		e_p = 1
-		while pow(p, e_p + 1) <= n:
-			e_p += 1
-		lcm *= pow(p, e_p)
-	return lcm
+    """
+    outputs the least common multiple for the numbers from 1 to 20
+    """
+    primes = prime_list(n)
+    lcm = 1
+    for p in primes:
+        e_p = 1
+        while pow(p, e_p + 1) <= n:
+            e_p += 1
+        lcm *= pow(p, e_p)
+    return lcm
 
 
 if __name__ == "__main__":
@@ -89,4 +89,4 @@ if __name__ == "__main__":
     print("slow solution expired: {}s, solution: {}".format(
         np.round(end1 - start1, 5), solution1))
     print("fast solution expired: {}s, solution {}". format(
-    	np.round(end2 - start2, 5), solution2))
+        np.round(end2 - start2, 5), solution2))

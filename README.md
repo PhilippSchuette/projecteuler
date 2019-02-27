@@ -58,7 +58,7 @@ Unit tests are implemented using custom framework (`c_src/test`).
 
 ### <a name="cpp"></a> C++
 
-Tested with `g++8`. First of all navigate to `cpp_src` and run
+Tested with `g++8`. First of all navigate to `cpp_src` and execute
 
 ```bash
 cmake .
@@ -131,7 +131,14 @@ jest # uses test.js as an entry point by default
 To build the source files, you must have the Rust compiler (`rustc`) and Rust's package manager (`cargo`) installed. Then run:
 ```bash
 cd rust_src
-cargo run # builds and runs all solutions
+
+# builds and runs all solutions WITHOUT compiler optimizations
+# faster build but slower execution times
+cargo run
+
+# build WITH compiler optimizations (much faster execution times)
+cargo build --release
+./target/release/rust_src
 ```
 
 Testing and CI is not yet implemented.
@@ -142,11 +149,11 @@ The following table summarizes the current project status. The `test coverage` t
 
 | Problem | No. Solutions | Fastest Python |   Fastest C | Fastest C++ | Fastest JS | Fastest Go | Fastest Rust |
 | ------- | ------------- | -------------- |------------ | ----------- | ---------- | ---------- | ------------ |
-|       1 |             6 |    + (0.00s)   |  + (0.00s)  |       -     |  + (0.23s) |    + (s)   |     + (s)    |
-|       2 |             6 |    + (0.00s)   |  + (0.00s)  |       -     |  + (0.17s) |    + (s)   |     + (s)    |
-|       3 |             3 | _**+ (33.0s)**_|    -        |       -     |     -      |    + (s)   |     + (s)    |
-|       4 |             3 |    + (0.09s)   |    -        |       -     |     -      |    + (s)   |     + (s)    |
-|       5 |             3 |    + (0.00s)   |    -        |       -     |     -      |    + (s)   |       -      |
+|       1 |             6 |    + (0.00s)   |  + (0.00s)  |       -     |  + (0.23s) |    + (s)   |   + (0.00s)  |
+|       2 |             6 |    + (0.00s)   |  + (0.00s)  |       -     |  + (0.17s) |    + (s)   |   + (0.00s)  |
+|       3 |             3 | _**+ (33.0s)**_|    -        |       -     |     -      |    + (s)   |   + (0.84s)  |
+|       4 |             3 |    + (0.09s)   |    -        |       -     |     -      |    + (s)   |   + (0.16s)  |
+|       5 |             3 |    + (0.00s)   |    -        |       -     |     -      |    + (s)   |   + (0.16s)  |
 |       6 |             2 |    + (0.00s)   |    -        |       -     |     -      |    + (s)   |       -      |
 |       7 |             2 | _**+ (56.0s)**_|    -        |       -     |     -      |    + (s)   |       -      |
 |       8 |             3 |    + (0.00s)   |    -        |       -     |     -      |    + (s)   |       -      |

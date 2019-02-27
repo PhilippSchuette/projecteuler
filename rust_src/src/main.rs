@@ -3,27 +3,68 @@
  * functions that solve the problems are modularized
  * and imported.
  */
+use std::time::Instant;
+
 mod problem001;
 mod problem002;
 mod problem003;
 mod problem004;
+mod problem005;
 
 fn main() {
+    let skip = false;
+
     // run problem 1 solution
-    let result = problem001::sum_multiples(1000);
-    println!("Problem 1:\n\tresult: {}", result);
+    if !skip {
+        let now = Instant::now();
+        let result = problem001::sum_multiples(1000);
+        println!(
+            "Problem 1:\n\tresult: {}\n\telapsed: {:?}",
+            result,
+            now.elapsed() // in microsecs
+        );
+    }
 
     // run problem 2 solution
-    let fib_vec = problem002::fibonacci_vec(4000000);
-    let result = problem002::sum_even_terms_vec(fib_vec);
-    println!("Problem 2:\n\tresult: {}", result);
+    if !skip {
+        let now = Instant::now();
+        let fib_vec = problem002::fibonacci_vec(4000000);
+        let result = problem002::sum_even_terms_vec(fib_vec);
+        println!(
+            "Problem 2:\n\tresult: {}\n\telapsed: {:?}",
+            result,
+            now.elapsed()
+        );
+    }
 
     // run problem 3 solution
-    let result = problem003::largest_prime_factor(600851475143);
-    // let result = problem003::largest_prime_factor(13195);
-    println!("Problem 3:\n\tresult: {}", result);
+    if !skip {
+        let now = Instant::now();
+        let result = problem003::largest_prime_factor(600851475143);
+        println!(
+            "Problem 3:\n\tresult: {}\n\telapsed: {:?}",
+            result,
+            now.elapsed()
+        );
+    }
 
     // run problem 4 solution
-    let result = problem004::largest_palindrome();
-    println!("Problem 4:\n\tresult: {}", result);
+    if !skip {
+        let now = Instant::now();
+        let result = problem004::largest_palindrome();
+        println!(
+            "Problem 4:\n\tresult: {}\n\telapsed: {:?}",
+            result,
+            now.elapsed()
+        );
+    }
+
+    // run problem 5 solution
+    let now = Instant::now();
+    let result = problem005::evenly_divisible(20);
+    println!(
+        "Problem 5:\n\tresult: {}\n\telapsed: {:?}",
+        result,
+        now.elapsed()
+    );
 }
