@@ -141,6 +141,17 @@ cargo build --release
 ./target/release/rust_src
 ```
 
+To run a certain problem, it must be selected via a `,`-separated list
+or two `:` integers that get expanded to a range:
+
+```bash
+cargo build -- 1,2,7 # runs problems 1, 2, and 7
+cargo build -- 1,4:7 # runs problems 1 and 4 through 7
+
+# or as arguments to the binary:
+./target/release/rust_src 1,2,5:7
+```
+
 Testing and CI is not yet implemented.
 
 ## <a name="project-status"></a> Project Status
