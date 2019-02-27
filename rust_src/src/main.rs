@@ -6,6 +6,7 @@
 mod problem001;
 mod problem002;
 mod problem003;
+mod problem004;
 
 fn main() {
     // run problem 1 solution
@@ -20,5 +21,9 @@ fn main() {
     // run problem 3 solution
     let result = problem003::largest_prime_factor(600851475143);
     // let result = problem003::largest_prime_factor(13195);
-    println!("Problem3:\n\tresult: {}", result);
+    println!("Problem 3:\n\tresult: {}", result);
+
+    // run problem 4 solution
+    let result = problem004::largest_palindrome();
+    println!("Problem 4:\n\tresult: {}", result);
 }
