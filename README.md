@@ -128,7 +128,13 @@ jest # uses test.js as an entry point by default
 
 ### <a name="rust"></a> Rust
 
-Not yet documented.
+To build the source files, you must have the Rust compiler (`rustc`) and Rust's package manager (`cargo`) installed. Then run:
+```bash
+cd rust_src
+cargo run # builds and runs all solutions
+```
+
+Testing and CI is not yet implemented.
 
 ## <a name="project-status"></a> Project Status
 
@@ -136,10 +142,10 @@ The following table summarizes the current project status. The `test coverage` t
 
 | Problem | No. of Solutions | Test Coverage |      Python |         C |       C++ |        JS |    Go |  Rust |
 | ------- | ---------------- | ------------- | ----------- |---------- | --------- | --------- | ----- | ----- |
-|       1 |                5 |           yes |  + (0.00s)  | + (0.00s) |      -    | + (0.23s) | + (s) |*+ (s)*|
+|       1 |                5 |     partially |  + (0.00s)  | + (0.00s) |      -    | + (0.23s) | + (s) |*+ (s)*|
 |       2 |                5 |     partially |  + (0.00s)  |*+ (0.00s)*|      -    | + (0.17s) | + (s) |*+ (s)*|
-|       3 |                2 |           yes |**+ (33.0s)**|   -       |      -    |    -      | + (s) |*+ (s)*|
-|       4 |                2 |           yes |  + (0.09s)  |   -       |      -    |    -      | + (s) |   -   |
+|       3 |                2 |     partially |**+ (33.0s)**|   -       |      -    |    -      | + (s) |*+ (s)*|
+|       4 |                2 |     partially |  + (0.09s)  |   -       |      -    |    -      | + (s) |*+ (s)*|
 |       5 |                3 |           yes |  + (0.00s)  |   -       |      -    |    -      | + (s) |   -   |
 |       6 |                2 |           yes |  + (0.00s)  |   -       |      -    |    -      | + (s) |   -   |
 |       7 |                2 |           yes |**+ (56.0s)**|   -       |      -    |    -      | + (s) |   -   |
