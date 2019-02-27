@@ -45,6 +45,15 @@ char utest_init(int *argc, char **argv)
     return 0; /* return success */
 }
 
+int utest_free_all(void) {
+    extern RSLT_TBL  rslt_tbl;
+
+    for (int i = 0; i < MAX_TESTS; i++)
+        free(rslt_tbl.test_info[i]);
+
+    return 0;
+}
+
 boolean assert_equal(long test, long comp, const char *msg)
 {
     extern char      prog[BUFSIZE];
@@ -167,5 +176,4 @@ boolean assert_true(boolean, const char *msg);
 boolean assert_false(boolean, const char *msg);
 boolean assert_arr_equal(const long *, const long *, const char *msg);
 boolean assert_arr_not_equal(const long *, const long *, const char *msg);
-int utest_free_all(void);
 */
