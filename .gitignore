@@ -34,4 +34,4 @@ cpp_src/Testing
 coverage/
 
 # ignore rust dev binaries
-rust_src/target/
+rust_src/target

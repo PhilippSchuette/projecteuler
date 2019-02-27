@@ -1,1 +1,0 @@
-/home/daniel/code/python_src/projecteuler/rust_src/target/debug/rust_src: /home/daniel/code/python_src/projecteuler/rust_src/src/main.rs /home/daniel/code/python_src/projecteuler/rust_src/src/problem001.rs /home/daniel/code/python_src/projecteuler/rust_src/src/problem002.rs
