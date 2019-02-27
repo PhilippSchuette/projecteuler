@@ -65,9 +65,9 @@ int main(int argc, char **argv)
                      "testing unequality of calculated and wrong result");
     /* print test results and clean up */
     print_rslt_tbl();
-    if (utest_free_all()) /* returns < 0 on error */
-        fprintf(stderr, "%s: could not free utest's resources\n", argv[0]);
+    utest_free_all();
 
+    /* print calculation results and return */
     fprintf(stdout, "%s: solution: %ld\n", argv[0], sum);
     return 0;
 }

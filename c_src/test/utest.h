@@ -60,6 +60,8 @@ void print_rslt_tbl(void);
 
 /*
  * Free all used resources.
- * The return value indicates success or failure.
+ * The return value indicates success or failure. Currently, only
+ * ptr's are cleaned up and `free' does not return any errors.
+ * Thus, `utest_free_all' will always return 0;
  */
 int utest_free_all(void);
