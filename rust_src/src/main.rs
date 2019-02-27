@@ -1,7 +1,9 @@
 /*
  * Compile this file to run the solutions. Helper
  * functions that solve the problems are modularized
- * and imported.
+ * and imported. Remove `skip' before compilation
+ * to select an individual solution. This `feature'
+ * will be replaced with a CLI soon.
  */
 use std::time::Instant;
 
@@ -10,9 +12,10 @@ mod problem002;
 mod problem003;
 mod problem004;
 mod problem005;
+mod problem006;
 
 fn main() {
-    let skip = false;
+    let skip = true;
 
     // run problem 1 solution
     if !skip {
@@ -60,11 +63,26 @@ fn main() {
     }
 
     // run problem 5 solution
-    let now = Instant::now();
-    let result = problem005::evenly_divisible(20);
-    println!(
-        "Problem 5:\n\tresult: {}\n\telapsed: {:?}",
-        result,
-        now.elapsed()
-    );
+    if !skip {
+        let now = Instant::now();
+        let result = problem005::evenly_divisible(20);
+        println!(
+            "Problem 5:\n\tresult: {}\n\telapsed: {:?}",
+            result,
+            now.elapsed()
+        );
+    }
+
+    // run problem 6 solution
+    if !skip {
+        let now = Instant::now();
+        let result = problem006::solve(100, 100);
+        println!(
+            "Problem 6:\n\tresult: {}\n\telapsed: {:?}",
+            result,
+            now.elapsed()
+        );
+    }
+
+    // run problem 7 solution
 }
