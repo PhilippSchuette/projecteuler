@@ -13,6 +13,7 @@ mod problem003;
 mod problem004;
 mod problem005;
 mod problem006;
+mod problem007;
 
 fn main() {
     let skip = true;
@@ -85,4 +86,13 @@ fn main() {
     }
 
     // run problem 7 solution
+    if skip {
+        let now = Instant::now();
+        let result = problem007::nth_prime(10001);
+        println!(
+            "Problem 6:\n\tresult: {}\n\telapsed: {:?}",
+            result,
+            now.elapsed()
+        );
+    }
 }
