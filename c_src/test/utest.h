@@ -52,5 +52,14 @@ boolean assert_false(boolean, const char *msg);
 boolean assert_arr_equal(const long *, const long *, const char *msg);
 boolean assert_arr_not_equal(const long *, const long *, const char *msg);
 
-/* Prints `rslt_tbl'. */
+/*
+ * Prints `rslt_tbl'. This should always succeed if `utest_init'
+ * was called, so no return value.
+ */
 void print_rslt_tbl(void);
+
+/*
+ * Free all used resources.
+ * The return value indicates success or failure.
+ */
+int utest_free_all(void);

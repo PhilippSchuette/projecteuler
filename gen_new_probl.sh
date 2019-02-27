@@ -136,7 +136,7 @@ else
             fi
         done <<< "$hrefs"
     fi
-    
+
     # Now remove hyperlinks to input files
     statement=$(echo $statement | sed 's/<a href=".*">//g' | sed 's/<\/a>//g')
 
@@ -151,4 +151,3 @@ else
 
     echo "Successfully created source file $outfile!"
 fi
-
