@@ -1,6 +1,8 @@
 # Project Euler Solutions
 
-[![Build Status](https://travis-ci.org/PhilippSchuette/projecteuler.svg?branch=master)](https://travis-ci.org/PhilippSchuette/projecteuler) [![codecov](https://codecov.io/gh/PhilippSchuette/projecteuler/branch/master/graph/badge.svg)](https://codecov.io/gh/PhilippSchuette/projecteuler) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues) ![open issues](https://img.shields.io/github/issues/PhilippSchuette/projecteuler.svg?style=flat) ![language js](https://img.shields.io/badge/Language-JS-blue.svg) ![language c](https://img.shields.io/badge/Language-C-blue.svg) ![language c++](https://img.shields.io/badge/Language-C++-blue.svg) ![language go](https://img.shields.io/badge/Language-Go-blue.svg) ![language python](https://img.shields.io/badge/Language-Python-blue.svg) ![language rust](https://img.shields.io/badge/Language-Rust-blue.svg)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues) [![Build Status](https://travis-ci.org/PhilippSchuette/projecteuler.svg?branch=master)](https://travis-ci.org/PhilippSchuette/projecteuler) [![codecov](https://codecov.io/gh/PhilippSchuette/projecteuler/branch/master/graph/badge.svg)](https://codecov.io/gh/PhilippSchuette/projecteuler) ![open issues](https://img.shields.io/github/issues/PhilippSchuette/projecteuler.svg?style=flat)
+
+![language js](https://img.shields.io/badge/Language-JS-blue.svg) ![language c](https://img.shields.io/badge/Language-C-blue.svg) ![language c++](https://img.shields.io/badge/Language-C++-blue.svg) ![language go](https://img.shields.io/badge/Language-Go-blue.svg) ![language python](https://img.shields.io/badge/Language-Python-blue.svg) ![language rust](https://img.shields.io/badge/Language-Rust-blue.svg)
 
 ## <a name="overview"></a> Overview
 
@@ -168,7 +170,7 @@ The following table summarizes the current project status. The `test coverage` t
 |       6 |             3 |    + (0.00s)   |    -        |       -     |     -      |    + (s)   |   + (0.00s)  |
 |       7 |             3 | _**+ (56.0s)**_|    -        |       -     |     -      |    + (s)   |   + (1.36s)  |
 |       8 |             3 |    + (0.00s)   |    -        |       -     |     -      |    + (s)   |   + (0.00s)  |
-|       9 |             1 |    + (0.60s)   |    -        |       -     |     -      |    + (s)   |       -      |
+|       9 |             1 |    + (0.60s)   |    -        |       -     |     -      |    + (s)   |   + (0.01s)  |
 |      10 |             2 | _**+ (> 60s)**_|    -        |  + (0.66s)  |     -      |    + (s)   |       -      |
 |      11 |             1 |    + (0.00)    |    -        |       -     |     -      |       -    |       -      |
 |      12 |             - |       -        |    -        |       -     |     -      |       -    |       -      |

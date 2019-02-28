@@ -22,6 +22,7 @@ mod problem005;
 mod problem006;
 mod problem007;
 mod problem008;
+mod problem009;
 
 fn main() {
     // collect first command line argument or set default "none"
@@ -141,7 +142,19 @@ fn main() {
                         now.elapsed()
                     );
                 }
-                // other values should just return from main
+                "9" => {
+                    // run problem 9 solution
+                    let now = Instant::now();
+                    let triplet: problem009::Triplet = problem009::find_pyt_triplet(1000);
+                    let result = problem009::mult_triplet(triplet);
+                    println!(
+                        "Problem 9:\n\tresult: {}\n\telapsed: {:?}",
+                        result,
+                        now.elapsed() // in microsecs
+                    );
+                }
+
+                // other values should just silently return from main
                 "0" => return,
                 "none" => return,
                 _ => return,
