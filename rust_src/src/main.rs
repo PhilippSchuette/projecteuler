@@ -11,18 +11,21 @@
  * For authorship and licensing information, see any
  * of the problem files in this directory.
  */
+mod tests;
+mod lib;
+
+use lib::problem001;
+use lib::problem002;
+use lib::problem003;
+use lib::problem004;
+use lib::problem005;
+use lib::problem006;
+use lib::problem007;
+use lib::problem008;
+use lib::problem009;
+
 use std::env;
 use std::time::Instant;
-
-mod problem001;
-mod problem002;
-mod problem003;
-mod problem004;
-mod problem005;
-mod problem006;
-mod problem007;
-mod problem008;
-mod problem009;
 
 fn main() {
     // collect first command line argument or set default "none"
@@ -134,7 +137,8 @@ fn main() {
                 "8" => {
                     // run problem 8 solution
                     let now = Instant::now();
-                    let data = problem008::parse_data("../inputs/problem008.in".to_string());
+                    let data = problem008::parse_data("inputs/problem008.in".to_string());
+                        /* path from base dir */
                     let result = problem008::adjacent_digits(data);
                     println!(
                         "Problem 8:\n\tresult: {}\n\telapsed: {:?}",

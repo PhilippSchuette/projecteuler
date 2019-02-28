@@ -15,26 +15,40 @@
  * Date: 2019/02/27
  * License: MIT (see ../LICENSE.md)
  */
-pub fn fibonacci_vec(target: i64) -> Vec<i64> {
+// Return a vector of the Fibonacci terms that do not exceed `n'.
+pub fn fibonacci_vec(n: i64) -> Vec<i64> {
+    let mut fib: Vec<i64> = Vec::new();
+
+    // handle corner cases
+    if n < 1 {
+        return fib; /* return the empty vector */
+    }
+
+    // push 1 onto the vector and return if `n'==1
+    fib.push(1);
+    if n == 1 {
+        return fib;
+    }
+
+    // push 2 onto the vector and return if `n'==1
+    fib.push(2);
+    if n == 2 {
+        return fib;
+    }
+
     // declare variables to use for fib seq
     let mut current: i64 = 1;
     let mut next: i64 = 2;
     let mut temp: i64;
 
-    // initialize vector and push first to terms
-    // This can be done more elegantly, I know!
-    let mut fib: Vec<i64> = Vec::new();
-    fib.push(1);
-    fib.push(2);
-
-    // infinite loop until next fib term > target
+    // infinite loop until next fib term > `n'
     loop {
         temp = next;
         next += current;
         current = temp;
 
         // break if next term is larger then target
-        if next > target {
+        if next > n {
             break;
         }
 
