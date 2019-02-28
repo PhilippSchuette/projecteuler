@@ -11,8 +11,8 @@
  * For authorship and licensing information, see any
  * of the problem files in this directory.
  */
-use std::time::Instant;
 use std::env;
+use std::time::Instant;
 
 mod problem001;
 mod problem002;
@@ -21,6 +21,7 @@ mod problem004;
 mod problem005;
 mod problem006;
 mod problem007;
+mod problem008;
 
 fn main() {
     // collect first command line argument or set default "none"
@@ -67,7 +68,7 @@ fn main() {
                         result,
                         now.elapsed() // in microsecs
                     );
-                },
+                }
                 "2" => {
                     // run problem 2 solution
                     let now = Instant::now();
@@ -78,7 +79,7 @@ fn main() {
                         result,
                         now.elapsed()
                     );
-                },
+                }
                 "3" => {
                     // run problem 3 solution
                     let now = Instant::now();
@@ -88,7 +89,7 @@ fn main() {
                         result,
                         now.elapsed()
                     );
-                },
+                }
                 "4" => {
                     // run problem 4 solution
                     let now = Instant::now();
@@ -98,9 +99,9 @@ fn main() {
                         result,
                         now.elapsed()
                     );
-                },
+                }
                 "5" => {
-                // run problem 5 solution
+                    // run problem 5 solution
                     let now = Instant::now();
                     let result = problem005::evenly_divisible(20);
                     println!(
@@ -108,7 +109,7 @@ fn main() {
                         result,
                         now.elapsed()
                     );
-                },
+                }
                 "6" => {
                     // run problem 6 solution
                     let now = Instant::now();
@@ -118,7 +119,7 @@ fn main() {
                         result,
                         now.elapsed()
                     );
-                },
+                }
                 "7" => {
                     // run problem 7 solution
                     let now = Instant::now();
@@ -128,7 +129,19 @@ fn main() {
                         result,
                         now.elapsed()
                     );
-                },
+                }
+                "8" => {
+                    // run problem 8 solution
+                    let now = Instant::now();
+                    let data = problem008::parse_data("../inputs/problem008.in".to_string());
+                    let result = problem008::adjacent_digits(data);
+                    println!(
+                        "Problem 8:\n\tresult: {}\n\telapsed: {:?}",
+                        result,
+                        now.elapsed()
+                    );
+                }
+                // other values should just return from main
                 "0" => return,
                 "none" => return,
                 _ => return,
