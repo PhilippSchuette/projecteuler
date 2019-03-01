@@ -1,7 +1,14 @@
 cmake_minimum_required (VERSION 3.0.2)
 
-# Enable optimization and link OpenMP
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -march=native -fopenmp")
+option(GCOV "GCOV" OFF)
+if(GCOV) 
+    set(CMAKE_CXX_FLAGS "-fopenmp --coverage")
+else()
+    # Enable optimization and link OpenMP
+    set(CMAKE_CXX_FLAGS "-O3 -march=native -fopenmp")
+endif()
+
+set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE ON)
 
 # Include fmt libary
 if(NOT EXISTS include/fmt/include)
@@ -28,14 +35,10 @@ foreach( problem ${problems} )
     target_link_libraries(${outname}.out fmt::fmt)
 endforeach()
 
-add_executable(tests ${problems} test.cpp)
+add_executable(tests ${problems} tests.cpp)
 # Define TESTING which will disable the main() functions in the problemxxx.cpp files
 target_compile_definitions(tests PRIVATE TESTING)
 # Link fmt and Catch2
 target_link_libraries(tests Catch2::Catch2 fmt::fmt)
 set_target_properties(tests PROPERTIES EXCLUDE_FROM_ALL TRUE)
 set_target_properties(tests PROPERTIES OUTPUT_NAME tests.out)
-add_custom_command(TARGET tests POST_BUILD
-    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/tests.out
-    COMMENT "Running Tests..."
-)

@@ -49,9 +49,15 @@ matrix:
         - export CC=gcc-8
         - export CXX=g++-8
       script:
-        - cmake .
+        - cmake -DGCOV=ON .
         - make
         - make tests
+
+        - ./get_code_cov
+
+      after_success:
+        - bash <(curl -s https://codecov.io/bash)
+        - cd ..
 
     - language: rust
       sudo: required
