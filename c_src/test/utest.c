@@ -18,8 +18,9 @@ char utest_init(int *argc, char **argv)
         fprintf(stderr, "error: filename %s is too long\n", argv[0]);
         exit(1);
     }
-    strcpy(prog, argv[0]);
+    strcpy(prog, argv[0]); /* save program name for fmt strings */
 
+    /* initialize total, failed and successful tests counts */
     rslt_tbl.t_total = 0;
     rslt_tbl.t_success = 0;
     rslt_tbl.t_failed = 0;
@@ -38,11 +39,19 @@ char utest_init(int *argc, char **argv)
             (*argc)--;
         }
 
-    for (int i = 0; i < MAX_TESTS; i++) {
+    for (int i = 0; i < MAX_TESTS; i++)
         rslt_tbl.test_info[i] = (char *)malloc(BUFSIZE * sizeof(char));
-    }
 
     return 0; /* return success */
+}
+
+int utest_free_all(void) {
+    extern RSLT_TBL  rslt_tbl;
+
+    for (int i = 0; i < MAX_TESTS; i++)
+        free(rslt_tbl.test_info[i]);
+
+    return 0;
 }
 
 boolean assert_equal(long test, long comp, const char *msg)
@@ -83,8 +92,10 @@ boolean assert_equal(long test, long comp, const char *msg)
                  "%s %s\t%s: test failed: %ld is not equal to %ld\n%s",
                  DELIM_STD, DELIM_FAILURE, prog, test, comp, DELIM_END);
 
-        /* add information to `rslt_tbl' */
-        /* update `rslt_tbl', entry offset is always t_total + (t_total-1) */
+        /*
+         * Add information to `rslt_tbl', then update `rslt_tbl',
+         * entry offset is always t_total + (t_total-1)
+         */
         strcpy(rslt_tbl.test_info[rslt_tbl.t_total+(rslt_tbl.t_total-1)],
                rslt_str);
         rslt_tbl.t_failed += 1;

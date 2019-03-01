@@ -136,9 +136,13 @@ else
             fi
         done <<< "$hrefs"
     fi
-    
+
     # Now remove hyperlinks to input files
     statement=$(echo $statement | sed 's/<a href=".*">//g' | sed 's/<\/a>//g')
+
+    # Parse subscripts and superscripts
+    statement=$(echo $statement | sed 's/<sub>/_{/g; s/<\/sub>/}/g')
+    statement=$(echo $statement | sed 's/<sup>/^{/g; s/<\/sup>/}/g')
 
     # replace template comment with problem statement
     statement=$(echo "Problem statement: $statement")
@@ -147,4 +151,3 @@ else
 
     echo "Successfully created source file $outfile!"
 fi
-

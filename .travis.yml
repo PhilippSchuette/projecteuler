@@ -23,7 +23,7 @@ matrix:
         - npm run test
       after_success:
         - codecov
-        - cd ../
+        - cd ..
 
     - language: c
       before_script:
@@ -33,7 +33,38 @@ matrix:
         - make clean_utest
       after_success:
         - bash <(curl -s https://codecov.io/bash)
+        - cd ..
 
+    - language: rust
+      sudo: required
+      addons:
+        apt:
+          packages:
+            - libcurl4-openssl-dev
+            - libelf-dev
+            - libdw-dev
+            - cmake
+            - gcc
+            - binutils-dev
+            - libiberty-dev
+      before_script:
+        - cd rust_src
+      after_success:
+        - wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz
+        - tar xzf master.tar.gz
+        - cd kcov-master
+        - mkdir build
+        - cd build
+        - cmake ..
+        - make
+        - make install DESTDIR=../../kcov-build
+        - cd ../..
+        - rm -rf kcov-master
+        - options="1,2,3:9"
+        - for file in target/debug/rust_src*; do [ -x "${file}" ] || continue; mkdir -p "target/cov/$(basename $file)"; ./kcov-build/usr/local/bin/kcov --exclude-line=#no_code --exclude-pattern=/.cargo,/usr,/lib64 --verify "target/cov/$(basename $file)" "$file" $options; done
+        - for file in target/debug/rust_src*; do [ -x "${file}" ] || continue; mkdir -p "target/cov/$(basename $file)"; ./kcov-build/usr/local/bin/kcov --exclude-line=#no_code --exclude-pattern=/.cargo,/usr,/lib64 --verify "target/cov/$(basename $file)" "$file"; done
+        - bash <(curl -s https://codecov.io/bash)
+        - echo "Uploaded code coverage"
 
 notifications:
   email: false

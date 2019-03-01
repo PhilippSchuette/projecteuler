@@ -63,8 +63,11 @@ int main(int argc, char **argv)
                  "testing equality of calulated and expected result");
     assert_not_equal(sum, WRONG_RSLT,
                      "testing unequality of calculated and wrong result");
+    /* print test results and clean up */
     print_rslt_tbl();
+    utest_free_all();
 
+    /* print calculation results and return */
     fprintf(stdout, "%s: solution: %ld\n", argv[0], sum);
     return 0;
 }
