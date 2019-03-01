@@ -56,7 +56,7 @@ pub fn fibonacci_vec(n: i64) -> Vec<i64> {
         fib.push(next);
     }
     return fib;
-}
+} // #no_code
 
 pub fn sum_even_terms_vec(vec: Vec<i64>) -> i64 {
     let mut sum: i64 = 0;

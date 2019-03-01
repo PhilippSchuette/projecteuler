@@ -1,15 +1,16 @@
-/*
- * Compile this file to run the solutions. Helper
- * functions that solve the problems are modularized
- * and imported. To run individual solutions, supply
- * a comma-separated list of problem numbers like so:
- * `$cargo run -- 1,2,5' for problems 1, 2 and 5 or
- * `$./path/to/bin 1,2,5' if you don't want to use
- * cargo. A syntax for argument expansion is available,
- * too: `$cargo run -- 1:7' run problems 1 through 7.
+/* #no_code
+ * Compile this file to run the solutions. Helper functions that
+ * solve the problems are modularized and imported. To run individual
+ * solutions, supply a comma-separated list of problem numbers like so:
+ * `$cargo run -- 1,2,5'
+ * for problems 1, 2 and 5 or
+ * `$./path/to/bin 1,2,5'
+ * if you don't want to use cargo. A syntax for argument expansion is
+ * available, too:
+ * `$cargo run -- 1:7' run problems 1 through 7.
  *
- * For authorship and licensing information, see any
- * of the problem files in this directory.
+ * For authorship and licensing information, see any of the problem files
+ * in `lib/'.
  */
 mod tests;
 mod lib;
@@ -55,7 +56,7 @@ fn main() {
                     opts_expanded.push(s);
                 }
             }
-        } else {
+        } else { // #no_code
             opts_expanded.push(option.to_string());
         }
 
