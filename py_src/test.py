@@ -16,6 +16,7 @@ import problem013
 import problem016
 import problem019
 import problem022
+import problem025
 
 
 class TestProblem001Solution(unittest.TestCase):
@@ -136,6 +137,10 @@ class TestProblem022Solution(unittest.TestCase):
         self.assertEqual(problem022.alphabetical_value('COLIN'), 53)
         self.assertEqual(problem022.alphabetical_value('ABC'), 6)
 
+class TestProblem025Solution(unittest.TestCase):
+    def test_num_digits(self):
+        self.assertEqual(problem025.num_digits(123), 3)
+        self.assertEqual(problem025.num_digits('25431'), 5)
 
 if __name__ == "__main__":
     unittest.main()

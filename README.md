@@ -155,7 +155,7 @@ The following table summarizes the current project status. The `test coverage` t
 |      22 |                - |             - |     -       | -     |      -    |    -      |    -  |
 |      23 |                - |             - |     -       | -     |      -    |    -      |    -  |
 |      24 |                - |             - |     -       | -     |      -    |    -      |    -  |
-|      25 |                - |             - |     -       | -     |      -    |    -      |    -  |
+|      25 |                1 |           yes |     TBD     | -     |      -    |    -      |    -  |
 |      26 |                - |             - |     -       | -     |      -    |    -      |    -  |
 |      27 |                - |             - |     -       | -     |      -    |    -      |    -  |
 |      28 |                - |             - |     -       | -     |      -    |    -      |    -  |
