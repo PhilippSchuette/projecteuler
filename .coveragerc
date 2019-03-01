@@ -3,6 +3,7 @@
 exclude_lines =
     pragma: no cover
     if __name__ == .__main__.:
+    int main(int argc, char **argv) {
 
 omit =
     c_src/test/*
