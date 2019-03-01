@@ -1,0 +1,16 @@
+#!/bin/bash
+# Report code coverage for cpp solutions.
+# FIXME: This only works for progs compiled with `--coverage'.
+declare -a files=(problem010.out problem019.out)
+
+# run progs and report code coverage
+for file in "${files[@]}";
+do
+  ./"$file"; # execute
+  gcov "$file"; # run coverage
+done
+
+# run tests, too
+make tests
+./tests.out
+gcov tests.out

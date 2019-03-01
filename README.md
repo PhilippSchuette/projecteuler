@@ -90,13 +90,13 @@ Now run with
 If you want to run the problem solutions in this repository, you need to install Go from [here](https://golang.org/). After you confirmed that your Go installation works (you need to set up a workspace and set your `$GOPATH` accordingly, see [here](https://golang.org/doc/code.html)), you can `$go get` all solutions as follows:
 
 ```bash
-go get github.com/DanielSchuette/geulerproject
+go get github.com/PhilippSchuette/projecteuler/go_src
 ```
 
 If this does not work for you, you can clone this repository and manually put all files into a folder in your Go workspace:
 
 ```bash
-GOPATH/src/github.com/DanielSchuette/geulerproject/<all_files_are_here>
+GOPATH/src/github.com/PhilippSchuette/projecteuler/go_src/<all_files_are_here>
 ```
 
 Now, confirm that all tests run successfully and print the % of code that is covered by unit tests:
@@ -152,9 +152,10 @@ cargo build -- 1,4:7 # runs problems 1 and 4 through 7
 
 # or as arguments to the binary:
 ./target/release/rust_src 1,2,5:7
-```
 
-Testing and CI is not yet implemented.
+# run unit tests
+cargo test
+```
 
 ## <a name="project-status"></a> Project Status
 
@@ -186,7 +187,7 @@ The following table summarizes the current project status. The `test coverage` t
 |      22 |             1 |    + (0.02s)   |    -        |       -     |     -      |       -    |       -      |
 |      23 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
 |      24 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
-|      25 |             1 |       TBD      |    -        |       -     |     -      |       -    |       -      |
+|      25 |             1 |    + (0.03s)   |    -        |       -     |     -      |       -    |       -      |
 |      26 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
 |      27 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
 |      28 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
