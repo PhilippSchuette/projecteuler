@@ -69,7 +69,7 @@ cmake .
 Afterwards you can build and run the tests with
 
 ```bash
-make test
+make tests
 ```
 
 To build the problems use

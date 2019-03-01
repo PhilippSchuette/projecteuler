@@ -28,18 +28,14 @@ foreach( problem ${problems} )
     target_link_libraries(${outname}.out fmt::fmt)
 endforeach()
 
-# Include "Catch" library 
-set(CATCH_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include/Catch2)
-add_library(Catch INTERFACE)
-target_include_directories(Catch INTERFACE ${CATCH_INCLUDE_DIR})
-
-add_executable(test ${problems} test.cpp)
+add_executable(tests ${problems} test.cpp)
 # Define TESTING which will disable the main() functions in the problemxxx.cpp files
-target_compile_definitions(test PRIVATE TESTING)
-target_link_libraries(test Catch fmt::fmt)
-set_target_properties(test PROPERTIES EXCLUDE_FROM_ALL TRUE)
-set_target_properties(test PROPERTIES OUTPUT_NAME test.out)
-add_custom_command(TARGET test POST_BUILD
-    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/test.out
+target_compile_definitions(tests PRIVATE TESTING)
+# Link fmt and Catch2
+target_link_libraries(tests Catch2::Catch2 fmt::fmt)
+set_target_properties(tests PROPERTIES EXCLUDE_FROM_ALL TRUE)
+set_target_properties(tests PROPERTIES OUTPUT_NAME tests.out)
+add_custom_command(TARGET tests POST_BUILD
+    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/tests.out
     COMMENT "Running Tests..."
 )
