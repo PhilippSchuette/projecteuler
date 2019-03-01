@@ -1,15 +1,7 @@
 #!/bin/bash
 # Report code coverage for cpp solutions.
-declare -a files=(problem010.out problem019.out)
-files=( $(ls | grep -E 'problem[0-9]+.out') )
+files=$(ls | grep -E 'problem[0-9]+.out') 
 
-# run progs and report code coverage
-for file in "${files[@]}"; do
-  ./$file
-  gcov "$file" --object-directory CMakeFiles/${file}.dir | sed -e '/\include\/c++/,+3d; /cpp_src\/include/,+3d;'; # run coverage
-done
-
-# run tests, too
 make tests
 ./tests.out
-gcov tests ${files[@]} --object-directory CMakeFiles/tests.dir | sed -e '/\include\/c++/,+3d; /cpp_src\/include/,+3d;'
+gcov tests $files --object-directory CMakeFiles/tests.dir | sed -e '/\usr\/include/,+3d; /cpp_src\/include/,+3d;'
