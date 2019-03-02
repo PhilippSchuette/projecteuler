@@ -63,7 +63,7 @@ def greatest_product(matrix):
                 nums.append(matrix[k][j+idx])
             prod = mult_over_list(nums)
             if prod > max_product:
-                max_product = prod
+                max_product = prod  # pragma: no cover
             nums = []  # reset for next iteration
 
     # diagonal - down and right to left

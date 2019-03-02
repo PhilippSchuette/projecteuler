@@ -162,12 +162,10 @@ class TestProblem019Solution(unittest.TestCase):
         self.assertEqual(problem019.zellers_congruence(17, 2, 2019), 7)
 
     def test_brute_force_solution(self):
-        # TODO
-        pass
+        self.assertEqual(problem019.bruteforce_solution(), 171)
 
     def test_fast_solution(self):
-        # TODO
-        pass
+        self.assertEqual(problem019.fast_solution(), 171)
 
 
 class TestProblem022Solution(unittest.TestCase):
