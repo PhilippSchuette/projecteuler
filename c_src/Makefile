@@ -1,5 +1,6 @@
 # Makefile to compile all solutions in this dir
-CFLAGS := -coverage -O0 -std=c99
+CFLAGS := -O0 -std=c99
+COVFLAG := -coverage
 test_dir := utest
 test := $(test_dir)/utest
 problems.o := p1.o p2.o
@@ -12,15 +13,15 @@ all: $(problems_exe)
 	bash ./time.sh
 
 $(problems_exe): $(test).o
-	gcc $(CFLAGS) p1.o $(test).o -o p1
-	gcc $(CFLAGS) p2.o $(test).o -o p2
+	gcc $(CFLAGS) $(COVFLAG) p1.o $(test).o -o p1
+	gcc $(CFLAGS) $(COVFLAG) p2.o $(test).o -o p2
 
 $(test).o: $(problems.o)
 	gcc $(CFLAGS) $(test).c -c -o $(test).o
 
 $(problems.o):
-	gcc $(CFLAGS) problem001.c -c -o p1.o
-	gcc $(CFLAGS) problem002.c -c -o p2.o
+	gcc $(CFLAGS) $(COVFLAG) problem001.c -c -o p1.o
+	gcc $(CFLAGS) $(COVFLAG) problem002.c -c -o p2.o
 
 test:
 	bash ./test.sh
