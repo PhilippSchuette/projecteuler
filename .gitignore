@@ -33,5 +33,8 @@ cpp_src/Testing
 # ignore js coverage reports
 coverage/
 
+# ignore cpp coverage reports
+coverage.info
+
 # ignore rust dev binaries
 rust_src/target

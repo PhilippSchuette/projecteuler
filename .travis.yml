@@ -59,16 +59,9 @@ matrix:
         - cmake -DGCOV=ON .
         - make
         - make tests
-        - ./tests.out
-
-        # Record coverage with lcov
-        - lcov --directory CMakeFiles/tests.dir --capture --output-file coverage.info
-        # Get rid of library headers
-        - lcov --remove coverage.info '/usr/*' '*/include/Catch2/*' --output-file coverage.info
+        - ./get_code_cov.sh
 
       after_success:
-        # Output data for debugging
-        - lcov --list coverage.info
         # Upload to codecov.io
         - bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
 
