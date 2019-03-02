@@ -95,6 +95,7 @@ mod tests {
         // create test data
         let t1 = lib::problem009::Triplet { a: 3, b: 4, c: 5 };
         let t2 = lib::problem009::Triplet { a: 2, b: 3, c: 4 };
+        let t3 = lib::problem009::Triplet { a: 0, b: 0, c: 0 };
 
         // test `PartialEq' implementation
         assert_eq!(t1, t1);
@@ -105,6 +106,7 @@ mod tests {
         assert_eq!(lib::problem009::is_triplet(&t2), false);
 
         assert_eq!(lib::problem009::find_pyt_triplet(12), t1);
+        assert_eq!(lib::problem009::find_pyt_triplet(1), t3);
 
         assert_eq!(lib::problem009::mult_triplet(t1), 60);
     }
