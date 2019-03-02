@@ -1,24 +1,30 @@
 # Makefile to compile all solutions in this dir
 CFLAGS := -coverage -O0 -std=c99
+test_dir := utest
+test := $(test_dir)/utest
+problems.o := p1.o p2.o
+problems_exe := p1 p2
 
-target:
-	gcc $(CFLAGS) test/utest.c -c -o test/utest.o
-	gcc $(CFLAGS) problem001.c -c -o p1.o
-	gcc $(CFLAGS) problem002.c -c -o p2.o
-	gcc $(CFLAGS) p1.o test/utest.o -o p1
-	gcc $(CFLAGS) p2.o test/utest.o -o p2
+.PHONY: all debug_utest clean_utest clean test
+
+all: $(problems_exe)
 	bash ./test.sh
 	bash ./time.sh
 
-debug_utest:
-	gcc -g utest.c -c -o test/utest.o
-	gcc -g problem001.c -c -o p1.o
-	gcc -g test/utest.o p1.o -o p1
-	./p1
+$(problems_exe): $(test).o
+	gcc $(CFLAGS) p1.o $(test).o -o p1
+	gcc $(CFLAGS) p2.o $(test).o -o p2
 
-clean_utest:
-	rm -f test/*.gcno test/*.gcda test/*.gcov
+$(test).o: $(problems.o)
+	gcc $(CFLAGS) $(test).c -c -o $(test).o
+
+$(problems.o):
+	gcc $(CFLAGS) problem001.c -c -o p1.o
+	gcc $(CFLAGS) problem002.c -c -o p2.o
+
+test:
+	bash ./test.sh
 
 clean:
-	rm -f *.o p1 p2 *.gcno *.gcda *.gcov
-	rm -f test/*.o test/*.gcno test/*.gcda test/*.gcov
+	rm -f *.o $(problems_exe) *.gcno *.gcda *.gcov
+	rm -f $(test_dir)/*.o $(test_dir)/*.gcno $(test_dir)/*.gcda $(test_dir)/*.gcov

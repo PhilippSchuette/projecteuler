@@ -36,21 +36,21 @@ char        prog[BUFSIZE];
 boolean     log_silent; /* if set, no results are reported */
 
 /* Initialize `rslt_tbl'. Returns 0 on success, 1 otherwise. */
-char utest_init(int *argc, char **argv);
+char utest_init(int *, char **);
 
 /*
  * Assert equality of two long integers, boolean values and arrays.
  * Test results are added to `rslt_tbl'. All logging output is
  * currently printed to stderr.
  */
-boolean assert_equal(long, long, const char *msg);
-boolean assert_not_equal(long, long, const char *msg);
+boolean assert_equal(long, long, const char *);
+boolean assert_not_equal(long, long, const char *);
 
-boolean assert_true(boolean, const char *msg);
-boolean assert_false(boolean, const char *msg);
+boolean assert_true(boolean, const char *);
+boolean assert_false(boolean, const char *);
 
-boolean assert_arr_equal(const long *, const long *, const char *msg);
-boolean assert_arr_not_equal(const long *, const long *, const char *msg);
+boolean assert_arr_equal(const long *, const long *, long, long, const char *);
+boolean assert_arr_not_equal(const long *, const long *, long, long, const char *);
 
 /*
  * Prints `rslt_tbl'. This should always succeed if `utest_init'
@@ -65,3 +65,18 @@ void print_rslt_tbl(void);
  * Thus, `utest_free_all' will always return 0;
  */
 int utest_free_all(void);
+
+/*
+ * Returns 1 if input arrays are identical. Takes two arrays and
+ * there lengths as inputs.
+ */
+boolean __is_ident_arr(const long *, const long *, long, long);
+
+/*
+ * Generates a string representation of a known-length input array.
+ * The caller has to provide a buffer to print to and the length
+ * of the input array and that buffer. The caller also has to ensure
+ * that the length of the buffer is at least identical to the indicated
+ * length of the array. Returns 0 on success.
+ */
+int __print_arr(const long *, unsigned long, unsigned long, char *);
