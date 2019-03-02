@@ -11,7 +11,7 @@
  * Date: 2019/02/27
  * License: MIT (see ../LICENSE.md)
  */
-fn is_prime(n: i64) -> bool {
+pub fn is_prime(n: i64) -> bool {
     // handle corner cases
     if n < 2 {
         return false;

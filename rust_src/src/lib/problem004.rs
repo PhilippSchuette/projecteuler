@@ -13,7 +13,7 @@
  * Date: 2019/02/27
  * License: MIT (see ../LICENSE.md)
  */
-fn is_palindrome(n: i32) -> bool {
+pub fn is_palindrome(n: i32) -> bool {
     let s: String = n.to_string();
     let s_reverse = reverse_str(&s);
 
@@ -23,7 +23,7 @@ fn is_palindrome(n: i32) -> bool {
     return false;
 }
 
-fn reverse_str(s: &String) -> String {
+pub fn reverse_str(s: &String) -> String {
     // Create byte slice. Since we know the input format,
     // utf8 code points are nothing to pay attention to.
     let bytes = s.as_bytes();

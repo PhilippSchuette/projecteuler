@@ -24,4 +24,24 @@ mod tests {
 
         assert_eq!(lib::problem002::sum_even_terms_vec(vec![1, 2, 3, 4]), 6);
     }
+
+    #[test]
+    fn test_problem003() {
+        assert_eq!(lib::problem003::is_prime(1), false);
+        assert_eq!(lib::problem003::is_prime(2), true);
+        assert_eq!(lib::problem003::is_prime(3), true);
+        assert_eq!(lib::problem003::is_prime(4), false);
+
+        assert_eq!(lib::problem003::largest_prime_factor(13195), 29);
+    }
+
+    #[test]
+    fn test_problem004() {
+        assert_eq!(lib::problem004::is_palindrome(9009), true);
+        assert_eq!(lib::problem004::is_palindrome(9809), false);
+
+        assert_eq!(lib::problem004::reverse_str(&"ab".to_string()), "ba".to_string());
+
+        assert_eq!(lib::problem004::largest_palindrome(), 906609);
+    }
 }
