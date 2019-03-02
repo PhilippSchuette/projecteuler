@@ -71,7 +71,7 @@ cmake .
 Afterwards you can build and run the tests with
 
 ```bash
-make tests
+make tests && ./tests.out
 ```
 
 To build the problems use
