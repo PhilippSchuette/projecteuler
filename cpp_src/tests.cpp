@@ -6,6 +6,7 @@
 TEST_CASE( "Testing Zeller's congruence (Problem 19)") {
     REQUIRE(zellers_congruence(1, 1, 1900) == 1);
     REQUIRE(zellers_congruence(17, 2, 2019) == 7);
+    REQUIRE(zellers_congruence(2, 3, 2019) == 6);
 }
 
 TEST_CASE( "Testing prime_sum (Problem 10)") {
