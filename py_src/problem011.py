@@ -17,7 +17,7 @@
 import time
 
 
-def parseMatrix(path):
+def parse_matrix(path):
     """
     Doc string.
     """
@@ -31,21 +31,19 @@ def parseMatrix(path):
     return matrix
 
 
-def greatestProduct(matrix):
+def greatest_product(matrix):
     """
     Doc string.
     """
     nums = []  # temp stores data
-    max_nums = []  # temp stores max triplet
     max_product = 0  # temp stores maximum product
     max_adjacent = 4  # number of adjacent ints to multiply
 
     # left/right
     for arr in matrix:
         for i in range(len(arr)-max_adjacent+1):
-            prod = multOverList(arr[i:(i+max_adjacent)])
+            prod = mult_over_list(arr[i:(i+max_adjacent)])
             if prod > max_product:
-                max_nums = arr[i:(i+max_adjacent)]
                 max_product = prod
 
     # up/down
@@ -53,9 +51,8 @@ def greatestProduct(matrix):
         for j in range(len(matrix[0])):  # col
             for k in range(i, (i+max_adjacent)):
                 nums.append(matrix[k][j])
-            prod = multOverList(nums)
+            prod = mult_over_list(nums)
             if prod > max_product:
-                max_nums = nums
                 max_product = prod
             nums = []  # reset for next iteration
 
@@ -64,9 +61,8 @@ def greatestProduct(matrix):
         for j in range(len(matrix[0])-max_adjacent+1):  # col
             for idx, k in enumerate(range(i, (i+max_adjacent))):
                 nums.append(matrix[k][j+idx])
-            prod = multOverList(nums)
+            prod = mult_over_list(nums)
             if prod > max_product:
-                max_nums = nums
                 max_product = prod
             nums = []  # reset for next iteration
 
@@ -75,17 +71,16 @@ def greatestProduct(matrix):
         for j in range(len(matrix[0])-1, -1, -1):  # col right to left!
             for idx, k in enumerate(range(i, (i+max_adjacent))):
                 nums.append(matrix[k][j-idx])
-            prod = multOverList(nums)
+            prod = mult_over_list(nums)
             if prod > max_product:
-                max_nums = nums
                 max_product = prod
             nums = []  # reset for next iteration
+
     # return result
-    print(max_nums)
     return max_product
 
 
-def multOverList(l):
+def mult_over_list(l):
     """
     Doc string.
     """
@@ -98,8 +93,8 @@ def multOverList(l):
 if __name__ == "__main__":
     # calculate solution and time it
     start = time.time()
-    data = parseMatrix("../input_files/problem011.txt")
-    solution = greatestProduct(data)
+    data = parse_matrix("../input_files/problem011.txt")
+    solution = greatest_product(data)
     end = time.time()
 
     # print out results

@@ -113,6 +113,21 @@ class TestProblem010Solution(unittest.TestCase):
         self.assertEqual(problem010.sum_primes(10), 17)
 
 
+class TestProblem011Solution(unittest.TestCase):
+    def test_parse_matrix(self):
+        self.assertListEqual(
+            problem011.parse_matrix("../input_files/test011.txt"),
+            [["12"], ["34"], ["56"]]
+        )
+
+    def test_greatest_product(self):
+        self.data = problem011.parse_matrix("../input_files/problem011.txt")
+        self.assertEqual(problem011.greatest_product(self.data), 70600674)
+
+    def test_mult_over_list(self):
+        self.assertEqual(problem011.mult_over_list([1, 2, 3]), 6)
+
+
 class TestProblem013Solution(unittest.TestCase):
     def test_sum_numbers(self):
         self.assertEqual(problem013.sum_numbers([123, 100, 400]), 623)
@@ -123,25 +138,49 @@ class TestProblem016Solution(unittest.TestCase):
         self.assertEqual(problem016.digit_sum(123), 6)
         self.assertEqual(problem016.digit_sum('7356'), 21)
 
+
 class TestProblem019Solution(unittest.TestCase):
     def test_is_leapyear(self):
         self.assertEqual(problem019.is_leapyear(1904), True)
         self.assertEqual(problem019.is_leapyear(1800), False)
         self.assertEqual(problem019.is_leapyear(2400), True)
 
+    def test_days_per_month(self):
+        self.assertEqual(problem019.days_per_month(1, 2019), 31)
+        self.assertEqual(problem019.days_per_month(2, 2019), 28)
+        self.assertEqual(problem019.days_per_month(2, 2012), 29)
+        self.assertEqual(problem019.days_per_month(4, 2019), 30)
+        self.assertRaises(
+            ValueError,
+            problem019.days_per_month,
+            -1,
+            2019
+        )
+
     def test_zeller(self):
         self.assertEqual(problem019.zellers_congruence(1, 1, 1900), 1)
         self.assertEqual(problem019.zellers_congruence(17, 2, 2019), 7)
+
+    def test_brute_force_solution(self):
+        # TODO
+        pass
+
+    def test_fast_solution(self):
+        # TODO
+        pass
+
 
 class TestProblem022Solution(unittest.TestCase):
     def test_alphabetical_value(self):
         self.assertEqual(problem022.alphabetical_value('COLIN'), 53)
         self.assertEqual(problem022.alphabetical_value('ABC'), 6)
 
+
 class TestProblem025Solution(unittest.TestCase):
     def test_num_digits(self):
         self.assertEqual(problem025.num_digits(123), 3)
         self.assertEqual(problem025.num_digits('25431'), 5)
+
 
 if __name__ == "__main__":
     unittest.main()
