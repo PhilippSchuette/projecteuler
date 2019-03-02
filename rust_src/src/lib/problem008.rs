@@ -35,7 +35,7 @@ pub fn parse_data(path: String) -> String {
         }
     }
     return data_str;
-}
+} // #no_code
 
 pub fn adjacent_digits(s: String) -> i64 {
     let num_digits = 13;
@@ -57,4 +57,4 @@ pub fn adjacent_digits(s: String) -> i64 {
         }
     }
     return prod;
-}
+} // #no_code

@@ -14,11 +14,11 @@
  * Date: 2018/02/28
  * License: MIT (see ../LICENSE.md)
  */
-#[derive(Debug)]
+#[derive(Debug)] // #no_code
 pub struct Triplet {
-    pub a: i64,
-    pub b: i64,
-    pub c: i64,
+    pub a: i64, // #no_code
+    pub b: i64, // #no_code
+    pub c: i64, // #no_code
 }
 
 // Implementation required for calling assertion macros.

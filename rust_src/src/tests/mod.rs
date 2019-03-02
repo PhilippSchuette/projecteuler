@@ -41,7 +41,7 @@ mod tests {
         assert_eq!(lib::problem004::is_palindrome(9009), true);
         assert_eq!(lib::problem004::is_palindrome(9809), false);
 
-        assert_eq!(
+        assert_eq!( // #no_code
             lib::problem004::reverse_str(&"ab".to_string()),
             "ba".to_string()
         );
@@ -92,9 +92,15 @@ mod tests {
 
     #[test]
     fn test_problem009() {
+        // create test data
         let t1 = lib::problem009::Triplet { a: 3, b: 4, c: 5 };
         let t2 = lib::problem009::Triplet { a: 2, b: 3, c: 4 };
 
+        // test `PartialEq' implementation
+        assert_eq!(t1, t1);
+        assert_ne!(t1, t2);
+
+        // test problem009 functions
         assert_eq!(lib::problem009::is_triplet(&t1), true);
         assert_eq!(lib::problem009::is_triplet(&t2), false);
 
