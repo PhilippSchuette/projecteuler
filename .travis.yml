@@ -3,10 +3,10 @@ matrix:
     - language: python
       python:
         - 3.6
+      before_install:
+        - cd py_src
       install:
         - pip install -r requirements.txt
-      before_script:
-        - cd py_src
       script:
         - coverage run test.py
       after_success:
