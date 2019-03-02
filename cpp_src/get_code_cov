@@ -1,7 +1,0 @@
-#!/bin/bash
-# Report code coverage for cpp solutions.
-files=$(ls | grep -E 'problem[0-9]+.out') 
-
-make tests
-./tests.out
-gcov tests $files --object-directory CMakeFiles/tests.dir | sed -e '/\usr\/include/,+3d; /cpp_src\/include/,+3d;'

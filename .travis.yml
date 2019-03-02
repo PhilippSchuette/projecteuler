@@ -48,22 +48,29 @@ matrix:
           packages:
             - gcc-6
             - g++-6
+            - lcov
       before_script:
         - cd cpp_src
         - export CC=gcc-6
         - export CXX=g++-6
         - export GCOV=gcov-6
-      script:
         - sudo ln -sf /usr/bin/gcov-6 /usr/local/bin/gcov
+      script:
         - cmake -DGCOV=ON .
         - make
         - make tests
+        - ./tests.out
 
-        - ./get_code_cov
+        # Record coverage with lcov
+        - lcov --directory CMakeFiles/tests.dir --capture --output-file coverage.info
+        # Get rid of library headers
+        - lcov --remove coverage.info '/usr/*' '*/include/Catch2/*' --output-file coverage.info
 
       after_success:
-        - bash <(curl -s https://codecov.io/bash)
-        - cd ..
+        # Output data for debugging
+        - lcov --list coverage.info
+        # Upload to codecov.io
+        - bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
 
     - language: rust
       sudo: required
