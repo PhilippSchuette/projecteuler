@@ -41,8 +41,7 @@ mod tests {
         assert_eq!(lib::problem004::is_palindrome(9009), true);
         assert_eq!(lib::problem004::is_palindrome(9809), false);
 
-        assert_eq!(
-            // #no_code
+        /* #no_code */ assert_eq!(
             lib::problem004::reverse_str(&"ab".to_string()),
             "ba".to_string()
         );
@@ -79,7 +78,7 @@ mod tests {
     #[should_panic]
     fn test_invalid_path() {
         lib::problem008::parse_data("invalid-path".to_string());
-    }
+    /* #no_code */}
 
     #[test]
     fn test_problem008() {

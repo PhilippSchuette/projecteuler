@@ -5,9 +5,13 @@ matrix:
         - 3.6
       install:
         - pip install -r requirements.txt
+      before_script:
+        - cd py_src
       script:
-        - coverage run py_src/test.py
-      after_success: codecov
+        - coverage run test.py
+      after_success:
+        - codecov
+        - cd ..
 
     - language: node_js
       node_js:

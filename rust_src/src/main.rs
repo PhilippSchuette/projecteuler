@@ -56,8 +56,7 @@ fn main() {
                     opts_expanded.push(s);
                 }
             }
-        } else {
-            // #no_code
+        } else /* #no_code */ {
             opts_expanded.push(option.to_string());
         }
 
