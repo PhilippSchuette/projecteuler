@@ -12,8 +12,8 @@
  * For authorship and licensing information, see any of the problem files
  * in `lib/'.
  */
-mod tests;
 mod lib;
+mod tests;
 
 use lib::problem001;
 use lib::problem002;
@@ -56,7 +56,8 @@ fn main() {
                     opts_expanded.push(s);
                 }
             }
-        } else { // #no_code
+        } else {
+            // #no_code
             opts_expanded.push(option.to_string());
         }
 
@@ -139,7 +140,7 @@ fn main() {
                     // run problem 8 solution
                     let now = Instant::now();
                     let data = problem008::parse_data("inputs/problem008.in".to_string());
-                        /* path from base dir */
+                    /* path from base dir */
                     let result = problem008::adjacent_digits(data);
                     println!(
                         "Problem 8:\n\tresult: {}\n\telapsed: {:?}",

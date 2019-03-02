@@ -16,20 +16,30 @@
  */
 #[derive(Debug)]
 pub struct Triplet {
-    a: i64,
-    b: i64,
-    c: i64,
+    pub a: i64,
+    pub b: i64,
+    pub c: i64,
+}
+
+// Implementation required for calling assertion macros.
+impl std::cmp::PartialEq for Triplet {
+    fn eq(&self, other: &Triplet) -> bool {
+        if (self.a == other.a) && (self.b == other.b) && (self.c == other.c) {
+            return true;
+        }
+        return false;
+    }
 }
 
 // Test whether a given triplet is Pythagorean.
-fn is_triplet(t: &Triplet) -> bool {
+pub fn is_triplet(t: &Triplet) -> bool {
     if i64::pow(t.c, 2) == (i64::pow(t.a, 2) + i64::pow(t.b, 2)) {
         return true;
     }
     return false;
 }
 
-// Find a Pythagorean triplet that satisfies `a + b+ c = n' as a `Triplet'.
+// Find a Pythagorean triplet that satisfies `a + b + c = n' as a `Triplet'.
 pub fn find_pyt_triplet(n: i64) -> Triplet {
     // initialize empty triplet
     let mut t: Triplet;

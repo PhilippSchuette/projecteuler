@@ -42,6 +42,8 @@ pub fn adjacent_digits(s: String) -> i64 {
     let mut prod: i64 = 0;
 
     for i in 0..(s.len() + 1 - num_digits) {
+        // Input string must be at least `num_digits' long,
+        // otherwise the following unwrap panics.
         let ss = s.get(i..(i + num_digits)).unwrap();
         let mut new_prod: i64 = 1;
         for c in ss.chars() {

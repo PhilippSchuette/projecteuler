@@ -17,7 +17,7 @@
  * License: MIT (see ../LICENSE.md)
  */
 // Calculate the sum of squares in range 1..target.
-fn sum_of_squares(target: i32) -> i32 {
+pub fn sum_of_squares(target: i32) -> i32 {
     let mut sum = 0;
 
     for i in 1..target + 1 {
@@ -27,14 +27,14 @@ fn sum_of_squares(target: i32) -> i32 {
 }
 
 // Calculate the square of sums in range 1..target.
-fn square_of_sums(target: i32) -> i32 {
+pub fn square_of_sums(target: i32) -> i32 {
     let mut sum = 0;
 
     for i in 1..target + 1 {
         sum += i;
     }
     return i32::pow(sum, 2);
-}
+} // #no_code
 
 // Return the difference between the values that were
 // calculated based upon the targets. Basically a
