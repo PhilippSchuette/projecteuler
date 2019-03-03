@@ -116,4 +116,22 @@ mod tests {
 
         assert_eq!(lib::problem009::mult_triplet(t1), 60);
     }
+
+    #[test]
+    fn test_problem010() {
+        assert_eq!(lib::problem010::sum_primes(10), 17);
+        assert_eq!(lib::problem010::sum_primes(2_000_000), 142913828922);
+    }
+
+    #[test]
+    fn test_problem011() {
+        let m = lib::problem011::parse_matrix("inputs/problem011.in");
+
+        assert_eq!(
+            lib::problem011::parse_matrix("inputs/test011.in"),
+            vec![vec![1, 2], vec![3, 4], vec![5, 6]]
+        );
+
+        assert_eq!(lib::problem011::greatest_product(m), 70600674);
+    }
 }

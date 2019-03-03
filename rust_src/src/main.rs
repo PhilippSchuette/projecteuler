@@ -25,6 +25,7 @@ use lib::problem007;
 use lib::problem008;
 use lib::problem009;
 use lib::problem010;
+use lib::problem011;
 
 use std::env;
 use std::time::Instant;
@@ -165,6 +166,17 @@ fn main() {
                     let result = problem010::sum_primes(2_000_000);
                     println!(
                         "Problem 10:\n\tresult: {}\n\telapsed: {:?}",
+                        result,
+                        now.elapsed()
+                    );
+                }
+                "11" => {
+                    // run problem 11 solution
+                    let now = Instant::now();
+                    let matrix = problem011::parse_matrix("inputs/problem011.in");
+                    let result = problem011::greatest_product(matrix);
+                    println!(
+                        "Problem 11:\n\tresult: {}\n\telapsed: {:?}",
                         result,
                         now.elapsed()
                     );

@@ -15,11 +15,12 @@ use crate::lib;
 
 // Returns the sum of all primes below `n'.
 pub fn sum_primes(n: i64) -> i64 {
-    let mut sum: i64 = 0;
+    let mut sum: i64 = 2; /* 2 is prime */
 
-    for i in (1..n).step_by(2) {
+    for i in (3..n).step_by(2) {
+        /* 2 is already included */
         if lib::problem007::is_prime(i) {
-            sum  += i;
+            sum += i;
         }
     }
     return sum;
