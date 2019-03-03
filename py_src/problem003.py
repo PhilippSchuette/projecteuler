@@ -10,6 +10,7 @@
 # Author: Daniel Schuette
 # Date: 2018/09/30
 # License: MIT (see ../LICENSE.md)
+import math
 import time
 
 import numpy as np
@@ -28,7 +29,7 @@ def is_prime(n):
     elif n % 2 == 0:
         return False
 
-    for i in range(n):
+    for i in range(int(math.sqrt(n)+1)):
         if (i == 0) or (i == 1):
             continue
         if (n % i) == 0:

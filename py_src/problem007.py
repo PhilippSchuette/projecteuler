@@ -16,6 +16,7 @@
 import time
 
 import numpy as np
+
 from problem003 import is_prime
 
 
@@ -48,4 +49,4 @@ if __name__ == "__main__":
 
     # print result
     print("expired: {}s, solution: {}".format(
-        np.round(end - start), solution))
+        np.round(end - start, 4), solution))
