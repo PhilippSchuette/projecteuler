@@ -135,7 +135,7 @@ mod tests {
         assert_eq!(lib::problem012::prime_factor_powers(48), vec![4, 1]);
 
         assert_eq!(lib::problem012::num_divisors(1), 1);
-        assert_eq!(lib::problem012::num_divisors(28), 6);
+        assert_eq!(lib::problem012::num_divisors(28), 6, "28 has 6 divisors");
 
         assert_eq!(lib::problem012::nth_triangle_num(7), 28);
         assert_eq!(lib::problem012::nth_triangle_num(10), 55);

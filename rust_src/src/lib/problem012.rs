@@ -5,6 +5,7 @@
  * the natural numbers. So the 7th triangle number would be
  * 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28. The first ten terms would be:
  * 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...
+ *   2  3  4   5   6   7   8
  * Let us list the factors of the first seven triangle numbers:
  *
  *     1: 1
@@ -35,7 +36,7 @@ pub fn prime_factor_powers(n: i64) -> Vec<i64> {
     let mut factors: Vec<i64> = vec![];
     let mut current_val: i64 = n;
 
-    for i in 2..(n as f64).sqrt() as i64 {
+    for i in 2..n as i64 {
         if lib::problem007::is_prime(i) && (n % i == 0) {
             // the current `i' is a prime factor of `n'
             // now determine how often `i' fits into `n'
@@ -64,17 +65,18 @@ pub fn prime_factor_powers(n: i64) -> Vec<i64> {
 // where p, q, ... are natural powers of the prime factors of
 // `n', so that a^p + b^q + c^r + ... = n.
 pub fn num_divisors(n: i64) -> i64 {
-    let mut num_div: i64 = 0;
+    let mut num_div: i64 = 1;
+    let pow = prime_factor_powers(n);
 
-    for i in 1..(n + 1) {
-        if n % i == 0 {
-            num_div += 1;
-        }
+    for p in pow {
+        num_div *= p + 1;
     }
     return num_div;
 }
 
-// Returns the nth triangle number.
+// Returns the nth triangle number. Not actually used in this
+// solution.
+#[allow(dead_code)]
 pub fn nth_triangle_num(n: i64) -> i64 {
     let mut num: i64 = 0;
 
@@ -87,15 +89,15 @@ pub fn nth_triangle_num(n: i64) -> i64 {
 
 // Returns the first triangle number with more than `n' divisors.
 pub fn solve(n: i64) -> i64 {
-    let mut current: i64 = 1;
+    let mut current: i64 = nth_triangle_num(n); /* current triangle number */
+    let mut offset: i64 = n + 1; /* offset to next triangle number */
 
     loop {
-        let num = nth_triangle_num(current);
-        let divisors = num_divisors(num);
-        println!("tested {}, divisors: {}", num, divisors);
+        let divisors = num_divisors(current);
         if divisors > n {
-            return num;
+            return current;
         }
-        current += 1;
+        current += offset;
+        offset += 1;
     }
 }

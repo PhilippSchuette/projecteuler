@@ -185,9 +185,6 @@ fn main() {
                     );
                 }
                 "12" => {
-                    // FIXME: debugging
-                    problem012::prime_factor_powers(48);
-
                     // run problem 12 solution
                     let now = Instant::now();
                     let result = problem012::solve(500);
