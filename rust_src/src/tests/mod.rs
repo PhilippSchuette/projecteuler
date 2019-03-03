@@ -41,11 +41,7 @@ mod tests {
         assert_eq!(lib::problem004::is_palindrome(9009), true);
         assert_eq!(lib::problem004::is_palindrome(9809), false);
 
-        /* #no_code */
-        assert_eq!(
-            lib::problem004::reverse_str(&"ab".to_string()),
-            "ba".to_string()
-        );
+        assert_eq!(lib::problem004::reverse_str("ab"), "ba".to_string());
 
         assert_eq!(lib::problem004::largest_palindrome(), 906609);
     }
@@ -149,12 +145,11 @@ mod tests {
     #[should_panic]
     fn test_invalid_path_008() {
         lib::problem008::parse_data("invalid-path".to_string());
-        /* #no_code */
-    }
+    } /* #no_code */
 
     #[test]
     #[should_panic]
     fn test_invalid_path_011() {
         lib::problem011::parse_matrix("invalid-path");
-    }
+    } /* #no_code */
 }

@@ -1,4 +1,4 @@
-# Project Euler Problem 8 Solution
+# Project Euler Problem 13 Solution
 #
 # Problem statement:
 # Work out the first ten digits of the sum of the following one-
@@ -28,7 +28,8 @@ def sum_numbers(nums):
 
 if __name__ == "__main__":
     # Convert the input to a list of strings
-    nums = [l.strip('\n') for l in open("../input_files/problem013.txt").readlines()]
+    nums = [l.strip('\n')
+            for l in open("../input_files/problem013.txt").readlines()]
 
     start = time.time()
     solution = str(sum_numbers(nums))[:10]

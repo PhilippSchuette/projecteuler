@@ -23,10 +23,11 @@ pub fn is_palindrome(n: i32) -> bool {
     return false;
 }
 
-pub fn reverse_str(s: &String) -> String {
+pub fn reverse_str(s: &str) -> String {
     // Create byte slice. Since we know the input format,
     // utf8 code points are nothing to pay attention to.
-    let bytes = s.as_bytes();
+    let ss = s.to_string();
+    let bytes = ss.as_bytes();
 
     // revert bytes
     let mut arr_rev: Vec<u8> = Vec::new();

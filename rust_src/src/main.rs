@@ -60,7 +60,7 @@ fn main() {
                 }
             }
         } else
-        /* #no_code */
+        // #no_code
         {
             opts_expanded.push(option.to_string());
         }
