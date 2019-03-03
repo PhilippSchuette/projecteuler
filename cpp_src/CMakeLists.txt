@@ -1,10 +1,12 @@
 cmake_minimum_required (VERSION 3.0.2)
 
+
+set(CMAKE_CXX_STANDARD 17)
+
 option(GCOV "GCOV" OFF)
 if(GCOV) 
-    set(CMAKE_CXX_FLAGS "-fopenmp --coverage")
+    set(CMAKE_CXX_FLAGS "--coverage -fopenmp")
 else()
-    # Enable optimization and link OpenMP
     set(CMAKE_CXX_FLAGS "-O3 -march=native -fopenmp")
 endif()
 
@@ -24,21 +26,26 @@ if(NOT EXISTS include/Catch2/include)
 endif()
 add_subdirectory(include/Catch2)
 
+# prime_utils.cpp is used in multiple executables, 
+# so by making it a static library we only have to 
+# build it once, thus reducing compilation time
+add_library(prime_utils STATIC prime_utils.cpp)
+
 file( GLOB problems problem*.cpp  )
 foreach( problem ${problems} )    
     # Store relative filename without ".cpp" in outname
     get_filename_component(outname ${problem} NAME_WE)
 
-	add_executable( ${outname}.out ${problem}  )    
+	add_executable( ${outname}.out ${problem} )    
 
     # Link fmt
-    target_link_libraries(${outname}.out fmt::fmt)
+    target_link_libraries(${outname}.out fmt::fmt prime_utils)
 endforeach()
 
-add_executable(tests ${problems} tests.cpp)
+add_executable(tests ${problems} tests.cpp prime_utils.cpp)
 # Define TESTING which will disable the main() functions in the problemxxx.cpp files
 target_compile_definitions(tests PRIVATE TESTING)
-# Link fmt and Catch2
-target_link_libraries(tests Catch2::Catch2 fmt::fmt)
+# Link fmt, Catch2 and prime_utils
+target_link_libraries(tests Catch2::Catch2 fmt::fmt prime_utils)
 set_target_properties(tests PROPERTIES EXCLUDE_FROM_ALL TRUE)
 set_target_properties(tests PROPERTIES OUTPUT_NAME tests.out)

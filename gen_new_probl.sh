@@ -34,10 +34,13 @@ num=$(printf "%03d" $num[2])
 # Create the problem source file
 is_go=false
 is_js=false
+is_cpp=false
 case $lang[2] in
     "cpp" )
+        is_cpp=true
         template="cpp_src/template.cpp"
         outfile="cpp_src/problem${num}.cpp"
+        headerfile="cpp_src/problem${num}.hpp"
         ;;
     "c" )
         template="c_src/template.c"
@@ -83,6 +86,14 @@ elif $is_js; then
     fi
     cp $template1 $outfile1
     cp $template2 $outfile2
+elif $is_cpp; then
+    if [[ -z $force && (-e $outfile || -e $headerfile) ]]; then
+        read -q "REPLY?One of the output files already exists! Overwrite? (y/n)"
+        echo ""
+        [[ $REPLY = "n" ]] && exit 1
+    fi
+    cp $template $outfile
+    echo "#pragma once" > $headerfile
 else
     if [[ -z $force && -e $outfile ]]; then
         read -q "REPLY?File $outfile already exists! Overwrite? (y/n)"
@@ -148,6 +159,10 @@ else
     statement=$(echo "Problem statement: $statement")
     # use @ instead of / here, otherwise sed will be confused if the problem statement contains /
     sed -i "s@Problem statement:@$statement@g" $outfile
+
+    if $is_cpp; then
+        sed -i "s/header.hpp/problem${num}.hpp/g" $outfile
+    fi
 
     echo "Successfully created source file $outfile!"
 fi
