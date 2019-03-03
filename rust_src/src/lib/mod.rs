@@ -12,3 +12,4 @@ pub mod problem008;
 pub mod problem009;
 pub mod problem010;
 pub mod problem011;
+pub mod problem012;

@@ -41,7 +41,8 @@ mod tests {
         assert_eq!(lib::problem004::is_palindrome(9009), true);
         assert_eq!(lib::problem004::is_palindrome(9809), false);
 
-        /* #no_code */ assert_eq!(
+        /* #no_code */
+        assert_eq!(
             lib::problem004::reverse_str(&"ab".to_string()),
             "ba".to_string()
         );
@@ -129,12 +130,31 @@ mod tests {
         assert_eq!(lib::problem011::greatest_product(m), 70600674);
     }
 
+    #[test]
+    fn test_problem012() {
+        assert_eq!(lib::problem012::prime_factor_powers(48), vec![4, 1]);
+
+        assert_eq!(lib::problem012::num_divisors(1), 1);
+        assert_eq!(lib::problem012::num_divisors(28), 6);
+
+        assert_eq!(lib::problem012::nth_triangle_num(7), 28);
+        assert_eq!(lib::problem012::nth_triangle_num(10), 55);
+
+        assert_eq!(lib::problem012::solve(3), 6);
+        assert_eq!(lib::problem012::solve(5), 28);
+    }
+
     // test functions that should panic, e.g. if files don't exist
     #[test]
     #[should_panic]
-    fn test_invalid_paths() {
+    fn test_invalid_path_008() {
         lib::problem008::parse_data("invalid-path".to_string());
-        lib::problem011::parse_matrix("invalid-path");
-    /* #no_code */}
+        /* #no_code */
+    }
 
+    #[test]
+    #[should_panic]
+    fn test_invalid_path_011() {
+        lib::problem011::parse_matrix("invalid-path");
+    }
 }

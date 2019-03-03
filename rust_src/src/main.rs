@@ -26,6 +26,7 @@ use lib::problem008;
 use lib::problem009;
 use lib::problem010;
 use lib::problem011;
+use lib::problem012;
 
 use std::env;
 use std::time::Instant;
@@ -58,7 +59,9 @@ fn main() {
                     opts_expanded.push(s);
                 }
             }
-        } else /* #no_code */ {
+        } else
+        /* #no_code */
+        {
             opts_expanded.push(option.to_string());
         }
 
@@ -177,6 +180,19 @@ fn main() {
                     let result = problem011::greatest_product(matrix);
                     println!(
                         "Problem 11:\n\tresult: {}\n\telapsed: {:?}",
+                        result,
+                        now.elapsed()
+                    );
+                }
+                "12" => {
+                    // FIXME: debugging
+                    problem012::prime_factor_powers(48);
+
+                    // run problem 12 solution
+                    let now = Instant::now();
+                    let result = problem012::solve(500);
+                    println!(
+                        "Problem 12:\n\tresult: {}\n\telapsed: {:?}",
                         result,
                         now.elapsed()
                     );
