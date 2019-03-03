@@ -1,4 +1,5 @@
 #include "prime_utils.hpp"
+#include <cmath>
 
 // This function returns a boolean value indicating whether the input "n" is a primer number or not.
 bool is_prime(size_t n) {

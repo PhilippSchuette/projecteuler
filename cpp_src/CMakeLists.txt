@@ -1,10 +1,12 @@
 cmake_minimum_required (VERSION 3.0.2)
 
+
+set(CMAKE_CXX_STANDARD 17)
+
 option(GCOV "GCOV" OFF)
 if(GCOV) 
-    set(CMAKE_CXX_FLAGS "-fopenmp --coverage")
+    set(CMAKE_CXX_FLAGS "--coverage -fopenmp")
 else()
-    # Enable optimization and link OpenMP
     set(CMAKE_CXX_FLAGS "-O3 -march=native -fopenmp")
 endif()
 
