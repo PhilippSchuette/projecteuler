@@ -24,6 +24,7 @@ use lib::problem006;
 use lib::problem007;
 use lib::problem008;
 use lib::problem009;
+use lib::problem010;
 
 use std::env;
 use std::time::Instant;
@@ -156,6 +157,16 @@ fn main() {
                         "Problem 9:\n\tresult: {}\n\telapsed: {:?}",
                         result,
                         now.elapsed() // in microsecs
+                    );
+                }
+                "10" => {
+                    // run problem 10 solution
+                    let now = Instant::now();
+                    let result = problem010::sum_primes(2_000_000);
+                    println!(
+                        "Problem 10:\n\tresult: {}\n\telapsed: {:?}",
+                        result,
+                        now.elapsed()
                     );
                 }
 
