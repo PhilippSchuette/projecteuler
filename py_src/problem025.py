@@ -18,22 +18,25 @@
 # F11 = 89
 # F12 = 144
 # The 12th term, F12, is the first term to contain three digits.
+# What is the index of the first term in the Fibonacci sequence to
+# contain 1000 digits?
 #
-# What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
-#
-# Solution description: Obvious brute force approach: Compute Fibonacci numbers until number of digits is exceeded
+# Solution description:
+# Obvious brute force approach: Compute Fibonacci numbers until number
+# of digits is exceeded.
 #
 # Author: Tom Praschan
 # 2019/02/01
 # License: MIT (see ../LICENSE.md)
-
 import time
+
 
 def num_digits(n):
     """
-    Given a number n, this functio returns its number of digits in base 10
+    Given a number n, this function returns its number of digits in base 10.
     """
     return len(str(n))
+
 
 if __name__ == "__main__":
     start = time.time()
@@ -45,7 +48,7 @@ if __name__ == "__main__":
         temp = f2
         f2 += f1
         f1 = temp
-        index+=1
+        index += 1
 
     end = time.time()
 

@@ -49,7 +49,13 @@ python3 test.py
 To compile all solutions at once, type:
 
 ```bash
+cd c_src/
 make
+```
+
+To run test:
+```bash
+make test
 ```
 
 To clean up binaries:
@@ -58,7 +64,7 @@ To clean up binaries:
 make clean
 ```
 
-Unit tests are implemented using custom framework (`c_src/test`).
+Unit tests are implemented using a custom framework (`c_src/utest`) with a basic set of assertion functions. Suggestions for improvements are welcome!
 
 ### <a name="cpp"></a> C++
 
@@ -203,7 +209,7 @@ The following table summarizes the current project status. The `test coverage` t
 
 ## <a name="adding-solutions"></a> Adding Solutions
 
-You can use the script `gen_new_probl.sh` to quickly generate a template for your problem solution. Problem number, author name and date will be automatically filled in. **Javascript, Go and Rust and not yet fully supported**, i.e. source files are created from templates but need to be modified to a certain amount.
+You can use the script `gen_new_probl.sh` to quickly generate a template for your problem solution. Problem number, author name and date will be automatically filled in. **Javascript, Go and Rust are not yet fully supported**, i.e. source files are created from templates but need to be modified to a certain amount.
 
 E.g. to generate a template for your C++ solution to problem 123 use
 

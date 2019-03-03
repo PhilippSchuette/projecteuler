@@ -1,5 +1,4 @@
-# template.py demonstrates how to structure the problem
-# Project Euler Problem X Solution
+# Project Euler Problem 10 Solution
 #
 # Problem statement:
 # The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
@@ -8,8 +7,8 @@
 # Solution description:
 # --
 #
-# Author: <autor_name>
-# Date: 2018/../..
+# Author: Daniel Schuette
+# Date: 2019/02/10
 # License: MIT (see ../LICENSE.md)
 import time
 
