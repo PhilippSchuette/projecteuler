@@ -90,7 +90,7 @@ matrix:
         - make install DESTDIR=../../kcov-build
         - cd ../..
         - rm -rf kcov-master
-        - options="1,2,3:9"
+        - options="1,2,3:11"
         - for file in target/debug/rust_src*; do [ -x "${file}" ] || continue; mkdir -p "target/cov/$(basename $file)"; ./kcov-build/usr/local/bin/kcov --exclude-line=#no_code --exclude-pattern=/.cargo,/usr,/lib64 --verify "target/cov/$(basename $file)" "$file" $options; done
         - for file in target/debug/rust_src*; do [ -x "${file}" ] || continue; mkdir -p "target/cov/$(basename $file)"; ./kcov-build/usr/local/bin/kcov --exclude-line=#no_code --exclude-pattern=/.cargo,/usr,/lib64 --verify "target/cov/$(basename $file)" "$file"; done
         - bash <(curl -s https://codecov.io/bash)

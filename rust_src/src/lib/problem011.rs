@@ -44,7 +44,7 @@ pub fn parse_matrix(path: &str) -> Vec<Vec<i64>> {
         }
         data.push(v);
     }
-    return data;
+    return data; /* #no_code, should not be reached */
 }
 
 pub fn greatest_product(matrix: Vec<Vec<i64>>) -> i64 {
@@ -86,7 +86,7 @@ pub fn greatest_product(matrix: Vec<Vec<i64>>) -> i64 {
 
             let p = mult_over_slice(&v[..]);
             if p > product {
-                product = p;
+                product = p; /* #no_code */
             }
         }
     }

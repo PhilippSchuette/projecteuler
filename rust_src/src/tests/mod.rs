@@ -75,12 +75,6 @@ mod tests {
     }
 
     #[test]
-    #[should_panic]
-    fn test_invalid_path() {
-        lib::problem008::parse_data("invalid-path".to_string());
-    /* #no_code */}
-
-    #[test]
     fn test_problem008() {
         assert_eq!(
             lib::problem008::parse_data("inputs/test008.in".to_string()),
@@ -134,4 +128,13 @@ mod tests {
 
         assert_eq!(lib::problem011::greatest_product(m), 70600674);
     }
+
+    // test functions that should panic, e.g. if files don't exist
+    #[test]
+    #[should_panic]
+    fn test_invalid_paths() {
+        lib::problem008::parse_data("invalid-path".to_string());
+        lib::problem011::parse_matrix("invalid-path");
+    /* #no_code */}
+
 }
