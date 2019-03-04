@@ -39,3 +39,6 @@ coverage.info
 
 # ignore rust dev binaries
 rust_src/target
+
+# projecteuler.net recovery key
+.recovery
