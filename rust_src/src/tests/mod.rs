@@ -156,6 +156,12 @@ mod tests {
         assert_eq!(lib::problem014::find_longest_collatz(1_000_000), 837799);
     }
 
+    #[test]
+    fn test_problem015() {
+        assert_eq!(lib::problem015::find_routes(2, 2), 6);
+        assert_eq!(lib::problem015::find_routes(20, 20), 137846528820);
+    }
+
     // test functions that should panic, e.g. if files don't exist
     #[test]
     #[should_panic]

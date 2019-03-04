@@ -29,6 +29,7 @@ use lib::problem011;
 use lib::problem012;
 use lib::problem013;
 use lib::problem014;
+use lib::problem015;
 
 use std::env;
 use std::time::Instant;
@@ -212,6 +213,16 @@ fn main() {
                     let result = problem014::find_longest_collatz(1_000_000);
                     println!(
                         "Problem 14:\n\tresult: {}\n\telapsed: {:?}",
+                        result,
+                        now.elapsed()
+                    );
+                }
+                "15" => {
+                    // run problem 15 solution
+                    let now = Instant::now();
+                    let result = problem015::find_routes(20, 20);
+                    println!(
+                        "Problem 15:\n\tresult: {}\n\telapsed: {:?}",
                         result,
                         now.elapsed()
                     );
