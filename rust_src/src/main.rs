@@ -30,6 +30,7 @@ use lib::problem012;
 use lib::problem013;
 use lib::problem014;
 use lib::problem015;
+use lib::problem016;
 
 use std::env;
 use std::time::Instant;
@@ -223,6 +224,16 @@ fn main() {
                     let result = problem015::find_routes(20, 20);
                     println!(
                         "Problem 15:\n\tresult: {}\n\telapsed: {:?}",
+                        result,
+                        now.elapsed()
+                    );
+                }
+                "16" => {
+                    // run problem 16 solution
+                    let now = Instant::now();
+                    let result = problem016::sum_of_digits(2.0, 1000.0);
+                    println!(
+                        "Problem 16:\n\tresult: {}\n\telapsed: {:?}",
                         result,
                         now.elapsed()
                     );

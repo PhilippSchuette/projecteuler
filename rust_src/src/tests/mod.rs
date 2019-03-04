@@ -162,6 +162,12 @@ mod tests {
         assert_eq!(lib::problem015::find_routes(20, 20), 137846528820);
     }
 
+    #[test]
+    fn test_problem016() {
+        assert_eq!(lib::problem016::sum_of_digits(2.0, 15.0), 26);
+        assert_eq!(lib::problem016::sum_of_digits(2.0, 1000.0), 1366);
+    }
+
     // test functions that should panic, e.g. if files don't exist
     #[test]
     #[should_panic]
