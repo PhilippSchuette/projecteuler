@@ -152,7 +152,7 @@ cargo build --release
 ```
 
 To run a certain problem, it must be selected via a `,`-separated list
-or two `:` integers that get expanded to a range:
+or two `:`-separated integers that get expanded to a range:
 
 ```bash
 cargo build -- 1,2,7 # runs problems 1, 2, and 7
@@ -167,7 +167,7 @@ cargo test
 
 ## <a name="project-status"></a> Project Status
 
-The following table summarizes the current project status. The `test coverage` tab indicates whether there are unit tests across programming languages (`yes`, `partially`, `no`). The speed of the fastest solution per problem is shown as well (all test were run on a ThinkPad T440 with an Intel i5-4300U CPU). *Solutions that are written in bold face and italics are still very slow and need improvement*! The unit test coverage for all solutions is monitored via `Travis` and `CodeCov`, but **Go** still needs to be added to the CI pipeline.
+The following table summarizes the current project status. The speed of the fastest solution per problem and programming language is shown as well (all test were run on a ThinkPad T440 with an Intel i5-4300U CPU). Rust solutions were built and run with `--release` flag for compiler optimizations. *Solutions that are written in bold face and italics are still very slow and need improvement*! The unit test coverage for all solutions is monitored via `Travis` and `CodeCov`, but **Go** still needs to be added to the CI pipeline.
 
 | Problem | No. Solutions | Fastest Python |   Fastest C | Fastest C++ | Fastest JS | Fastest Go | Fastest Rust |
 | ------- | ------------- | -------------- |------------ | ----------- | ---------- | ---------- | ------------ |
@@ -183,7 +183,7 @@ The following table summarizes the current project status. The `test coverage` t
 |      10 |             2 | _**+ (19.9s)**_|    -        |  + (0.66s)  |     -      |    + (s)   |   + (0.98s)  |
 |      11 |             1 |    + (0.00)    |    -        |       -     |     -      |       -    |   + (0.00s)  |
 |      12 |             - |       -        |    -        |       -     |     -      |       -    |   + (1.45s)  |
-|      13 |             1 |    + (0.00s)   |    -        |       -     |     -      |       -    |       -      |
+|      13 |             1 |    + (0.00s)   |    -        |       -     |     -      |       -    |   + (0.00s)  |
 |      14 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
 |      15 |             - |       -        |    -        |       -     |     -      |       -    |       -      |
 |      16 |             1 |    + (0.00s)   |    -        |       -     |     -      |       -    |       -      |

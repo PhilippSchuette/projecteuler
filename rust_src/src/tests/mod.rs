@@ -140,6 +140,14 @@ mod tests {
         assert_eq!(lib::problem012::solve(5), 28);
     }
 
+    #[test]
+    fn test_problem013() {
+        assert_eq!(
+            lib::problem013::sum_big_ints("inputs/problem013.in"),
+            "5537376230390876637302048746832985971773659831892672"
+        );
+    }
+
     // test functions that should panic, e.g. if files don't exist
     #[test]
     #[should_panic]
@@ -151,5 +159,11 @@ mod tests {
     #[should_panic]
     fn test_invalid_path_011() {
         lib::problem011::parse_matrix("invalid-path");
+    } /* #no_code */
+
+    #[test]
+    #[should_panic]
+    fn test_invalid_path_013() {
+        lib::problem013::sum_big_ints("invalid-path");
     } /* #no_code */
 }

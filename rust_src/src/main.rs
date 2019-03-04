@@ -27,6 +27,7 @@ use lib::problem009;
 use lib::problem010;
 use lib::problem011;
 use lib::problem012;
+use lib::problem013;
 
 use std::env;
 use std::time::Instant;
@@ -59,9 +60,7 @@ fn main() {
                     opts_expanded.push(s);
                 }
             }
-        } else
-        // #no_code
-        {
+        } else {
             opts_expanded.push(option.to_string());
         }
 
@@ -191,6 +190,18 @@ fn main() {
                     println!(
                         "Problem 12:\n\tresult: {}\n\telapsed: {:?}",
                         result,
+                        now.elapsed()
+                    );
+                }
+
+                "13" => {
+                    // run problem 13 solution
+                    let now = Instant::now();
+                    let result = problem013::sum_big_ints("inputs/problem013.in");
+                    let (split, _) = result.split_at(10); /* display first 10 digits */
+                    println!(
+                        "Problem 12:\n\tresult: {}\n\telapsed: {:?}",
+                        split,
                         now.elapsed()
                     );
                 }
