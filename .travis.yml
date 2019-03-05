@@ -66,13 +66,14 @@ matrix:
         - bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
 
     - language: go
-      before_install:
-        - go get -u github.com/DanielSchuette/goeulerproject
+      before_script:
+        - cd go_src/goeulerproject
       script:
         - go test . -v -cover -race -coverprofile=coverage.txt -covermode=atomic
-        - go build -v
+        - sh install.sh
       after_success:
         - bash <(curl -s https://codecov.io/bash)
+        - cd ../..
 
     - language: rust
       sudo: required
