@@ -69,7 +69,7 @@ matrix:
       before_install:
         - cd go_src/goeulerproject
       install:
-        # only works because there are no dependencies to `go get'
+        - go get github.com/DanielSchuette/goeulerproject
         - make
       script:
         - go test . -v -cover -race -coverprofile=coverage.txt -covermode=atomic
