@@ -95,7 +95,7 @@ Now run with
 
 ### <a name="go"></a> Go
 
-The `Go` code in this repository is managed in another repository [here](https://github.com/DanielSchuette/goeulerproject).
+The `Go` code in this repository is managed in another repository [here](https://github.com/DanielSchuette/goeulerproject). Documentation regarding building and running problem solutions can be found there.
 
 ### <a name="js"></a> JavaScript
 
