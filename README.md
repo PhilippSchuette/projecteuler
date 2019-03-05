@@ -95,7 +95,19 @@ Now run with
 
 ### <a name="go"></a> Go
 
-The `Go` code in this repository is managed in another repository [here](https://github.com/DanielSchuette/goeulerproject). Documentation regarding building and running problem solutions can be found there.
+The `Go` code in this repository is managed in another repository [here](https://github.com/DanielSchuette/goeulerproject). You can get the code by running:
+
+```bash
+go get github.com/DanielSchuette/goeulerproject
+```
+
+Then, run individual problem solutions, all problem solutions or the test suite:
+
+```bash
+go run main/problem<number>.go
+sh install.sh --cover
+go test .
+```
 
 ### <a name="js"></a> JavaScript
 
