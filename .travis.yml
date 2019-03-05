@@ -66,8 +66,11 @@ matrix:
         - bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
 
     - language: go
-      before_script:
+      before_install:
         - cd go_src/goeulerproject
+      install:
+        # only works because there are no dependencies to `go get'
+        - make
       script:
         - go test . -v -cover -race -coverprofile=coverage.txt -covermode=atomic
         - sh install.sh
