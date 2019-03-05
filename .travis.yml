@@ -65,6 +65,15 @@ matrix:
         # Upload to codecov.io
         - bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
 
+    - language: go
+      before_install:
+        - go get -u github.com/DanielSchuette/goeulerproject
+      script:
+        - go test . -v -cover -race -coverprofile=coverage.txt -covermode=atomic
+        - go build -v
+      after_success:
+        - bash <(curl -s https://codecov.io/bash)
+
     - language: rust
       sudo: required
       addons:

@@ -95,29 +95,7 @@ Now run with
 
 ### <a name="go"></a> Go
 
-If you want to run the problem solutions in this repository, you need to install Go from [here](https://golang.org/). After you confirmed that your Go installation works (you need to set up a workspace and set your `$GOPATH` accordingly, see [here](https://golang.org/doc/code.html)), you can `$go get` all solutions as follows:
-
-```bash
-go get github.com/PhilippSchuette/projecteuler/go_src
-```
-
-If this does not work for you, you can clone this repository and manually put all files into a folder in your Go workspace:
-
-```bash
-GOPATH/src/github.com/PhilippSchuette/projecteuler/go_src/<all_files_are_here>
-```
-
-Now, confirm that all tests run successfully and print the % of code that is covered by unit tests:
-
-```bash
-go test -v -cover .
-```
-
-You can then run individual examples, too:
-
-```bash
-go run main/<problemXX.go>
-```
+The `Go` code in this repository is managed in another repository [here](https://github.com/DanielSchuette/goeulerproject).
 
 ### <a name="js"></a> JavaScript
 
@@ -167,7 +145,7 @@ cargo test
 
 ## <a name="project-status"></a> Project Status
 
-The following table summarizes the current project status. The speed of the fastest solution per problem and programming language is shown as well (all test were run on a ThinkPad T440 with an Intel i5-4300U CPU). Rust solutions were built and run with `--release` flag for compiler optimizations. *Solutions that are written in bold face and italics are still very slow and need improvement*! The unit test coverage for all solutions is monitored via `Travis` and `CodeCov`, but **Go** still needs to be added to the CI pipeline.
+The following table summarizes the current project status. The speed of the fastest solution per problem and programming language is shown as well (all test were run on a ThinkPad T440 with an Intel i5-4300U CPU). Rust solutions were built and run with `--release` flag for compiler optimizations. *Solutions that are written in bold face and italics are still very slow and need improvement*! The unit test coverage for all solutions is monitored via `Travis` and `CodeCov`.
 
 | Problem | No. Solutions | Fastest Python |   Fastest C | Fastest C++ | Fastest JS |     Fastest Go | Fastest Rust |
 | ------- | ------------- | -------------- |------------ | ----------- | ---------- | -------------- | ------------ |
