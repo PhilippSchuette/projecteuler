@@ -5,6 +5,3 @@
 	path = cpp_src/include/Catch2
 	url = https://github.com/catchorg/Catch2
     ignore = dirty
-[submodule "go_src/goeulerproject"]
-	path = go_src/goeulerproject
-	url = https://github.com/DanielSchuette/goeulerproject
