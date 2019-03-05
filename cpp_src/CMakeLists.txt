@@ -7,7 +7,7 @@ option(GCOV "GCOV" OFF)
 if(GCOV) 
     set(CMAKE_CXX_FLAGS "--coverage -fopenmp")
 else()
-    set(CMAKE_CXX_FLAGS "-O3 -march=native -fopenmp")
+    set(CMAKE_CXX_FLAGS "-O2 -march=native -fopenmp")
 endif()
 
 set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE ON)
