@@ -16,9 +16,9 @@
 // Returns all the multiples of 3 or 5 below n
 std::vector<int> multiples35_below(unsigned n) {
     if (n <= 3) 
-        return {1};
+        return {};
     if (n <= 5)
-        return {3, 5};
+        return {3};
     std::vector<int> mult = {3, 5};
     for (unsigned i = 6; i < n; i++) {
         if (i % 3 == 0 or i % 5 == 0) {

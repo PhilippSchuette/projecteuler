@@ -11,7 +11,9 @@
 #include "problem019.hpp"
 
 TEST_CASE( "Testing multiples35_below (Problem 1)") {
-    REQUIRE(multiples35_below(10) == std::vector<int>({3, 5, 6, 9}));
+   REQUIRE(multiples35_below(2) == std::vector<int>({}));
+   REQUIRE(multiples35_below(5) == std::vector<int>({3}));
+   REQUIRE(multiples35_below(10) == std::vector<int>({3, 5, 6, 9}));
 }
 
 TEST_CASE( "Testing is_palindrome (Problem 4)") {
