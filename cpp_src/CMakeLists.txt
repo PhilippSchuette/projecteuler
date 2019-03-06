@@ -1,13 +1,14 @@
 cmake_minimum_required (VERSION 3.0.2)
 
-
 set(CMAKE_CXX_STANDARD 17)
+
+find_package(OpenMP REQUIRED)
 
 option(GCOV "GCOV" OFF)
 if(GCOV) 
-    set(CMAKE_CXX_FLAGS "--coverage -fopenmp")
+    set(CMAKE_CXX_FLAGS "--coverage ${OpenMP_CXX_FLAGS}")
 else()
-    set(CMAKE_CXX_FLAGS "-O2 -march=native -fopenmp")
+    set(CMAKE_CXX_FLAGS "-O2 -march=native -fopenmp ${OpenMP_CXX_FLAGS}")
 endif()
 
 set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE ON)
