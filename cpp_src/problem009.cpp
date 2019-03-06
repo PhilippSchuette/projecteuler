@@ -20,12 +20,12 @@ bool is_perfect_square(unsigned n) {
 #ifndef TESTING
 int main(int argc, char **argv) {
     auto start = omp_get_wtime();
-    auto solution = []() {
+    auto solution = []() -> unsigned {
         for (unsigned a = 2; ; a++) 
             for (unsigned b = 1; b < a; b++) 
                 if (double c_sq = a*a + b*b; is_perfect_square(c_sq) and a + b + sqrt(c_sq) == 1000) 
                     return a * b * sqrt(c_sq);
-    }
+    }();
     auto end = omp_get_wtime();
 
     fmt::print("Solution: {} \n", solution);
