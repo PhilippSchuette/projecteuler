@@ -1,13 +1,14 @@
 cmake_minimum_required (VERSION 3.0.2)
 
-
 set(CMAKE_CXX_STANDARD 17)
+
+find_package(OpenMP REQUIRED)
 
 option(GCOV "GCOV" OFF)
 if(GCOV) 
-    set(CMAKE_CXX_FLAGS "--coverage -fopenmp")
+    set(CMAKE_CXX_FLAGS "--coverage ${OpenMP_CXX_FLAGS}")
 else()
-    set(CMAKE_CXX_FLAGS "-O2 -march=native -fopenmp")
+    set(CMAKE_CXX_FLAGS "-O2 -march=native -fopenmp ${OpenMP_CXX_FLAGS}")
 endif()
 
 set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE ON)
@@ -42,7 +43,7 @@ foreach( problem ${problems} )
     target_link_libraries(${outname}.out fmt::fmt prime_utils)
 endforeach()
 
-add_executable(tests ${problems} tests.cpp prime_utils.cpp)
+add_executable(tests ${problems} tests-main.cpp tests.cpp prime_utils.cpp)
 # Define TESTING which will disable the main() functions in the problemxxx.cpp files
 target_compile_definitions(tests PRIVATE TESTING)
 # Link fmt, Catch2 and prime_utils
