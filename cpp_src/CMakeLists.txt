@@ -42,7 +42,7 @@ foreach( problem ${problems} )
     target_link_libraries(${outname}.out fmt::fmt prime_utils)
 endforeach()
 
-add_executable(tests ${problems} tests.cpp prime_utils.cpp)
+add_executable(tests ${problems} tests-main.cpp tests.cpp prime_utils.cpp)
 # Define TESTING which will disable the main() functions in the problemxxx.cpp files
 target_compile_definitions(tests PRIVATE TESTING)
 # Link fmt, Catch2 and prime_utils
