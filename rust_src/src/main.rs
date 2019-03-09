@@ -14,6 +14,7 @@
  */
 mod lib;
 mod tests;
+mod utils;
 
 use lib::problem001;
 use lib::problem002;
@@ -31,6 +32,8 @@ use lib::problem013;
 use lib::problem014;
 use lib::problem015;
 use lib::problem016;
+use lib::problem017;
+use lib::problem018;
 
 use std::env;
 use std::time::Instant;
@@ -234,6 +237,26 @@ fn main() {
                     let result = problem016::sum_of_digits(2.0, 1000.0);
                     println!(
                         "Problem 16:\n\tresult: {}\n\telapsed: {:?}",
+                        result,
+                        now.elapsed()
+                    );
+                }
+                "17" => {
+                    // run problem 17 solution
+                    let now = Instant::now();
+                    let result = problem017::placeholder();
+                    println!(
+                        "Problem 17:\n\tresult: {}\n\telapsed: {:?}",
+                        result,
+                        now.elapsed()
+                    );
+                }
+                "18" => {
+                    // run problem 18 solution
+                    let now = Instant::now();
+                    let result = problem018::placeholder();
+                    println!(
+                        "Problem 18:\n\tresult: {}\n\telapsed: {:?}",
                         result,
                         now.elapsed()
                     );

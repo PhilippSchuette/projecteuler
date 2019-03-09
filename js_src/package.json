@@ -15,5 +15,8 @@
     "Algorithms"
   ],
   "author": "Daniel Schuette",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.15.1"
+  }
 }

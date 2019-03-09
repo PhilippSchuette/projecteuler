@@ -42,3 +42,6 @@ rust_src/target
 
 # projecteuler.net recovery key
 .recovery
+
+# node modules
+node_modules/

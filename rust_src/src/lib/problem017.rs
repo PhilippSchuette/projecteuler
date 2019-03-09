@@ -19,3 +19,6 @@
  * Date: 2019/03/05
  * License: MIT (see ../LICENSE.md)
  */
+pub fn placeholder() -> i64 {
+    return 0;
+}

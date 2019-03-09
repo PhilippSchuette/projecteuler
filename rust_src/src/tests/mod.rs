@@ -8,6 +8,7 @@
 #[cfg(test)]
 mod tests {
     use crate::lib;
+    use crate::utils;
 
     #[test]
     fn test_problem001() {
@@ -186,4 +187,15 @@ mod tests {
     fn test_invalid_path_013() {
         lib::problem013::sum_big_ints("invalid-path");
     } /* #no_code */
+
+    /*
+     * Tests for utility functions in `src/utils/'.
+     */
+    #[test]
+    fn test_utils_gcd() {
+        assert_eq!(utils::gcd(11, 13), 1);
+        assert_eq!(utils::gcd(15, 12), 3);
+        assert_eq!(utils::gcd(27, 18), 9);
+        assert_eq!(utils::gcd(44, 33), 11);
+    }
 }

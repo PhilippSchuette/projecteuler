@@ -12,6 +12,8 @@
  * Date: 2019/02/27
  * License: MIT (see ../LICENSE.md)
  */
+// Sums all natural numbers < `target' that are multiples of
+// `5' and `3'.
 pub fn sum_multiples(target: i32) -> i64 {
     let (a, b) = (3, 5);
     let mut sum: i64 = 0;

@@ -24,9 +24,9 @@ pub fn find_routes(n: i64, m: i64) -> i64 {
     // and initialize it with 0
     let mut matrix: Vec<Vec<i64>> = vec![];
 
-    for _ in 0..(n+1) {
+    for _ in 0..(n + 1) {
         let mut v = vec![];
-        for _ in 0..(m+1) {
+        for _ in 0..(m + 1) {
             v.push(0);
         }
         matrix.push(v);
@@ -36,11 +36,11 @@ pub fn find_routes(n: i64, m: i64) -> i64 {
     // first, fill in all nodes in the top/bottom/
     // left/right margins since one can only go
     // forward (i.e. right/down) on the grid
-    for row in 0..(n+1) {
+    for row in 0..(n + 1) {
         matrix[row as usize][0] = 1;
         matrix[row as usize][m as usize] = 1;
     }
-    for col in 0..(m+1) {
+    for col in 0..(m + 1) {
         matrix[0][col as usize] = 1;
         matrix[n as usize][col as usize] = 1;
     }
@@ -51,8 +51,8 @@ pub fn find_routes(n: i64, m: i64) -> i64 {
     // margins
     for row in (0..n).rev() {
         for col in (0..m).rev() {
-            let bottom = matrix[(row+1) as usize][col as usize];
-            let right = matrix[row as usize][(col+1) as usize];
+            let bottom = matrix[(row + 1) as usize][col as usize];
+            let right = matrix[row as usize][(col + 1) as usize];
 
             matrix[row as usize][col as usize] = bottom + right;
         }
