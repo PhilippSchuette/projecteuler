@@ -244,7 +244,7 @@ fn main() {
                 "17" => {
                     // run problem 17 solution
                     let now = Instant::now();
-                    let result = problem017::placeholder();
+                    let result = problem017::solve(1000);
                     println!(
                         "Problem 17:\n\tresult: {}\n\telapsed: {:?}",
                         result,
@@ -254,7 +254,7 @@ fn main() {
                 "18" => {
                     // run problem 18 solution
                     let now = Instant::now();
-                    let result = problem018::placeholder();
+                    let result = problem018::find_triangle_sum("invalid-path");
                     println!(
                         "Problem 18:\n\tresult: {}\n\telapsed: {:?}",
                         result,

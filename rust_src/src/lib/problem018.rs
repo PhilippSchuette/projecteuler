@@ -26,7 +26,7 @@
 // Returns the largest sum of numbers in the triangle located
 // at `path'. See the problem statement above for additional
 // information.
-pub fn find_triangle_sum(path: String) -> i64 {
+pub fn find_triangle_sum(path: &str) -> i64 {
     println!("{}", path);
     return 0;
 }

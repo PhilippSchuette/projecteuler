@@ -169,6 +169,52 @@ mod tests {
         assert_eq!(lib::problem016::sum_of_digits(2.0, 1000.0), 1366);
     }
 
+    #[test]
+    fn test_problem017() {
+        // test string translation of various different numbers
+        assert_eq!(
+            lib::problem017::num_to_string(8).unwrap(),
+            String::from("eight")
+        );
+        assert_eq!(
+            lib::problem017::num_to_string(49).unwrap(),
+            String::from("forty-nine")
+        );
+        assert_eq!(
+            lib::problem017::num_to_string(107).unwrap(),
+            String::from("one hundred and seven")
+        );
+        assert_eq!(
+            lib::problem017::num_to_string(170).unwrap(),
+            String::from("one hundred and seventy")
+        );
+        assert_eq!(
+            lib::problem017::num_to_string(342).unwrap(),
+            String::from("three hundred and forty-two")
+        );
+        assert_eq!(
+            lib::problem017::num_to_string(615).unwrap(),
+            String::from("six hundred and fifteen")
+        );
+        assert_eq!(
+            lib::problem017::num_to_string(912).unwrap(),
+            String::from("nine hundred and twelve")
+        );
+        assert_eq!(lib::problem017::num_to_string(900).unwrap(), String::from("nine hundred"));
+        assert_eq!(lib::problem017::num_to_string(1000).unwrap(), String::from("one thousand"));
+
+        assert_eq!(
+            lib::problem017::str_len_exclude("three hundred and forty-two".to_string()),
+            23,
+        );
+        assert_eq!(
+            lib::problem017::str_len_exclude("one hundred and fifteen".to_string()),
+            20,
+        );
+
+        assert_eq!(lib::problem017::solve(1000), 21124);
+    }
+
     // test functions that should panic, e.g. if files don't exist
     #[test]
     #[should_panic]
