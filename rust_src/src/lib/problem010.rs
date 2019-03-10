@@ -11,7 +11,7 @@
  * Date: 2019/03/02
  * License: MIT (see ../LICENSE.md)
  */
-use crate::lib;
+use crate::utils;
 
 // Returns the sum of all primes below `n'.
 pub fn sum_primes(n: i64) -> i64 {
@@ -19,7 +19,7 @@ pub fn sum_primes(n: i64) -> i64 {
 
     for i in (3..n).step_by(2) {
         /* 2 is already included */
-        if lib::problem007::is_prime(i) {
+        if utils::is_prime(i) {
             sum += i;
         }
     }

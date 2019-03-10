@@ -14,41 +14,17 @@
  * Date: 2018/02/27
  * License: MIT (see ../LICENSE.md)
  */
-// Returns true if the input is a prime number. Might
-// be used as a helper function in other places, so
-// make sure to not break compatibility by changing
-// the function signature.
-pub fn is_prime(n: i64) -> bool {
-    // Handle corner cases, `n' < 1 is not a valid
-    // input and even numbers cannot be prime.
-    if n <= 1 {
-        return false;
-    } else if n == 2 {
-        return true;
-    } else if n % 2 == 0 {
-        return false; /* n==2 must be handled first */
-    }
+use crate::utils;
 
-    // Determine primality via a O(sqrt(n)) approach. This
-    // method is valid because once sqrt(n) is reached, all
-    // larger divisors are simply dividends of a previous divisor.
-    // In addition, only odd numbers are tested.
-    for i in (3..(n as f64).sqrt() as i64 + 1).step_by(2) {
-        if n % i == 0 {
-            return false;
-        }
-    }
-    return true;
-}
-
-pub fn nth_prime(target: i64) -> i64 {
+// Returns the n'th prime number.
+pub fn nth_prime(n: i64) -> i64 {
     let mut prime_count: i64 = 1; /* 2 is already counted in */
     let mut current_num: i64 = 3;
 
     loop {
-        if is_prime(current_num) {
+        if utils::is_prime(current_num) {
             prime_count += 1;
-            if prime_count == target {
+            if prime_count == n {
                 return current_num;
             }
         }

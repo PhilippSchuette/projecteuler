@@ -27,7 +27,7 @@
  * Date: 2019/03/03
  * License: MIT (see ../LICENSE.md)
  */
-use crate::lib;
+use crate::utils;
 
 // Returns a vector [p, q, r, ...] of natural powers of the
 // prime factors [a, b, c, ...] of `n', where
@@ -37,7 +37,7 @@ pub fn prime_factor_powers(n: i64) -> Vec<i64> {
     let mut current_val: i64 = n;
 
     for i in 2..n as i64 {
-        if lib::problem007::is_prime(i) && (n % i == 0) {
+        if utils::is_prime(i) && (n % i == 0) {
             // the current `i' is a prime factor of `n'
             // now determine how often `i' fits into `n'
             // and save the result in a variable `_power'

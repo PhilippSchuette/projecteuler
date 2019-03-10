@@ -28,11 +28,6 @@ mod tests {
 
     #[test]
     fn test_problem003() {
-        assert_eq!(lib::problem003::is_prime(1), false);
-        assert_eq!(lib::problem003::is_prime(2), true);
-        assert_eq!(lib::problem003::is_prime(3), true);
-        assert_eq!(lib::problem003::is_prime(4), false);
-
         assert_eq!(lib::problem003::largest_prime_factor(13195), 29);
         assert_eq!(lib::problem003::largest_prime_factor(29), -1);
     }
@@ -63,12 +58,6 @@ mod tests {
 
     #[test]
     fn test_problem007() {
-        assert_eq!(lib::problem007::is_prime(1), false);
-        assert_eq!(lib::problem007::is_prime(2), true);
-        assert_eq!(lib::problem007::is_prime(3), true);
-        assert_eq!(lib::problem007::is_prime(4), false);
-        assert_eq!(lib::problem007::is_prime(10), false);
-
         assert_eq!(lib::problem007::nth_prime(6), 13);
     }
 
@@ -243,5 +232,14 @@ mod tests {
         assert_eq!(utils::gcd(15, 12), 3);
         assert_eq!(utils::gcd(27, 18), 9);
         assert_eq!(utils::gcd(44, 33), 11);
+    }
+
+    #[test]
+    fn test_utils_is_prime() {
+        assert_eq!(utils::is_prime(1), false);
+        assert_eq!(utils::is_prime(2), true);
+        assert_eq!(utils::is_prime(3), true);
+        assert_eq!(utils::is_prime(4), false);
+        assert_eq!(utils::is_prime(10), false);
     }
 }
