@@ -30,6 +30,10 @@ matrix:
         - cd ..
 
     - language: c
+      before_install:
+        - sudo apt-get update
+        - sudo apt-get install -y libc6
+        - ldd --version
       before_script:
         - cd c_src
       script:
