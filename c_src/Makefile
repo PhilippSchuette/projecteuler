@@ -1,5 +1,6 @@
 # Makefile to compile all solutions in this dir
-CFLAGS := -O0 -std=c99 -lm
+CFLAGS := -O0 -std=c99
+MATH := -lm
 COVFLAG := -coverage
 test_dir := utest
 test := $(test_dir)/utest
@@ -17,7 +18,7 @@ all: $(problems_exe)
 $(problems_exe): $(test).o
 	gcc $(CFLAGS) $(COVFLAG) p1.o $(test).o -o p1
 	gcc $(CFLAGS) $(COVFLAG) p2.o $(test).o -o p2
-	gcc $(CFLAGS) $(COVFLAG) p3.o $(test).o -o p3
+	gcc $(CFLAGS) $(COVFLAG) p3.o $(test).o -o p3 $(MATH)
 
 $(test).o: $(problems.o)
 	gcc $(CFLAGS) $(test).c -c -o $(test).o

@@ -33,7 +33,7 @@ matrix:
       before_install:
         - sudo apt-get update
         - sudo apt-get install -y libc6
-        - ldd --version
+        - ldd --version # check if glibc is installed
       before_script:
         - cd c_src
       script:
