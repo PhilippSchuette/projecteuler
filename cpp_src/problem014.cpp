@@ -17,7 +17,7 @@ unsigned collatz_len(unsigned n) {
     for (len = 1; n != 1; len++){
         n = n % 2 == 0 ? n / 2 : 3*n + 1;
     }
-    return len; 
+    return len;
 }
 
 #ifndef TESTING
@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
     auto start = omp_get_wtime();
     unsigned max = 0, solution;
     for (unsigned i = 1; i < 1000000; i++) {
-        if (auto len = collatz(i); len > max) {
+        if (auto len = collatz_len(i); len > max) {
             max = len;
             solution = i;
         }
