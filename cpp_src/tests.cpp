@@ -8,6 +8,7 @@
 #include "problem007.hpp"
 #include "problem009.hpp"
 #include "problem010.hpp"
+#include "problem014.hpp"
 #include "problem019.hpp"
 
 TEST_CASE( "Testing multiples35_below (Problem 1)") {
@@ -66,3 +67,8 @@ TEST_CASE( "Testing is_prime (Problem 7 and 10)") {
     REQUIRE(!is_prime(20));
 }
 
+TEST_CASE( "Testing collatz_len (Problem 14)") {
+    REQUIRE(collatz_len(1) == 1);
+    REQUIRE(collatz_len(2) == 2);
+    REQUIRE(collatz_len(13) == 10);
+}
