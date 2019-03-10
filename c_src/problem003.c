@@ -90,5 +90,3 @@ long max_prime_factor2(long n)
 	}
 	return -1; /* indicates failure of search for prime factor */
 }
-
-

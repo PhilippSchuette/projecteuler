@@ -4,7 +4,7 @@
  */
 // `ParamError' enumerates errors that are related to function
 // parameters.
-#[derive(Debug)]
+#[derive(Debug, PartialEq)] /* #no_code */
 pub enum ParamError {
     InputOutOfRange,
 }
@@ -48,4 +48,3 @@ pub fn is_prime(n: i64) -> bool {
     }
     return true;
 }
-

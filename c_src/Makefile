@@ -1,5 +1,5 @@
 # Makefile to compile all solutions in this dir
-CFLAGS := -O0 -std=c99
+CFLAGS := -O0 -std=c99 -lm
 COVFLAG := -coverage
 test_dir := utest
 test := $(test_dir)/utest

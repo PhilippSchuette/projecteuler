@@ -25,7 +25,7 @@ use crate::utils;
 // e.g. `32' -> `thirty-two' and `112' -> `one hundred and twelve'.
 pub fn num_to_string(num: i32) -> Result<String, utils::ParamError> {
     // FIXME: cannot deal with numbers that aren't within [1,1000]
-    if num < 0 || num > 1000 {
+    if num < 1 || num > 1000 {
         return Err(utils::ParamError::InputOutOfRange);
     }
     let mut input = num;

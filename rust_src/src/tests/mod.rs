@@ -160,6 +160,12 @@ mod tests {
 
     #[test]
     fn test_problem017() {
+        // test `InputOutOfRange' error
+        assert_eq!(
+            lib::problem017::num_to_string(0),
+            Err(utils::ParamError::InputOutOfRange)
+        );
+
         // test string translation of various different numbers
         assert_eq!(
             lib::problem017::num_to_string(8).unwrap(),
@@ -189,8 +195,14 @@ mod tests {
             lib::problem017::num_to_string(912).unwrap(),
             String::from("nine hundred and twelve")
         );
-        assert_eq!(lib::problem017::num_to_string(900).unwrap(), String::from("nine hundred"));
-        assert_eq!(lib::problem017::num_to_string(1000).unwrap(), String::from("one thousand"));
+        assert_eq!(
+            lib::problem017::num_to_string(900).unwrap(),
+            String::from("nine hundred")
+        );
+        assert_eq!(
+            lib::problem017::num_to_string(1000).unwrap(),
+            String::from("one thousand")
+        );
 
         assert_eq!(
             lib::problem017::str_len_exclude("three hundred and forty-two".to_string()),
