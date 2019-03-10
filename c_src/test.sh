@@ -11,3 +11,7 @@ gcov p1
 # problem 2
 ./p2
 gcov p2
+
+# problem 3
+./p3
+gcov p3
