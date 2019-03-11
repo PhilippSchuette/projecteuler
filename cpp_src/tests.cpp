@@ -8,6 +8,7 @@
 #include "problem007.hpp"
 #include "problem009.hpp"
 #include "problem010.hpp"
+#include "problem012.hpp"
 #include "problem014.hpp"
 #include "problem019.hpp"
 
@@ -66,6 +67,22 @@ TEST_CASE( "Testing is_prime (Problem 7 and 10)") {
     REQUIRE(is_prime(7));
     REQUIRE(!is_prime(20));
 }
+
+TEST_CASE( "Testing num_divisors (Problem 12)") {
+    REQUIRE(num_divisors_bruteforce(1) == 1);
+    REQUIRE(num_divisors_bruteforce(2) == 2);
+    REQUIRE(num_divisors_bruteforce(13) == 2);
+    REQUIRE(num_divisors_bruteforce(15) == 4);
+    REQUIRE(num_divisors_bruteforce(21) == 4);
+    REQUIRE(num_divisors_bruteforce(28) == 6);
+}
+
+TEST_CASE( "Testing triangle_number (Problem 12)") {
+    REQUIRE(triangle_number(1) == 1);
+    REQUIRE(triangle_number(2) == 3);
+    REQUIRE(triangle_number(3) == 6);
+    REQUIRE(triangle_number(4) == 10);
+    REQUIRE(triangle_number(5) == 15);
 
 TEST_CASE( "Testing collatz_len (Problem 14)") {
     REQUIRE(collatz_len(1) == 1);
