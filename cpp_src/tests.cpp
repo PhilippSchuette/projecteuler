@@ -83,6 +83,7 @@ TEST_CASE( "Testing triangle_number (Problem 12)") {
     REQUIRE(triangle_number(3) == 6);
     REQUIRE(triangle_number(4) == 10);
     REQUIRE(triangle_number(5) == 15);
+}
 
 TEST_CASE( "Testing collatz_len (Problem 14)") {
     REQUIRE(collatz_len(1) == 1);
