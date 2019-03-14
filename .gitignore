@@ -18,6 +18,7 @@ tags
 CMakeFiles/
 CMakeCache.txt
 *.cmake
+cpp_src/compile_commands.json
 
 # exclude must be absolute since Makefiles are required for some Travis builds
 /cpp_src/Makefile
