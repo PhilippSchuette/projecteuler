@@ -17,8 +17,8 @@ unsigned num_divisors_bruteforce(unsigned n) {
     if (n == 1) return 1;
     if (n == 2) return 2;
 
-    //Intialize to 2 -> always count 1 and the number itself 
-    unsigned num_divisors = 2;  
+    //Intialize to 2 -> always count 1 and the number itself
+    unsigned num_divisors = 2;
 
     for (unsigned i = 2; i < n / 2 + 1; i++) {
         if (n % i == 0)
@@ -36,7 +36,7 @@ unsigned triangle_number(unsigned n) {
 int main(int argc, char **argv) {
     auto start = omp_get_wtime();
     unsigned n = 1;
-    for (n = 1; num_divisors_bruteforce(triangle_number(n)) <= 5; n++) {}
+    for (n = 1; num_divisors_bruteforce(triangle_number(n)) <= 500; n++) {}
     auto solution = triangle_number(n);
     auto end = omp_get_wtime();
 

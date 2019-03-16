@@ -9,12 +9,14 @@
  *                 2 4 6
  *                8 5 9 3
  * That is, 3 + 7 + 4 + 9 = 23. Find the maximum total from
- * top to bottom of the triangle in `inputs/problem018.in'.
+ * top to bottom in `inputs/problem067.in', a 15K text file
+ * containing a triangle with one-hundred rows.
  *
- * NOTE: As there are only 16384 routes, it is possible to solve
- * this problem by trying every route. However, Problem 67, is the
- * same challenge with a triangle containing one-hundred rows; it
- * cannot be solved by brute force, and requires a clever method!
+ * NOTE: This is a much more difficult version of Problem 18.
+ * It is not possible to try every route to solve this problem,
+ * as there are 2^99 altogether! If you could check one trillion
+ * (10^12) routes every second it would take over twenty billion
+ * years to check them all.
  *
  * Solution description:
  * Brute-force.

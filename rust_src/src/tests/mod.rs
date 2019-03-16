@@ -216,6 +216,24 @@ mod tests {
         assert_eq!(lib::problem017::solve(1000), 21124);
     }
 
+    #[test]
+    fn test_problem018() {
+        assert_eq!(lib::problem018::find_triangle_sum("inputs/test018.in"), 23);
+        assert_eq!(
+            lib::problem018::find_triangle_sum("inputs/problem018.in"),
+            1074
+        );
+    }
+
+    #[test]
+    fn test_problem067() {
+        assert_eq!(lib::problem067::find_triangle_sum("inputs/test018.in"), 23);
+        assert_eq!(
+            lib::problem067::find_triangle_sum("inputs/problem067.in"),
+            7273
+        );
+    }
+
     // test functions that should panic, e.g. if files don't exist
     #[test]
     #[should_panic]

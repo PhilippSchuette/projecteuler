@@ -34,6 +34,7 @@ use lib::problem015;
 use lib::problem016;
 use lib::problem017;
 use lib::problem018;
+use lib::problem067;
 
 use std::env;
 use std::time::Instant;
@@ -254,9 +255,19 @@ fn main() {
                 "18" => {
                     // run problem 18 solution
                     let now = Instant::now();
-                    let result = problem018::find_triangle_sum("invalid-path");
+                    let result = problem018::find_triangle_sum("inputs/problem018.in");
                     println!(
                         "Problem 18:\n\tresult: {}\n\telapsed: {:?}",
+                        result,
+                        now.elapsed()
+                    );
+                }
+                "67" => {
+                    // run problem 67 solution
+                    let now = Instant::now();
+                    let result = problem067::find_triangle_sum("inputs/problem067.in");
+                    println!(
+                        "Problem 67:\n\tresult: {}\n\telapsed: {:?}",
                         result,
                         now.elapsed()
                     );
