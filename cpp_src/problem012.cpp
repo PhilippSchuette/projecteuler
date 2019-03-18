@@ -39,7 +39,7 @@ unsigned num_divisors(unsigned n) {
     for (unsigned i = 3; i <= n; i+=2) {
         if (n % i == 0 && is_prime(i)) {
             unsigned p = 0;
-            do {
+            do { //LCOV_EXCL_LINE
                 n /= i;
                 p++;
             } while (n % i == 0);
