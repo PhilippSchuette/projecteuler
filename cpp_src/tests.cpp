@@ -70,12 +70,13 @@ TEST_CASE( "Testing is_prime (Problem 7 and 10)") {
 }
 
 TEST_CASE( "Testing num_divisors (Problem 12)") {
-    // REQUIRE(num_divisors(1) == 1);
-    // REQUIRE(num_divisors(2) == 2);
-    // REQUIRE(num_divisors(13) == 2);
-    // REQUIRE(num_divisors(15) == 4);
-    // REQUIRE(num_divisors(21) == 4);
-    // REQUIRE(num_divisors(28) == 6);
+    REQUIRE(num_divisors(1) == 1);
+    REQUIRE(num_divisors(2) == 2);
+    REQUIRE(num_divisors(13) == 2);
+    REQUIRE(num_divisors(14) == 4);
+    REQUIRE(num_divisors(15) == 4);
+    REQUIRE(num_divisors(21) == 4);
+    REQUIRE(num_divisors(28) == 6);
 }
 
 TEST_CASE( "Testing triangle_number (Problem 12)") {

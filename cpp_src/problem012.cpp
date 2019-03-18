@@ -25,7 +25,7 @@ unsigned num_divisors(unsigned n) {
     //Stores the powers of the prime factors
     std::vector<unsigned> powers; 
 
-    const int max = sqrt(n);
+    const int max = n;
 
     //Special case: n is even
     if (n % 2 == 0) {
@@ -36,7 +36,7 @@ unsigned num_divisors(unsigned n) {
         } while (n % 2 == 0);
         powers.push_back(p + 1);
     }
-    for (unsigned i = 3; i <= max; i+=2) {
+    for (unsigned i = 3; i <= n; i+=2) {
         if (n % i == 0 && is_prime(i)) {
             unsigned p = 0;
             do {
