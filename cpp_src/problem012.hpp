@@ -1,5 +1,5 @@
 #pragma once
 
-unsigned num_divisors_bruteforce(unsigned n);
+unsigned num_divisors(unsigned n);
 
 unsigned triangle_number(unsigned n);
