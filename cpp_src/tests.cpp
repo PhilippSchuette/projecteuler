@@ -93,8 +93,10 @@ TEST_CASE( "Testing collatz_len (Problem 14)") {
     REQUIRE(collatz_len(13) == 10);
 }
 
-TEST_CASE( "Testing Problem 18 brute_force_solution") {
-    REQUIRE(bruteforce_solution(getTriangle("../input_files/test018.txt")) == 23);
-    REQUIRE(bruteforce_solution(getTriangle("../input_files/problem018.txt")) == 1074);
+TEST_CASE( "Testing Problem 18/67 fst and bruteforce solution") {
+    REQUIRE(triangle_sum_bruteforce(getTriangle("../input_files/test018.txt")) == 23);
+    REQUIRE(triangle_sum_bruteforce(getTriangle("../input_files/problem018.txt")) == 1074);
+    REQUIRE(triangle_sum_fast(getTriangle("../input_files/test018.txt")) == 23);
+    REQUIRE(triangle_sum_fast(getTriangle("../input_files/problem018.txt")) == 1074);
 }
 

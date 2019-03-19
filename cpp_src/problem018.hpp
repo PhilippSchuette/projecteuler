@@ -2,8 +2,10 @@
 #include <vector>
 #include <string>
 
-typedef std::vector<std::vector<unsigned>> Matrix;
+typedef std::vector<std::vector<unsigned>> Triangle;
 
-Matrix getTriangle(const std::string &file);
+Triangle getTriangle(const std::string &file);
 
-unsigned bruteforce_solution(const Matrix &mat, unsigned hor = 0, unsigned ver = 0, unsigned sum = 0);
+unsigned triangle_sum_bruteforce(const Triangle &tri, unsigned hor = 0, unsigned ver = 0, unsigned sum = 0);
+
+unsigned triangle_sum_fast(const Triangle &tri);
