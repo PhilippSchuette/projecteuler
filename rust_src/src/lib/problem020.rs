@@ -14,3 +14,11 @@
  * Date: 2019/03/15
  * License: MIT (see ../LICENSE.md)
  */
+extern crate num_bigint;
+use crate::utils;
+
+pub fn solve(n: usize) -> i64 {
+    let big = num_bigint::BigUint::from(n);
+    let fac = utils::factorial(big);
+    utils::sum_of_digits(fac.to_str_radix(10))
+}

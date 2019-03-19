@@ -35,6 +35,7 @@ use lib::problem016;
 use lib::problem017;
 use lib::problem018;
 use lib::problem019;
+use lib::problem020;
 use lib::problem067;
 
 use std::env;
@@ -264,7 +265,7 @@ fn main() {
                     );
                 }
                 "19" => {
-                    // run problem 67 solution
+                    // run problem 19 solution
                     let now = Instant::now();
                     let result = problem019::solve();
                     println!(
@@ -273,7 +274,16 @@ fn main() {
                         now.elapsed()
                     );
                 }
-
+                "20" => {
+                    // run problem 20 solution
+                    let now = Instant::now();
+                    let result = problem020::solve(100);
+                    println!(
+                        "Problem 20:\n\tresult: {}\n\telapsed: {:?}",
+                        result,
+                        now.elapsed()
+                    );
+                }
                 "67" => {
                     // run problem 67 solution
                     let now = Instant::now();
