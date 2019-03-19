@@ -10,6 +10,7 @@
 #include "problem010.hpp"
 #include "problem012.hpp"
 #include "problem014.hpp"
+#include "problem018.hpp"
 #include "problem019.hpp"
 
 TEST_CASE( "Testing multiples35_below (Problem 1)") {
@@ -69,12 +70,13 @@ TEST_CASE( "Testing is_prime (Problem 7 and 10)") {
 }
 
 TEST_CASE( "Testing num_divisors (Problem 12)") {
-    REQUIRE(num_divisors_bruteforce(1) == 1);
-    REQUIRE(num_divisors_bruteforce(2) == 2);
-    REQUIRE(num_divisors_bruteforce(13) == 2);
-    REQUIRE(num_divisors_bruteforce(15) == 4);
-    REQUIRE(num_divisors_bruteforce(21) == 4);
-    REQUIRE(num_divisors_bruteforce(28) == 6);
+    REQUIRE(num_divisors(1) == 1);
+    REQUIRE(num_divisors(2) == 2);
+    REQUIRE(num_divisors(13) == 2);
+    REQUIRE(num_divisors(14) == 4);
+    REQUIRE(num_divisors(15) == 4);
+    REQUIRE(num_divisors(21) == 4);
+    REQUIRE(num_divisors(28) == 6);
 }
 
 TEST_CASE( "Testing triangle_number (Problem 12)") {
@@ -90,3 +92,9 @@ TEST_CASE( "Testing collatz_len (Problem 14)") {
     REQUIRE(collatz_len(2) == 2);
     REQUIRE(collatz_len(13) == 10);
 }
+
+TEST_CASE( "Testing Problem 18 brute_force_solution") {
+    REQUIRE(bruteforce_solution(getTriangle("../input_files/test018.txt")) == 23);
+    REQUIRE(bruteforce_solution(getTriangle("../input_files/problem018.txt")) == 1074);
+}
+

@@ -9,22 +9,45 @@
 // License: MIT (see ../LICENSE.md)
 
 #include "problem012.hpp"
+#include "prime_utils.hpp"
 #include <omp.h>
 #include <fmt/format.h>
+#include <vector>
+#include <numeric> // For std::accumulate 
 
-// Finds the number of divisors of n via bruteforce
-unsigned num_divisors_bruteforce(unsigned n) {
+// First find the prime factorization of n, 
+// then the number of divisors is given by the product
+// of the powers of the prime factors + 1
+unsigned num_divisors(unsigned n) {
     if (n == 1) return 1;
     if (n == 2) return 2;
+    if (is_prime(n)) return 2;
+    //Stores the powers of the prime factors
+    std::vector<unsigned> powers; 
 
-    //Intialize to 2 -> always count 1 and the number itself
-    unsigned num_divisors = 2;
+    const int max = n;
 
-    for (unsigned i = 2; i < n / 2 + 1; i++) {
-        if (n % i == 0)
-            num_divisors++;
+    //Special case: n is even
+    if (n % 2 == 0) {
+        unsigned p = 0;
+        do {
+            n /= 2;
+            p++;
+        } while (n % 2 == 0);
+        powers.push_back(p + 1);
     }
-    return num_divisors;
+    for (unsigned i = 3; i <= n; i+=2) {
+        if (n % i == 0 && is_prime(i)) {
+            unsigned p = 0;
+            do { //LCOV_EXCL_LINE
+                n /= i;
+                p++;
+            } while (n % i == 0);
+            powers.push_back(p + 1);
+        }
+    }
+
+    return std::accumulate(powers.begin(), powers.end(), 1, std::multiplies<unsigned>());
 }
 
 // Return the nth triangle number using Gauß' formula
@@ -36,7 +59,7 @@ unsigned triangle_number(unsigned n) {
 int main(int argc, char **argv) {
     auto start = omp_get_wtime();
     unsigned n = 1;
-    for (n = 1; num_divisors_bruteforce(triangle_number(n)) <= 500; n++) {}
+    for (n = 1; num_divisors(triangle_number(n)) <= 500; n++) {}
     auto solution = triangle_number(n);
     auto end = omp_get_wtime();
 
