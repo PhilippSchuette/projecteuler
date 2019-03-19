@@ -2,6 +2,7 @@
 
 #include "prime_utils.hpp"
 #include "problem001.hpp"
+#include "problem003.hpp"
 #include "problem004.hpp"
 #include "problem005.hpp"
 #include "problem006.hpp"
@@ -10,7 +11,7 @@
 #include "problem010.hpp"
 #include "problem012.hpp"
 #include "problem014.hpp"
-#include "problem018.hpp"
+#include "problem018and067.hpp"
 #include "problem019.hpp"
 
 TEST_CASE( "Testing multiples35_below (Problem 1)") {
@@ -18,6 +19,22 @@ TEST_CASE( "Testing multiples35_below (Problem 1)") {
    REQUIRE(multiples35_below(5) == std::vector<int>({3}));
    REQUIRE(multiples35_below(10) == std::vector<int>({3, 5, 6, 9}));
 }
+
+TEST_CASE("Testing largest_prime_factor (Problem 3)") {
+   REQUIRE(largest_prime_factor(2) == 2);
+   REQUIRE(largest_prime_factor(12) == 3);
+   REQUIRE(largest_prime_factor(13195) == 29);
+   REQUIRE(largest_prime_factor(600851475143) == 6857);
+}
+
+TEST_CASE( "Testing prime_factors (Problem 3 and 12)") {
+    REQUIRE(prime_factors(2) == std::make_pair(nvec({2}), nvec({1})));
+    REQUIRE(prime_factors(3) == std::make_pair(nvec({3}), nvec({1})));
+    REQUIRE(prime_factors(13) == std::make_pair(nvec({13}), nvec({1})));
+    REQUIRE(prime_factors(14) == std::make_pair(nvec({2, 7}), nvec({1, 1})));
+    REQUIRE(prime_factors(18) == std::make_pair(nvec({2, 3}), nvec({1, 2})));
+}
+
 
 TEST_CASE( "Testing is_palindrome (Problem 4)") {
     REQUIRE(is_palindrome(9009));
