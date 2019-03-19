@@ -14,6 +14,10 @@
 
 #include <stdio.h>
 #include <math.h>
+#include "utest/utest.h"
+
+#define EXPECTED_RSLT1 29
+#define EXPECTED_RSLT2 6857
 
 /* test for primality of input */
 int is_prime(long);
@@ -31,18 +35,37 @@ int main(int argc, char **argv)
 	long sol1;
 	long sol2;
 
-    if (argc > 1) { /* run code only if any argument was provided */
+    /* initialize unit testing */
+    utest_init(&argc, argv);
+
+    /* run slow code only if any random argument was provided */
+    if (argc > 1) {
         sol1 = max_prime_factor(to_factor1);
+        assert_equal(sol1, EXPECTED_RSLT1,
+                "testing return value of slow function");
         fprintf(stdout, "largest prime factor of %ld: %ld\n", to_factor1, sol1);
     }
 
+    /* run fast solution */
 	sol2 = max_prime_factor2(to_factor2);
+    assert_equal(sol2, EXPECTED_RSLT2,
+            "testing return value of fast function");
 	fprintf(stdout, "largest prime factor of %ld: %ld\n", to_factor2, sol2);
+
+    /* test edge cases for both functions */
+    assert_equal(max_prime_factor(0), 0,
+            "testing edge case for slow function");
+    assert_equal(max_prime_factor2(0), 0,
+            "testing edge case for fast function");
+
+    /* print test results and clean up */
+    print_rslt_tbl();
+    utest_free_all();
 
 	return 0;
 }
 
-
+/* Returns true if input is a prime number. */
 int is_prime(long n)
 {
 	long i, j;
@@ -79,7 +102,7 @@ long max_prime_factor(long n)
 		divisor -= 1;
 	}
 
-	return -1; /* indicates failure of search for prime factor */
+    return 0;
 }
 
 long max_prime_factor2(long n)
@@ -97,5 +120,5 @@ long max_prime_factor2(long n)
 		divisor += 1;
 	}
 
-	return -1; /* indicates failure of search for prime factor */
+    return 0;
 }
