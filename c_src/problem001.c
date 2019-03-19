@@ -41,13 +41,13 @@ int main(int argc, char **argv)
         case 2:
             bound = atol(argv[1]);
             if (bound == 0) {
-                fprintf(stderr, "%s: warning: %s is not valid, taking default (%d)\n",
+                fprintf(stderr, "%s: warning: %s is not valid, using default (%d)\n",
                         argv[0], argv[1], DEFAULT_BOUND);
                 bound = DEFAULT_BOUND;
             }
             break;
         default:
-            fprintf(stderr, "%s: warning: too many arguments, taking default (%d)\n",
+            fprintf(stderr, "%s: warning: too many arguments, using default (%d)\n",
                     argv[0], DEFAULT_BOUND);
             bound = DEFAULT_BOUND;
             break;
