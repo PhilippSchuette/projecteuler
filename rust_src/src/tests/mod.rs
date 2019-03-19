@@ -9,6 +9,7 @@
 mod tests {
     use crate::lib;
     use crate::utils;
+    extern crate num_bigint;
 
     #[test]
     fn test_problem001() {
@@ -259,6 +260,12 @@ mod tests {
     }
 
     #[test]
+    fn test_problem020() {
+        assert_eq!(lib::problem020::solve(10), 27);
+        assert_eq!(lib::problem020::solve(100), 648);
+    }
+
+    #[test]
     fn test_problem067() {
         assert_eq!(lib::problem067::find_triangle_sum("inputs/test018.in"), 23);
         assert_eq!(
@@ -304,5 +311,18 @@ mod tests {
         assert_eq!(utils::is_prime(3), true);
         assert_eq!(utils::is_prime(4), false);
         assert_eq!(utils::is_prime(10), false);
+    }
+
+    #[test]
+    fn test_utils_factorial() {
+        assert_eq!(
+            utils::factorial(num_bigint::BigUint::from(10u32)),
+            num_bigint::BigUint::from(3628800u32)
+        );
+    }
+
+    #[test]
+    fn test_utils_sum_of_digits() {
+        assert_eq!(utils::sum_of_digits(String::from("336.0")), 12);
     }
 }

@@ -2,6 +2,11 @@
  * A library of utility functions.
  * Part of https://github.com/PhilippSchuette/projecteuler.
  */
+extern crate num_bigint;
+
+use num_bigint::BigUint;
+use std::convert::From;
+
 // `ParamError' enumerates errors that are related to function
 // parameters.
 #[derive(Debug, PartialEq)] /* #no_code */
@@ -47,4 +52,30 @@ pub fn is_prime(n: i64) -> bool {
         }
     }
     return true;
+}
+
+// Returns the sum of all digits in a `String' representation of
+// a float, e.g. fn(336.0) -> 12.
+pub fn sum_of_digits(num: String) -> i64 {
+    let mut sum = 0;
+
+    for b in num.chars() {
+        if b != '.' {
+            sum += b.to_digit(10).unwrap() as i64;
+        }
+    }
+    sum
+}
+
+// Returns n!. The calculation is done recursively on `BigUint'.
+pub fn factorial(n: BigUint) -> BigUint {
+    let num: BigUint = BigUint::from(1 as usize);
+    let num_next: BigUint = BigUint::from(2 as usize);
+
+    if n < num_next {
+        num.clone()
+    } else {
+        let previous = factorial(n.clone() - num);
+        n * previous
+    }
 }
