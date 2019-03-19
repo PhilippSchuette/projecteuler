@@ -266,6 +266,16 @@ mod tests {
     }
 
     #[test]
+    fn test_problem021() {
+        assert_eq!(lib::problem021::divisor_sum(6), 6);
+
+        assert_eq!(lib::problem021::is_amicable(6), false);
+        assert_eq!(lib::problem021::is_amicable(220), true);
+
+        assert_eq!(lib::problem021::solve(10000), 31626);
+    }
+
+    #[test]
     fn test_problem067() {
         assert_eq!(lib::problem067::find_triangle_sum("inputs/test018.in"), 23);
         assert_eq!(
