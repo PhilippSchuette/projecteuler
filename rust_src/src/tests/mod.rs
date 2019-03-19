@@ -226,6 +226,22 @@ mod tests {
     }
 
     #[test]
+    fn test_problem019() {
+        assert_eq!(lib::problem019::is_leap_year(1900), false);
+        assert_eq!(lib::problem019::is_leap_year(2000), true);
+        assert_eq!(lib::problem019::is_leap_year(2100), false);
+        assert_eq!(lib::problem019::is_leap_year(2016), true);
+        assert_eq!(lib::problem019::is_leap_year(2018), false);
+        assert_eq!(lib::problem019::is_leap_year(2020), true);
+
+        assert_eq!(lib::problem019::days_per_month(2000, 1), 31);
+        assert_eq!(lib::problem019::days_per_month(2000, 9), 30);
+        assert_eq!(lib::problem019::days_per_month(2000, 2), 29);
+        assert_eq!(lib::problem019::days_per_month(2002, 2), 28);
+
+    }
+
+    #[test]
     fn test_problem067() {
         assert_eq!(lib::problem067::find_triangle_sum("inputs/test018.in"), 23);
         assert_eq!(

@@ -227,7 +227,7 @@ The following table summarizes the current project status. The speed of the fast
 |      64 |       -        |    -        |         -      |     -      |        -       |        -       |
 |      65 |       -        |    -        |         -      |     -      |        -       |        -       |
 |      66 |       -        |    -        |         -      |     -      |        -       |        -       |
-|      67 |       -        |    -        |         -      |     -      |    + (0.00s)   |        -       |
+|      67 |       -        |    -        |         -      |     -      |        -       |    + (0.00s)   |
 |      68 |       -        |    -        |         -      |     -      |        -       |        -       |
 |      69 |       -        |    -        |         -      |     -      |        -       |        -       |
 
