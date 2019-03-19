@@ -19,35 +19,11 @@
 // then the number of divisors is given by the product
 // of the powers of the prime factors + 1
 unsigned num_divisors(unsigned n) {
-    if (n == 1) return 1;
-    if (n == 2) return 2;
-    if (is_prime(n)) return 2;
-    //Stores the powers of the prime factors
-    std::vector<unsigned> powers; 
-
-    const int max = n;
-
-    //Special case: n is even
-    if (n % 2 == 0) {
-        unsigned p = 0;
-        do {
-            n /= 2;
-            p++;
-        } while (n % 2 == 0);
-        powers.push_back(p + 1);
-    }
-    for (unsigned i = 3; i <= n; i+=2) {
-        if (n % i == 0 && is_prime(i)) {
-            unsigned p = 0;
-            do { //LCOV_EXCL_LINE
-                n /= i;
-                p++;
-            } while (n % i == 0);
-            powers.push_back(p + 1);
-        }
-    }
-
-    return std::accumulate(powers.begin(), powers.end(), 1, std::multiplies<unsigned>());
+    auto &[factors, exponents] = prime_factors(n);
+    unsigned prod = 1;
+    for (auto e : exponents)
+        prod *= (e+1);
+    return prod;
 }
 
 // Return the nth triangle number using Gauß' formula
