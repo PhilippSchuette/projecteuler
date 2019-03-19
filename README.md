@@ -178,7 +178,7 @@ The following table summarizes the current project status. The speed of the fast
 |      15 |       -        |    -        |         -      |     -      |        -       |    + (0.00s)   |
 |      16 |    + (0.00s)   |    -        |         -      |     -      |        -       |    + (0.00s)   |
 |      17 |       -        |    -        |         -      |     -      |        -       |    + (0.01s)   |
-|      18 |       -        |    -        |         -      |     -      |        -       |    + (0.00s)   |
+|      18 |       -        |    -        |       TBD      |     -      |        -       |    + (0.00s)   |
 |      19 |    + (0.00s)   |    -        |    + (0.00s)   |     -      |        -       |    + (0.00s)   |
 |      20 |       -        |    -        |         -      |     -      |        -       |        -       |
 |      21 |       -        |    -        |         -      |     -      |        -       |        -       |
@@ -227,7 +227,7 @@ The following table summarizes the current project status. The speed of the fast
 |      64 |       -        |    -        |         -      |     -      |        -       |        -       |
 |      65 |       -        |    -        |         -      |     -      |        -       |        -       |
 |      66 |       -        |    -        |         -      |     -      |        -       |        -       |
-|      67 |       -        |    -        |         -      |     -      |        -       |    + (0.00s)   |
+|      67 |       -        |    -        |       TBD      |     -      |        -       |    + (0.00s)   |
 |      68 |       -        |    -        |         -      |     -      |        -       |        -       |
 |      69 |       -        |    -        |         -      |     -      |        -       |        -       |
 
