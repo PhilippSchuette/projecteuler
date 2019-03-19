@@ -266,7 +266,7 @@ fn main() {
                 "19" => {
                     // run problem 67 solution
                     let now = Instant::now();
-                    let result = problem019::is_leap_year(2000);
+                    let result = problem019::solve();
                     println!(
                         "Problem 19:\n\tresult: {}\n\telapsed: {:?}",
                         result,
