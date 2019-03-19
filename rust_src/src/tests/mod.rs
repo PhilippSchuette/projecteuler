@@ -226,6 +226,39 @@ mod tests {
     }
 
     #[test]
+    fn test_problem019() {
+        assert_eq!(lib::problem019::is_leap_year(1900), false);
+        assert_eq!(lib::problem019::is_leap_year(2000), true);
+        assert_eq!(lib::problem019::is_leap_year(2100), false);
+        assert_eq!(lib::problem019::is_leap_year(2016), true);
+        assert_eq!(lib::problem019::is_leap_year(2018), false);
+        assert_eq!(lib::problem019::is_leap_year(2020), true);
+
+        assert_eq!(lib::problem019::days_per_month(2000, 0), 31);
+        assert_eq!(lib::problem019::days_per_month(2000, 8), 30);
+        assert_eq!(lib::problem019::days_per_month(2000, 1), 29);
+        assert_eq!(lib::problem019::days_per_month(2002, 1), 28);
+
+        assert_eq!(lib::problem019::increment_weekday(2), 3);
+        assert_eq!(lib::problem019::increment_weekday(6), 0);
+
+        // fn doesn't have a return value, so some setup is required
+        // only two cases are covered, the rest is tested via `solve()'
+        let (mut d, mut m, mut y) = (28, 0, 1991);
+        let expected = (29, 0, 1991);
+        lib::problem019::increment_day_month_year(&mut d, &mut m, &mut y);
+        assert_eq!((d, m, y), expected);
+
+        let (mut d, mut m, mut y) = (31, 11, 1991);
+        let expected = (1, 0, 1992);
+        lib::problem019::increment_day_month_year(&mut d, &mut m, &mut y);
+        assert_eq!((d, m, y), expected);
+
+        // assert correct problem solution
+        assert_eq!(lib::problem019::solve(), 171);
+    }
+
+    #[test]
     fn test_problem067() {
         assert_eq!(lib::problem067::find_triangle_sum("inputs/test018.in"), 23);
         assert_eq!(
