@@ -13,6 +13,7 @@
 #include "problem014.hpp"
 #include "problem018and067.hpp"
 #include "problem019.hpp"
+#include "problem021.hpp"
 
 TEST_CASE( "Testing multiples35_below (Problem 1)") {
    REQUIRE(multiples35_below(2) == std::vector<int>({}));
@@ -115,5 +116,13 @@ TEST_CASE( "Testing Problem 18/67 fst and bruteforce solution") {
     REQUIRE(triangle_sum_bruteforce(getTriangle("../input_files/problem018.txt")) == 1074);
     REQUIRE(triangle_sum_fast(getTriangle("../input_files/test018.txt")) == 23);
     REQUIRE(triangle_sum_fast(getTriangle("../input_files/problem018.txt")) == 1074);
+}
+
+TEST_CASE( "Testing sum of divisors and amicable number test (Problem 21)") {
+    REQUIRE(sum_of_divisors(220) == 284);
+    REQUIRE(sum_of_divisors(284) == 220);
+    REQUIRE(is_amicable(284) == std::make_pair(true, 220));
+    REQUIRE(is_amicable(220) == std::make_pair(true, 284));
+    REQUIRE(is_amicable(5) == std::make_pair(false, 1));
 }
 

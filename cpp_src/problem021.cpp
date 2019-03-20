@@ -22,7 +22,7 @@ unsigned sum_of_divisors(unsigned n) {
     return sum;
 }
 
-std::pair<bool, int> isAmicableNumber(unsigned n) {
+std::pair<bool, int> is_amicable(unsigned n) {
     if (size_t sum = sum_of_divisors(n); sum_of_divisors(sum) == n) {
         return {sum != n, sum};
     } else {
@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
     auto start = omp_get_wtime();
     unsigned solution = 0;
     for (unsigned n = 1; n < 10000; n++) {
-        auto [amicable, sum] = isAmicableNumber(n);
+        auto [amicable, sum] = is_amicable(n);
         if (amicable)
             solution += n;
     }
