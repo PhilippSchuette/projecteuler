@@ -276,6 +276,17 @@ mod tests {
     }
 
     #[test]
+    fn test_problem022() {
+        assert_eq!(lib::problem022::solve("inputs/problem022.in"), 871198282);
+
+        assert_eq!(lib::problem022::name_score(&"AABCDD".to_string()), 15);
+
+        let mut vec = vec!["C".to_string(), "D".to_string(), "A".to_string()];
+        lib::problem022::bubble_sort_string(&mut vec);
+        assert_eq!(vec, vec!["A".to_string(), "C".to_string(), "D".to_string()]);
+    }
+
+    #[test]
     fn test_problem067() {
         assert_eq!(lib::problem067::find_triangle_sum("inputs/test018.in"), 23);
         assert_eq!(

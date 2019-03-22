@@ -37,6 +37,7 @@ use lib::problem018;
 use lib::problem019;
 use lib::problem020;
 use lib::problem021;
+use lib::problem022;
 use lib::problem067;
 
 use std::env;
@@ -291,6 +292,16 @@ fn main() {
                     let result = problem021::solve(10000);
                     println!(
                         "Problem 21: \n\tresult: {}\n\telapsed: {:?}",
+                        result,
+                        now.elapsed()
+                    );
+                }
+                "22" => {
+                    // run problem 22 solution
+                    let now = Instant::now();
+                    let result = problem022::solve("inputs/problem022.in");
+                    println!(
+                        "Problem 22: \n\tresult: {}\n\telapsed: {:?}",
                         result,
                         now.elapsed()
                     );
