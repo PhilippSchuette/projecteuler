@@ -280,10 +280,6 @@ mod tests {
         assert_eq!(lib::problem022::solve("inputs/problem022.in"), 871198282);
 
         assert_eq!(lib::problem022::name_score(&"AABCDD".to_string()), 15);
-
-        let mut vec = vec!["C".to_string(), "D".to_string(), "A".to_string()];
-        lib::problem022::bubble_sort_string(&mut vec);
-        assert_eq!(vec, vec!["A".to_string(), "C".to_string(), "D".to_string()]);
     }
 
     #[test]
@@ -345,5 +341,19 @@ mod tests {
     #[test]
     fn test_utils_sum_of_digits() {
         assert_eq!(utils::sum_of_digits(String::from("336.0")), 12);
+    }
+
+    #[test]
+    fn test_utils_bubble_sort() {
+        let mut vec_str = vec!["C".to_string(), "D".to_string(), "A".to_string()];
+        utils::bubble_sort(&mut vec_str);
+        assert_eq!(
+            vec_str,
+            vec!["A".to_string(), "C".to_string(), "D".to_string()]
+        );
+
+        let mut vec_num = vec![5, 2, 1, 6, 7, 9, 3];
+        utils::bubble_sort(&mut vec_num);
+        assert_eq!(vec_num, vec![1, 2, 3, 5, 6, 7, 9]);
     }
 }

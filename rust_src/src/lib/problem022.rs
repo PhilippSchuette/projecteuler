@@ -17,6 +17,7 @@
  * Date: 2019/03/22
  * License: MIT (see ../LICENSE.md)
  */
+use crate::utils;
 use std::fs::File;
 use std::io::Read;
 
@@ -39,26 +40,12 @@ pub fn solve(path: &str) -> i64 {
 
     // sort vector and calculate name score
     let mut score = 0;
-    bubble_sort_string(&mut names);
+    utils::bubble_sort(&mut names);
     for i in 0..names.len() {
-        score += name_score(&names[i]) * ((i+1) as i64);
+        score += name_score(&names[i]) * ((i + 1) as i64);
     }
 
     score
-}
-
-// Improving this sorting algorithm would speed up the solution a lot.
-pub fn bubble_sort_string(vec: &mut Vec<String>) {
-    for i in 0..(vec.len()-1) {
-        for j in 0..(vec.len()-1-i) {
-            if vec[j] > vec[j+1] {
-                // swap elements
-                let tmp = vec[j].clone();
-                vec[j] = vec[j+1].clone();
-                vec[j+1] = tmp;
-            }
-        }
-    }
 }
 
 // Calculate the score of a string which is the sum of its letters (A=1, B=2,
@@ -66,7 +53,7 @@ pub fn bubble_sort_string(vec: &mut Vec<String>) {
 pub fn name_score(name: &String) -> i64 {
     let mut sum: i64 = 0;
     for b in name.bytes() {
-        sum += (b-64) as i64;
+        sum += (b - 64) as i64;
     }
     sum
 }

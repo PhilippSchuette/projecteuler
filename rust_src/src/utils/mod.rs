@@ -79,3 +79,18 @@ pub fn factorial(n: BigUint) -> BigUint {
         n * previous
     }
 }
+
+// FIXME: Improving this sorting algorithm would speed up the
+// respective solution by a lot.
+pub fn bubble_sort<T: PartialOrd + Clone>(vec: &mut Vec<T>) {
+    for i in 0..(vec.len() - 1) {
+        for j in 0..(vec.len() - 1 - i) {
+            if vec[j] > vec[j + 1] {
+                // swap elements
+                let tmp = vec[j].clone();
+                vec[j] = vec[j + 1].clone();
+                vec[j + 1] = tmp;
+            }
+        }
+    }
+}
