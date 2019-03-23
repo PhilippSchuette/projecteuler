@@ -21,5 +21,4 @@ pub fn solve(n: usize) -> i64 {
     let big = num_bigint::BigUint::from(n);
     let fac = utils::factorial(big);
     utils::sum_of_digits(fac.to_str_radix(10))
-    /* #no_code */
-}
+} // #no_code
