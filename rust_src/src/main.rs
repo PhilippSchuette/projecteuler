@@ -60,7 +60,7 @@ fn main() {
             let o_vec: Vec<&str> = option.split(":").collect();
 
             // For now, ignore things like `1:2:3' and silently
-            // reduce to `1:2'. If parsing error are returned,
+            // reduce to `1:2'. If parsing errors are returned,
             // assume a range 0..2 by setting start=0, end=1.
             if o_vec.len() > 1 {
                 let start = o_vec[0].parse::<i32>().unwrap_or(0);
@@ -71,7 +71,7 @@ fn main() {
                     opts_expanded.push(s);
                 }
             }
-        } else {
+        } else /* #no_code */ {
             opts_expanded.push(option.to_string());
         }
 
@@ -215,7 +215,7 @@ fn main() {
                         split,
                         now.elapsed()
                     );
-                }
+                /* #no_code */}
                 "14" => {
                     // run problem 14 solution
                     let now = Instant::now();
