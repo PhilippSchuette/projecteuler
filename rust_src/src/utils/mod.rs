@@ -14,8 +14,8 @@ pub enum ParamError {
     InputOutOfRange,
 }
 
-// Calculates the greatest common divisor of two numbers
-// `a' and `b' using Euclid's algorithm.
+// Calculates the greatest common divisor of two numbers `a' and
+// `b' using Euclid's algorithm.
 #[allow(dead_code)]
 pub fn gcd(a: i64, b: i64) -> i64 {
     let (mut i, mut j) = (a, b);
@@ -80,8 +80,9 @@ pub fn factorial(n: BigUint) -> BigUint {
     }
 }
 
-// FIXME: Improving this sorting algorithm would speed up the
-// respective solution by a lot.
+// A generic bubble sort implementation. The input vector is
+// sorted in-place.
+#[allow(dead_code)]
 pub fn bubble_sort<T: PartialOrd + Clone>(vec: &mut Vec<T>) {
     for i in 0..(vec.len() - 1) {
         for j in 0..(vec.len() - 1 - i) {
@@ -90,6 +91,21 @@ pub fn bubble_sort<T: PartialOrd + Clone>(vec: &mut Vec<T>) {
                 let tmp = vec[j].clone();
                 vec[j] = vec[j + 1].clone();
                 vec[j + 1] = tmp;
+            }
+        }
+    }
+}
+
+// A generic insertion sort implementation. The input vector is
+// sorted in-place.
+pub fn insertion_sort<T: PartialOrd + Clone>(vec: &mut Vec<T>) {
+    for i in 1..vec.len() {
+        // insert i'th element into the sorted [0..i-1] part of `vec'
+        'insert_loop: for j in 0..i {
+            if vec[j] > vec[i] {
+                vec.insert(j, vec[i].clone()); /* shifts j right, inserts i */
+                vec.remove(i+1); /* i'th element is now i+1 */
+                break 'insert_loop; /* move on to next element */
             }
         }
     }

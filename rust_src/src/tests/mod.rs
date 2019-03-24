@@ -356,4 +356,18 @@ mod tests {
         utils::bubble_sort(&mut vec_num);
         assert_eq!(vec_num, vec![1, 2, 3, 5, 6, 7, 9]);
     }
+
+    #[test]
+    fn test_utils_insertion_sort() {
+        let mut vec_str = vec!["C".to_string(), "D".to_string(), "A".to_string()];
+        utils::insertion_sort(&mut vec_str);
+        assert_eq!(
+            vec_str,
+            vec!["A".to_string(), "C".to_string(), "D".to_string()]
+        );
+
+        let mut vec_num = vec![13, 14, 5, 2, 1, 6, 7, 11, 9, 3];
+        utils::insertion_sort(&mut vec_num);
+        assert_eq!(vec_num, vec![1, 2, 3, 5, 6, 7, 9, 11, 13, 14]);
+    }
 }

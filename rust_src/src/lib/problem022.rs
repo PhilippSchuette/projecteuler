@@ -40,7 +40,7 @@ pub fn solve(path: &str) -> i64 {
 
     // sort vector and calculate name score
     let mut score = 0;
-    utils::bubble_sort(&mut names);
+    utils::insertion_sort(&mut names);
     for i in 0..names.len() {
         score += name_score(&names[i]) * ((i + 1) as i64);
     }
