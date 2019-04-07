@@ -14,6 +14,7 @@
 #include "problem018and067.hpp"
 #include "problem019.hpp"
 #include "problem021.hpp"
+#include "problem046.hpp"
 
 TEST_CASE( "Testing multiples35_below (Problem 1)") {
    REQUIRE(multiples35_below(2) == std::vector<int>({}));
@@ -126,3 +127,18 @@ TEST_CASE( "Testing sum of divisors and amicable number test (Problem 21)") {
     REQUIRE(is_amicable(5) == std::make_pair(false, 1));
 }
 
+TEST_CASE( "Test violates_goldbach (problem 46)") {
+    std::vector<size_t> primes = {2};
+    for (size_t n = 3; n < 5777; n+=2) {
+        if (is_prime(n)) {
+            primes.emplace_back(n);
+        }
+    }
+    REQUIRE(!violates_goldbach(9, primes));
+    REQUIRE(!violates_goldbach(15, primes));
+    REQUIRE(!violates_goldbach(21, primes));
+    REQUIRE(!violates_goldbach(25, primes));
+    REQUIRE(!violates_goldbach(27, primes));
+    REQUIRE(!violates_goldbach(33, primes));
+    REQUIRE(violates_goldbach(5777, primes));
+}
