@@ -6,6 +6,7 @@ zparseopts -D -E \
     a:=author -author=author \
     d=dep -dependencies=dep \
     f=force -force=force \
+    g=git -git=git \
     h=help -help=help
 
 print_help() {
@@ -15,9 +16,10 @@ print_help() {
     printf "%-20s  %s \n" "-l --language" "Programming language to use: Currently supported are 'cpp' for C++, 'c' for C and 'py' for Python"
     printf "%-20s  %s \n" "-n --number" "Number of the problem you want to solve"
     echo "\nOptional arguments:"
+    printf "%-20s  %s \n" "-a --author" "Author name, default is the output of 'git config user.name'"
     printf "%-20s  %s \n" "-d --dependencies" "Try to extract and download the input file(s) from the problem statement"
     printf "%-20s  %s \n" "-f --force" "Always override if file already exists without prompting"
-    printf "%-20s  %s \n" "-a --author" "Author name, default is the output of 'git config user.name'"
+    printf "%-20s  %s \n" "-g --git" "'git add' the created files"
     printf "%-20s  %s \n" "-h --help" "Print this message and exit"
 }
 
@@ -78,6 +80,8 @@ if $is_go; then
     cp $template1 $outfile1
     cp $template2 $outfile2
     cp $template3 $outfile3
+    
+    [[ -n $git ]] && git add $outfile1 $outfile2 $outfile3
 elif $is_js; then
     if [[ -z $force && (-e $outfile1 || -e $outfile2) ]]; then
         read -q "REPLY?One of the output files already exists! Overwrite? (y/n)"
@@ -86,6 +90,8 @@ elif $is_js; then
     fi
     cp $template1 $outfile1
     cp $template2 $outfile2
+
+    [[ -n $git ]] && git add $outfile1 $outfile2 
 elif $is_cpp; then
     if [[ -z $force && (-e $outfile || -e $headerfile) ]]; then
         read -q "REPLY?One of the output files already exists! Overwrite? (y/n)"
@@ -94,6 +100,8 @@ elif $is_cpp; then
     fi
     cp $template $outfile
     echo "#pragma once" > $headerfile
+
+    [[ -n $git ]] && git add $outfile $headerfile
 else
     if [[ -z $force && -e $outfile ]]; then
         read -q "REPLY?File $outfile already exists! Overwrite? (y/n)"
@@ -101,6 +109,7 @@ else
         [[ $REPLY = "n" ]] && exit 1
     fi
     cp $template $outfile
+    [[ -n $git ]] && git add $outfile 
 fi
 
 # Add problem number, author and date (not for Go files)
