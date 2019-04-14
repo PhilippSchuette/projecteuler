@@ -6,10 +6,12 @@ find_package(OpenMP REQUIRED)
 
 option(GCOV "GCOV" OFF)
 if(GCOV) 
-    set(CMAKE_CXX_FLAGS "--coverage ${OpenMP_CXX_FLAGS}")
+    set(CMAKE_CXX_FLAGS "--coverage")
 else()
-    set(CMAKE_CXX_FLAGS "-O2 -march=native ${OpenMP_CXX_FLAGS}")
+    set(CMAKE_CXX_FLAGS "-O2 -march=native")
 endif()
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 
 set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE ON)
 
@@ -26,6 +28,13 @@ if(NOT EXISTS include/Catch2/include)
     execute_process(COMMAND git submodule update --init -- include/Catch2 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
 add_subdirectory(include/Catch2)
+
+# Add colors when using ninja instead of make
+if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+    add_compile_options (-fdiagnostics-color=always)
+elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+    add_compile_options (-fcolor-diagnostics)
+endif ()
 
 # prime_utils.cpp is used in multiple executables, 
 # so by making it a static library we only have to 
