@@ -32,23 +32,19 @@ pub fn num_to_string(num: i32) -> Result<String, utils::ParamError> {
 
     // `ones', `ten_to_nineteen', `tens' and `hundreds' can be indexed
     // to translate numbers into a string
-    let ones = [
-        "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
-    ];
-    let eleven_to_nineteen = [
-        "eleven",
-        "twelve",
-        "thirteen",
-        "fourteen",
-        "fifteen",
-        "sixteen",
-        "seventeen",
-        "eighteen",
-        "nineteen",
-    ];
-    let tens = [
-        "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety",
-    ];
+    let ones =
+        ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+    let eleven_to_nineteen = ["eleven",
+                              "twelve",
+                              "thirteen",
+                              "fourteen",
+                              "fifteen",
+                              "sixteen",
+                              "seventeen",
+                              "eighteen",
+                              "nineteen"];
+    let tens = ["ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy",
+                "eighty", "ninety"];
     let hundreds = ["hundred"];
     let thousands = ["thousand"];
 

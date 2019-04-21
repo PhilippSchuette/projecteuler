@@ -38,6 +38,7 @@ use lib::problem019;
 use lib::problem020;
 use lib::problem021;
 use lib::problem022;
+use lib::problem024;
 use lib::problem067;
 
 use std::env;
@@ -71,7 +72,9 @@ fn main() {
                     opts_expanded.push(s);
                 }
             }
-        } else /* #no_code */ {
+        } else
+        /* #no_code */
+        {
             opts_expanded.push(option.to_string());
         }
 
@@ -81,7 +84,8 @@ fn main() {
             match opt.as_str() {
                 "1" => {
                     // run problem 1 solution
-                    let now = Instant::now();
+                    let now =
+                        Instant::now();
                     let result = problem001::sum_multiples(1000);
                     println!(
                         "Problem 1:\n\tresult: {}\n\telapsed: {:?}",
@@ -94,77 +98,65 @@ fn main() {
                     let now = Instant::now();
                     let fib_vec = problem002::fibonacci_vec(4000000);
                     let result = problem002::sum_even_terms_vec(fib_vec);
-                    println!(
-                        "Problem 2:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 2:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "3" => {
                     // run problem 3 solution
                     let now = Instant::now();
                     let result = problem003::largest_prime_factor(600851475143);
-                    println!(
-                        "Problem 3:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 3:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "4" => {
                     // run problem 4 solution
                     let now = Instant::now();
                     let result = problem004::largest_palindrome();
-                    println!(
-                        "Problem 4:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 4:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "5" => {
                     // run problem 5 solution
                     let now = Instant::now();
                     let result = problem005::evenly_divisible(20);
-                    println!(
-                        "Problem 5:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 5:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "6" => {
                     // run problem 6 solution
                     let now = Instant::now();
                     let result = problem006::solve(100, 100);
-                    println!(
-                        "Problem 6:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 6:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "7" => {
                     // run problem 7 solution
                     let now = Instant::now();
                     let result = problem007::nth_prime(10001);
-                    println!(
-                        "Problem 7:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 7:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "8" => {
                     // run problem 8 solution
                     let now = Instant::now();
-                    let data = problem008::parse_data("inputs/problem008.in".to_string());
+                    let data =
+                        problem008::parse_data("inputs/problem008.in".to_string());
                     /* path from base dir */
                     let result = problem008::adjacent_digits(data);
-                    println!(
-                        "Problem 8:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 8:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "9" => {
                     // run problem 9 solution
-                    let now = Instant::now();
+                    let now =
+                        Instant::now();
                     let triplet: problem009::Triplet = problem009::find_pyt_triplet(1000);
                     let result = problem009::mult_triplet(triplet);
                     println!(
@@ -177,32 +169,26 @@ fn main() {
                     // run problem 10 solution
                     let now = Instant::now();
                     let result = problem010::sum_primes(2_000_000);
-                    println!(
-                        "Problem 10:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 10:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "11" => {
                     // run problem 11 solution
                     let now = Instant::now();
                     let matrix = problem011::parse_matrix("inputs/problem011.in");
                     let result = problem011::greatest_product(matrix);
-                    println!(
-                        "Problem 11:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 11:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "12" => {
                     // run problem 12 solution
                     let now = Instant::now();
                     let result = problem012::solve(500);
-                    println!(
-                        "Problem 12:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 12:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
 
                 "13" => {
@@ -210,111 +196,101 @@ fn main() {
                     let now = Instant::now();
                     let result = problem013::sum_big_ints("inputs/problem013.in");
                     let (split, _) = result.split_at(10); /* display first 10 digits */
-                    println!(
-                        "Problem 13:\n\tresult: {}\n\telapsed: {:?}",
-                        split,
-                        now.elapsed()
-                    );
-                /* #no_code */}
+                    println!("Problem 13:\n\tresult: {}\n\telapsed: {:?}",
+                             split,
+                             now.elapsed());
+                    /* #no_code */
+                }
                 "14" => {
                     // run problem 14 solution
                     let now = Instant::now();
                     let result = problem014::find_longest_collatz(1_000_000);
-                    println!(
-                        "Problem 14:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 14:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "15" => {
                     // run problem 15 solution
                     let now = Instant::now();
                     let result = problem015::find_routes(20, 20);
-                    println!(
-                        "Problem 15:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 15:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "16" => {
                     // run problem 16 solution
                     let now = Instant::now();
                     let result = problem016::sum_of_digits(2.0, 1000.0);
-                    println!(
-                        "Problem 16:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 16:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "17" => {
                     // run problem 17 solution
                     let now = Instant::now();
                     let result = problem017::solve(1000);
-                    println!(
-                        "Problem 17:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 17:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "18" => {
                     // run problem 18 solution
                     let now = Instant::now();
-                    let result = problem018::find_triangle_sum("inputs/problem018.in");
-                    println!(
-                        "Problem 18:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    let result =
+                        problem018::find_triangle_sum("inputs/problem018.in");
+                    println!("Problem 18:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "19" => {
                     // run problem 19 solution
                     let now = Instant::now();
                     let result = problem019::solve();
-                    println!(
-                        "Problem 19:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 19:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "20" => {
                     // run problem 20 solution
                     let now = Instant::now();
                     let result = problem020::solve(100);
-                    println!(
-                        "Problem 20:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 20:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "21" => {
                     // run problem 21 solution
                     let now = Instant::now();
                     let result = problem021::solve(10000);
-                    println!(
-                        "Problem 21: \n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 21: \n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "22" => {
                     // run problem 22 solution
                     let now = Instant::now();
                     let result = problem022::solve("inputs/problem022.in");
-                    println!(
-                        "Problem 22: \n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    println!("Problem 22: \n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
+                }
+                /* TODO: implement problem 23 */
+                "24" => {
+                    // run problem 24 solution
+                    let now = Instant::now();
+                    let result = problem024::solve();
+                    println!("Problem 24: \n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
                 "67" => {
                     // run problem 67 solution
                     let now = Instant::now();
-                    let result = problem067::find_triangle_sum("inputs/problem067.in");
-                    println!(
-                        "Problem 67:\n\tresult: {}\n\telapsed: {:?}",
-                        result,
-                        now.elapsed()
-                    );
+                    let result =
+                        problem067::find_triangle_sum("inputs/problem067.in");
+                    println!("Problem 67:\n\tresult: {}\n\telapsed: {:?}",
+                             result,
+                             now.elapsed());
                 }
 
                 // other values should just silently return from main

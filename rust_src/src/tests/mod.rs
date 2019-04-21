@@ -64,18 +64,15 @@ mod tests {
 
     #[test]
     fn test_problem008() {
-        assert_eq!(
-            lib::problem008::parse_data("inputs/test008.in".to_string()),
-            "123456789123456789".to_string(),
-            "parse data"
-        );
+        assert_eq!(lib::problem008::parse_data("inputs/test008.in".to_string()),
+                   "123456789123456789".to_string(),
+                   "parse data");
 
-        let data: String = lib::problem008::parse_data("inputs/problem008.in".to_string());
-        assert_eq!(
-            lib::problem008::adjacent_digits(data),
-            23514624000,
-            "calculate adjacent digits"
-        );
+        let data: String =
+            lib::problem008::parse_data("inputs/problem008.in".to_string());
+        assert_eq!(lib::problem008::adjacent_digits(data),
+                   23514624000,
+                   "calculate adjacent digits");
     }
 
     #[test]
@@ -109,10 +106,8 @@ mod tests {
     fn test_problem011() {
         let m = lib::problem011::parse_matrix("inputs/problem011.in");
 
-        assert_eq!(
-            lib::problem011::parse_matrix("inputs/test011.in"),
-            vec![vec![1, 2], vec![3, 4], vec![5, 6]]
-        );
+        assert_eq!(lib::problem011::parse_matrix("inputs/test011.in"),
+                   vec![vec![1, 2], vec![3, 4], vec![5, 6]]);
 
         assert_eq!(lib::problem011::greatest_product(m), 70600674);
     }
@@ -133,10 +128,8 @@ mod tests {
 
     #[test]
     fn test_problem013() {
-        assert_eq!(
-            lib::problem013::sum_big_ints("inputs/problem013.in"),
-            "5537376230390876637302048746832985971773659831892672"
-        );
+        assert_eq!(lib::problem013::sum_big_ints("inputs/problem013.in"),
+                   "5537376230390876637302048746832985971773659831892672");
     }
 
     #[test]
@@ -162,48 +155,28 @@ mod tests {
     #[test]
     fn test_problem017() {
         // test `InputOutOfRange' error
-        assert_eq!(
-            lib::problem017::num_to_string(0),
-            Err(utils::ParamError::InputOutOfRange)
-        );
+        assert_eq!(lib::problem017::num_to_string(0),
+                   Err(utils::ParamError::InputOutOfRange));
 
         // test string translation of various different numbers
-        assert_eq!(
-            lib::problem017::num_to_string(8).unwrap(),
-            String::from("eight")
-        );
-        assert_eq!(
-            lib::problem017::num_to_string(49).unwrap(),
-            String::from("forty-nine")
-        );
-        assert_eq!(
-            lib::problem017::num_to_string(107).unwrap(),
-            String::from("one hundred and seven")
-        );
-        assert_eq!(
-            lib::problem017::num_to_string(170).unwrap(),
-            String::from("one hundred and seventy")
-        );
-        assert_eq!(
-            lib::problem017::num_to_string(342).unwrap(),
-            String::from("three hundred and forty-two")
-        );
-        assert_eq!(
-            lib::problem017::num_to_string(615).unwrap(),
-            String::from("six hundred and fifteen")
-        );
-        assert_eq!(
-            lib::problem017::num_to_string(912).unwrap(),
-            String::from("nine hundred and twelve")
-        );
-        assert_eq!(
-            lib::problem017::num_to_string(900).unwrap(),
-            String::from("nine hundred")
-        );
-        assert_eq!(
-            lib::problem017::num_to_string(1000).unwrap(),
-            String::from("one thousand")
-        );
+        assert_eq!(lib::problem017::num_to_string(8).unwrap(),
+                   String::from("eight"));
+        assert_eq!(lib::problem017::num_to_string(49).unwrap(),
+                   String::from("forty-nine"));
+        assert_eq!(lib::problem017::num_to_string(107).unwrap(),
+                   String::from("one hundred and seven"));
+        assert_eq!(lib::problem017::num_to_string(170).unwrap(),
+                   String::from("one hundred and seventy"));
+        assert_eq!(lib::problem017::num_to_string(342).unwrap(),
+                   String::from("three hundred and forty-two"));
+        assert_eq!(lib::problem017::num_to_string(615).unwrap(),
+                   String::from("six hundred and fifteen"));
+        assert_eq!(lib::problem017::num_to_string(912).unwrap(),
+                   String::from("nine hundred and twelve"));
+        assert_eq!(lib::problem017::num_to_string(900).unwrap(),
+                   String::from("nine hundred"));
+        assert_eq!(lib::problem017::num_to_string(1000).unwrap(),
+                   String::from("one thousand"));
 
         assert_eq!(
             lib::problem017::str_len_exclude("three hundred and forty-two".to_string()),
@@ -220,10 +193,8 @@ mod tests {
     #[test]
     fn test_problem018() {
         assert_eq!(lib::problem018::find_triangle_sum("inputs/test018.in"), 23);
-        assert_eq!(
-            lib::problem018::find_triangle_sum("inputs/problem018.in"),
-            1074
-        );
+        assert_eq!(lib::problem018::find_triangle_sum("inputs/problem018.in"),
+                   1074);
     }
 
     #[test]
@@ -285,10 +256,8 @@ mod tests {
     #[test]
     fn test_problem067() {
         assert_eq!(lib::problem067::find_triangle_sum("inputs/test018.in"), 23);
-        assert_eq!(
-            lib::problem067::find_triangle_sum("inputs/problem067.in"),
-            7273
-        );
+        assert_eq!(lib::problem067::find_triangle_sum("inputs/problem067.in"),
+                   7273);
     }
 
     // test functions that should panic, e.g. if files don't exist
@@ -332,10 +301,8 @@ mod tests {
 
     #[test]
     fn test_utils_factorial() {
-        assert_eq!(
-            utils::factorial(num_bigint::BigUint::from(10u32)),
-            num_bigint::BigUint::from(3628800u32)
-        );
+        assert_eq!(utils::factorial(num_bigint::BigUint::from(10u32)),
+                   num_bigint::BigUint::from(3628800u32));
     }
 
     #[test]
@@ -345,12 +312,10 @@ mod tests {
 
     #[test]
     fn test_utils_bubble_sort() {
-        let mut vec_str = vec!["C".to_string(), "D".to_string(), "A".to_string()];
+        let mut vec_str = vec!["C".to_string(), "D".to_string(), "A".to_string(),];
         utils::bubble_sort(&mut vec_str);
-        assert_eq!(
-            vec_str,
-            vec!["A".to_string(), "C".to_string(), "D".to_string()]
-        );
+        assert_eq!(vec_str,
+                   vec!["A".to_string(), "C".to_string(), "D".to_string()]);
 
         let mut vec_num = vec![5, 2, 1, 6, 7, 9, 3];
         utils::bubble_sort(&mut vec_num);
@@ -359,14 +324,12 @@ mod tests {
 
     #[test]
     fn test_utils_insertion_sort() {
-        let mut vec_str = vec!["C".to_string(), "D".to_string(), "A".to_string()];
+        let mut vec_str = vec!["C".to_string(), "D".to_string(), "A".to_string(),];
         utils::insertion_sort(&mut vec_str);
-        assert_eq!(
-            vec_str,
-            vec!["A".to_string(), "C".to_string(), "D".to_string()]
-        );
+        assert_eq!(vec_str,
+                   vec!["A".to_string(), "C".to_string(), "D".to_string()]);
 
-        let mut vec_num = vec![13, 14, 5, 2, 1, 6, 7, 11, 9, 3];
+        let mut vec_num = vec![13, 14, 5, 2, 1, 6, 7, 11, 9, 3,];
         utils::insertion_sort(&mut vec_num);
         assert_eq!(vec_num, vec![1, 2, 3, 5, 6, 7, 9, 11, 13, 14]);
     }

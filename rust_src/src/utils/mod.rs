@@ -104,7 +104,7 @@ pub fn insertion_sort<T: PartialOrd + Clone>(vec: &mut Vec<T>) {
         'insert_loop: for j in 0..i {
             if vec[j] > vec[i] {
                 vec.insert(j, vec[i].clone()); /* shifts j right, inserts i */
-                vec.remove(i+1); /* i'th element is now i+1 */
+                vec.remove(i + 1); /* i'th element is now i+1 */
                 break 'insert_loop; /* move on to next element */
             }
         }

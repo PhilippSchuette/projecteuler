@@ -48,11 +48,10 @@ pub fn find_pyt_triplet(n: i64) -> Triplet {
     // be optimized for sure!
     for i in 1..(n / 2) {
         for j in 1..(n / 2) {
-            t = Triplet {
-                a: i,
-                b: j,
-                c: ((i64::pow(i, 2) + i64::pow(j, 2)) as f64).sqrt() as i64,
-            };
+            t = Triplet { a: i,
+                          b: j,
+                          c: ((i64::pow(i, 2) + i64::pow(j, 2)) as f64).sqrt()
+                             as i64 };
             if is_triplet(&t) && (t.a + t.b + t.c) == n {
                 return t;
             }

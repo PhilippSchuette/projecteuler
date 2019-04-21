@@ -32,9 +32,9 @@ pub fn solve(path: &str) -> i64 {
     let mut names: Vec<String> = vec![];
     for name in data.split(",") {
         let new: String = name /* last name has additional new line char */
-            .trim_matches('\n')
-            .trim_matches('"')
-            .to_string();
+                              .trim_matches('\n')
+                              .trim_matches('"')
+                              .to_string();
         names.push(new);
     }
 

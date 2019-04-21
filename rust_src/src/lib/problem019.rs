@@ -21,15 +21,13 @@
  * License: MIT (see ../LICENSE.md)
  */
 const MONTHS: [i64; 12] = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-const WEEKDAYS: [&str; 7] = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-];
+const WEEKDAYS: [&str; 7] = ["Monday",
+                             "Tuesday",
+                             "Wednesday",
+                             "Thursday",
+                             "Friday",
+                             "Saturday",
+                             "Sunday"];
 
 pub fn is_leap_year(year: i64) -> bool {
     if year % 100 == 0 {
@@ -91,12 +89,17 @@ pub fn solve() -> i64 {
 
     while current_year >= 1900 && current_year <= 2000 {
         // check condition and increment the counter
-        if current_year > 1900 && WEEKDAYS[current_weekday] == "Sunday" && current_day == 1 {
+        if current_year > 1900
+           && WEEKDAYS[current_weekday] == "Sunday"
+           && current_day == 1
+        {
             sunday_count += 1;
         }
 
         // increment all looping variables
-        increment_day_month_year(&mut current_day, &mut current_month, &mut current_year);
+        increment_day_month_year(&mut current_day,
+                                 &mut current_month,
+                                 &mut current_year);
         current_weekday = increment_weekday(current_weekday);
     }
 
