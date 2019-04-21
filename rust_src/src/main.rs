@@ -72,9 +72,7 @@ fn main() {
                     opts_expanded.push(s);
                 }
             }
-        } else
-        /* #no_code */
-        {
+        } else {
             opts_expanded.push(option.to_string());
         }
 
@@ -190,7 +188,6 @@ fn main() {
                              result,
                              now.elapsed());
                 }
-
                 "13" => {
                     // run problem 13 solution
                     let now = Instant::now();
