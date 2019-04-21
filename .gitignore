@@ -46,3 +46,9 @@ rust_src/target
 
 # node modules
 node_modules/
+
+# Ninja stiff
+.ninja_deps
+.ninja_log
+build.ninja
+rules.ninja
