@@ -1,7 +1,7 @@
 #!/bin/sh
 # Create code coverage report for CodeCov with `kcov'.
 # define cli options and exclude pattern
-options="1,2:18,67"
+options="1,2:22,24,67"
 exclude_pattern="#no_code"
 
 # run command once with exclude pattern and options

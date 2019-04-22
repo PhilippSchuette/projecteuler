@@ -254,6 +254,17 @@ mod tests {
     }
 
     #[test]
+    fn test_problem024() {
+        /* problem solver */
+        assert_eq!(lib::problem024::solve(), 2783915460);
+
+        /* helper functions */
+        let vec = vec![1, 2, 3, 4, 5];
+        assert_eq!(lib::problem024::max_in_vec(&vec), 5);
+        assert_eq!(lib::problem024::get_result(&vec), 12345);
+    }
+
+    #[test]
     fn test_problem067() {
         assert_eq!(lib::problem067::find_triangle_sum("inputs/test018.in"), 23);
         assert_eq!(lib::problem067::find_triangle_sum("inputs/problem067.in"),

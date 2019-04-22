@@ -18,7 +18,7 @@
  */
 #[derive(Debug)]
 struct LexPermutation {
-    pub digits: Vec<u8>, /* ordered digits of current permutation */
+    digits: Vec<u8>,     /* ordered digits of current permutation */
     current_permut: u64, /* current permutation */
     limit: u64,          /* iterates up to this value */
 }
@@ -86,33 +86,17 @@ impl Iterator for LexPermutation {
                 // element after the pivot to the end
                 self.swap(i, smallest_idx);
                 self.reverse(i + 1);
-                break; /* everything's done for this iteration */
+                break; /* done for this iteration */
             }
         }
         Some(self.digits.clone())
     }
 }
 
-pub fn print_debug(vec: &Vec<u8>) {
-    for i in 0..vec.len() {
-        print!("{}", vec[i]);
-    }
-    println!();
-}
-
 pub fn solve() -> i64 {
     let permutations = LexPermutation::new((0..10).collect(), 1_000_000);
-
-    //print_debug(&permutations.digits);
-    //for _ in 0..6 {
-    //    permutations.next();
-    //    print_debug(&permutations.digits);
-    //}
     let result = permutations.last().expect("Iterator failed");
-    print_debug(&result);
-
-    // result: 2783915460
-    0
+    get_result(&result)
 }
 
 pub fn max_in_vec<T>(vec: &Vec<T>) -> T
@@ -125,4 +109,12 @@ pub fn max_in_vec<T>(vec: &Vec<T>) -> T
         }
     }
     max
+}
+
+pub fn get_result(vec: &Vec<u8>) -> i64 {
+    let mut res = String::from("");
+    for i in 0..vec.len() {
+        res = format!("{}{}", res, vec[i]);
+    }
+    res.parse().unwrap()
 }
