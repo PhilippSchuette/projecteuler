@@ -17,9 +17,9 @@
 #include "problem046.hpp"
 
 TEST_CASE( "Testing multiples35_below (Problem 1)") {
-   REQUIRE(multiples35_below(2) == std::vector<int>({}));
-   REQUIRE(multiples35_below(5) == std::vector<int>({3}));
-   REQUIRE(multiples35_below(10) == std::vector<int>({3, 5, 6, 9}));
+   // Make sure the solution is actually computed at compile time 
+   static_assert(sum_multiples35_below<10>() == 23);
+   static_assert(sum_multiples35_below<1000>() == 233168);
 }
 
 TEST_CASE("Testing largest_prime_factor (Problem 3)") {
