@@ -77,13 +77,14 @@ def next_perm(permu):
     return(permu)
 
 # Test next_perm with easily checkable permutation:
-#init_permu = [0, 1, 2]
-#print(init_permu)
-#permu = init_permu
+# init_permu = [0, 1, 2]
+# print(init_permu)
+# permu = init_permu
 #
-#for i in range(0, 5):
-#    permu = next_perm(permu)
-#    print(permu)
+# for i in range(0, 5):
+#     permu = next_perm(permu)
+#     print(permu)
+
 
 # Calculate the answer to the Project Euler question:
 init_permu = [i for i in range(10)]

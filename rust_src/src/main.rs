@@ -73,6 +73,7 @@ fn main() {
                 }
             }
         } else {
+            /* #no_code */
             opts_expanded.push(option.to_string());
         }
 
@@ -196,8 +197,7 @@ fn main() {
                     println!("Problem 13:\n\tresult: {}\n\telapsed: {:?}",
                              split,
                              now.elapsed());
-                    /* #no_code */
-                }
+                } /* #no_code */
                 "14" => {
                     // run problem 14 solution
                     let now = Instant::now();
