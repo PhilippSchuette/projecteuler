@@ -16,3 +16,7 @@ gcov p2
 ./p3 --silent
 ./p3 slow
 gcov p3
+
+# problem 24
+./p24
+gcov p24
