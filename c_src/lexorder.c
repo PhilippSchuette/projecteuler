@@ -32,8 +32,8 @@ int main(int argc, char **argv)
     perm = (permutation *)malloc(sizeof(permutation));
     if (!perm)
         fail(1, "Cannot allocate more memory");
-
     init_perm(perm, NUM_CHARS);
+
     for (i = 0; i < NUM_PERMUTATIONS; i++) {
         err = next_perm(perm);
         if (err)
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
     return 0;
 }
 
-/* init_perm: generate an initial, ordered array of chars from '0' to max-1. */
+/* init_perm: generate an initial, ordered array of chars from '0' to len-1. */
 void init_perm(permutation *perm, unsigned int len)
 {
     int i;
@@ -54,10 +54,13 @@ void init_perm(permutation *perm, unsigned int len)
     perm->len = len;
     perm->num = 0;
     perm->curr = (char *)malloc(len*sizeof(char));
+    if (!perm->curr)
+        fail(1, "Cannot allocate more memory");
     for (i = 0; i < len; i++)
         perm->curr[i] = (char)(i+65);
 }
 
+/* print_perm: print a representation of the permutation array to stderr. */
 void print_perm(permutation *perm)
 {
     int i;
@@ -69,6 +72,7 @@ void print_perm(permutation *perm)
     fprintf(stderr, "] (number %d)\n", perm->num);
 }
 
+/* next_perm: generate the next permutation array, replacing the old one. */
 int next_perm(permutation *perm)
 {
     int i, len, max_k, max_l;
@@ -97,6 +101,7 @@ int next_perm(permutation *perm)
     return 0;
 }
 
+/* _swap: swap elements `i' and `j' in array `arr'. */
 void _swap(char *arr, int i, int j)
 {
     char tmp;
@@ -106,6 +111,7 @@ void _swap(char *arr, int i, int j)
     arr[j] = tmp;
 }
 
+/* _reverse_perm: reverse a permutation array. */
 void _reverse_perm(permutation *perm, int idx)
 {
     int half, i, len;
@@ -116,12 +122,14 @@ void _reverse_perm(permutation *perm, int idx)
         _swap(perm->curr, idx+i, len-i);
 }
 
+/* free_perm: free a permutation struct. */
 void free_perm(permutation *perm)
 {
     free(perm->curr);
     free(perm);
 }
 
+/* fail: exit with a message to stderr and an error status. */
 void fail(int status, char *msg)
 {
     fprintf(stderr, "Error: %s.\n", msg);
