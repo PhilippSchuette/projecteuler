@@ -29,8 +29,8 @@ const long int WRONG_RSLT[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
 typedef struct permutation {
     long int *curr;       /* the current permutation */
-    unsigned int len; /* the static length of the permutation buffer */
-    unsigned int num; /* the number of the current permutation */
+    unsigned int len;     /* the static length of the permutation buffer */
+    unsigned int num;     /* the number of the current permutation */
 } permutation;
 
 void init_perm(permutation *, unsigned int);
@@ -107,7 +107,7 @@ void print_perm(permutation *perm)
 /* next_perm: generate the next permutation array, replacing the old one. */
 int next_perm(permutation *perm)
 {
-    int i, len, max_k, max_l;
+    int i, max_k, max_l;
     max_k = max_l = -1;
 
     /* find the largest k, such that a[k] < a[k+1] */
