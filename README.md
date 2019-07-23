@@ -162,7 +162,7 @@ The following table summarizes the current project status. The speed of the fast
 | Problem | Fastest Python |   Fastest C |    Fastest C++ | Fastest JS |     Fastest Go |   Fastest Rust |
 | ------- | -------------- |------------ | -------------- | ---------- | -------------- | -------------- |
 |       1 |    + (0.00s)   |  + (0.00s)  |  compile time  |  + (0.23s) |    + (0.00s)   |    + (0.00s)   |
-|       2 |    + (0.00s)   |  + (0.00s)  |    + (0.00s)   |  + (0.17s) |    + (0.04s)   |    + (0.00s)   |
+|       2 |    + (0.00s)   |  + (0.00s)  |  compile time  |  + (0.17s) |    + (0.04s)   |    + (0.00s)   |
 |       3 | _**+ (33.0s)**_|  + (0.01s)  |    + (0.01s)   |     -      |    + (0.83s)   |    + (0.84s)   |
 |       4 |    + (0.09s)   |    -        |    + (0.01s)   |     -      |    + (0.07s)   |    + (0.16s)   |
 |       5 |    + (0.00s)   |    -        |    + (0.07s)   |     -      | _**+ (6.74s)**_|    + (0.16s)   |

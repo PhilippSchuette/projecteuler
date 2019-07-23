@@ -2,6 +2,7 @@
 
 #include "prime_utils.hpp"
 #include "problem001.hpp"
+#include "problem002.hpp"
 #include "problem003.hpp"
 #include "problem004.hpp"
 #include "problem005.hpp"
@@ -20,6 +21,19 @@ TEST_CASE( "Testing multiples35_below (Problem 1)") {
    // Make sure the solution is actually computed at compile time 
    static_assert(sum_multiples35_below<10>() == 23);
    static_assert(sum_multiples35_below<1000>() == 233168);
+}
+
+TEST_CASE( "Testing Fibonacci numbers and sum (Problem 2)") {
+    static_assert(fib<1>() == 1);
+    static_assert(fib<2>() == 2);
+    static_assert(fib<3>() == 3);
+    static_assert(fib<4>() == 5);
+    static_assert(fib<5>() == 8);
+    static_assert(fib<6>() == 13);
+    static_assert(fib<7>() == 21);
+    static_assert(fib<8>() == 34);
+
+    static_assert(fibSum<>() == 4613732);
 }
 
 TEST_CASE("Testing largest_prime_factor (Problem 3)") {
